@@ -183,7 +183,7 @@ function generateReadme(database, categories, _regions) {
   }
   lines.push('');
 
-  lines.push(`> Última actualización: ${new Date(last_updated).toLocaleDateString('es-CL', { year: 'numeric', month: 'long', day: 'numeric' })}`);
+  lines.push(`> Última actualización: ${new Date(last_updated).toLocaleDateString('es-CL', { timeZone: 'America/Santiago', year: 'numeric', month: 'long', day: 'numeric' })}`);
   lines.push('');
 
   for (const [key, cat] of categoriesOrdered) {
