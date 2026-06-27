@@ -746,6 +746,8 @@
       "name": "Khipu - Pagos Online",
       "url": "https://docs.khipu.com/products",
       "category": "business",
+      "pricing": "paid",
+      "pricing_url": "https://www.khipu.com/page/tarifas-instantaneos-chile",
       "description": "APIs de Khipu: Pagos Instantáneos, Pagos Automáticos y Open Finance para acceder a información bancaria",
       "endpoints": [
         {
@@ -795,6 +797,8 @@
       "name": "Flow - Pagos Online",
       "url": "https://developers.flow.cl/api",
       "category": "business",
+      "openapi": "https://developers.flow.cl/es-openApiFlow.yaml",
+      "pricing": "paid",
       "description": "API REST de plataforma de pagos online chilena para pagos con tarjetas de crédito y débito",
       "endpoints": [
         {
@@ -818,6 +822,8 @@
       "name": "Kushki - Pagos Globales",
       "url": "https://api-docs.kushkipagos.com/",
       "category": "business",
+      "pricing": "paid",
+      "pricing_url": "https://www.kushkipagos.com/api-integracion-pagos-kushki",
       "description": "API de pagos globales con recepción en moneda local, multi-medio de pago en cada país",
       "endpoints": [
         {
@@ -840,6 +846,8 @@
       "name": "Reveniu - Suscripciones",
       "url": "https://docs.reveniu.com",
       "category": "business",
+      "pricing": "paid",
+      "pricing_url": "https://reveniu.com/#rec237022060",
       "description": "API REST para gestión de cobro de suscripciones y pagos recurrentes en Chile. Documentación desactualizada (~4 años sin cambios)",
       "endpoints": [
         {
@@ -863,6 +871,7 @@
       "name": "Fintoc - Pagos por Transferencia",
       "url": "https://docs.fintoc.com/reference/introduction",
       "category": "business",
+      "pricing": "paid",
       "description": "API REST para iniciación de pagos mediante transferencias bancarias, tarjetas y conciliación de movimientos",
       "endpoints": [
         {
@@ -1005,6 +1014,7 @@
       "name": "Reqlut",
       "url": "https://reqlut.com/api/v3/doc",
       "category": "business",
+      "pricing": "paid",
       "description": "API REST para integración con el ecosistema de empleabilidad universitaria Reqlut. Requiere API key para uso institucional.",
       "endpoints": []
     },

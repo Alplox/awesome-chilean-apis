@@ -52,6 +52,8 @@ function updateAgentsMd(tree) {
       url: 'https://sitio.oficial.cl',
       openapi: 'https://ejemplo.cl/api/openapi.yaml',
       category: 'government',
+      pricing: 'free',
+      pricing_url: 'https://ejemplo.cl/pricing',
       description: 'Descripción objetiva de la API',
       endpoints: [
         {
@@ -173,6 +175,7 @@ function generateReadme(database, categories, _regions) {
   lines.push('');
   lines.push(`> Directorio curado de APIs chilenas públicas y privadas con endpoints verificados. **${apis.length} APIs** y **${total_endpoints} endpoints**, organizados por categoría y mantenidos activamente.`);
   lines.push('');
+  lines.push('<a id="top"></a>');
   lines.push('## 📑 Índice');
   lines.push('');
 
@@ -204,6 +207,17 @@ function generateReadme(database, categories, _regions) {
         badges.push(`![Active](${encodeURIComponent(`https://img.shields.io/badge/${apiActiveEndpoints}_endpoints-active-brightgreen`)})`);
       }
 
+      if (api.pricing && api.pricing !== 'free') {
+        const pricingColors = { paid: 'red', freemium: 'orange' };
+        const color = pricingColors[api.pricing] || 'lightgrey';
+        const pricingBadge = `![${api.pricing}](${encodeURIComponent(`https://img.shields.io/badge/${api.pricing}-${color}`)})`;
+        if (api.pricing_url) {
+          badges.push(`[${pricingBadge}](${api.pricing_url})`);
+        } else {
+          badges.push(pricingBadge);
+        }
+      }
+
       lines.push(`- **${api.name}** ${badges.join(' ')}`);
       lines.push(`  - 🌐 [${api.url}](${api.url})`);
       if (api.openapi) {
@@ -224,8 +238,9 @@ function generateReadme(database, categories, _regions) {
       }
       lines.push('');
     }
+    lines.push('  [⬆ Volver al índice](#top)');
+    lines.push('');
   }
-
   lines.push('---');
   lines.push('');
   lines.push('## 🤝 Contribuir');

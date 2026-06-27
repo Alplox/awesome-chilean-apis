@@ -72,6 +72,8 @@ Directorio curado de APIs chilenas públicas y privadas, con endpoints verificad
   "url": "https://sitio.oficial.cl",
   "openapi": "https://ejemplo.cl/api/openapi.yaml",
   "category": "government",
+  "pricing": "free",
+  "pricing_url": "https://ejemplo.cl/pricing",
   "description": "Descripción objetiva de la API",
   "endpoints": [
     {

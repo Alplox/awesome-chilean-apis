@@ -6,6 +6,7 @@
 
 > Directorio curado de APIs chilenas públicas y privadas con endpoints verificados. **31 APIs** y **58 endpoints**, organizados por categoría y mantenidos activamente.
 
+<a id="top"></a>
 ## 📑 Índice
 
 - [🏛️ Gobierno y Datos Públicos](#cat-government) — 7 APIs
@@ -80,6 +81,8 @@
     - ✅ `200` `JSON` `GET` [`https://chileabierto.cl/api/v1/indicators/poverty_rate_pct`](https://chileabierto.cl/api/v1/indicators/poverty_rate_pct) — Retorna metadatos de un indicador con valores de todas las comunas. Parámetro: code
     - ✅ `200` `JSON` `GET` [`https://chileabierto.cl/api/v1/compare?comunas=13101,13119&indicators=crime_rate_per_100k,poverty_rate_pct`](https://chileabierto.cl/api/v1/compare?comunas=13101,13119&indicators=crime_rate_per_100k,poverty_rate_pct) — Compara 2+ comunas en múltiples indicadores. Parámetros: comunas, indicators
 
+  [⬆ Volver al índice](#top)
+
 <a id="cat-finance"></a>
 ### 💰 Finanzas e Impuestos (8 APIs)
 
@@ -141,6 +144,8 @@
   - **Endpoints:**
     - ✅ 🔑 `200` `XML` `GET` [`https://www.quetalmiafp.cl/AccederCuotas`](https://www.quetalmiafp.cl/AccederCuotas) — Valores diarios de las cuotas de las AFP
 
+  [⬆ Volver al índice](#top)
+
 <a id="cat-weather"></a>
 ### 🌤️ Clima y Meteorología (1 API)
 
@@ -151,6 +156,8 @@
   - 📝 Datos meteorológicos en tiempo real y registros históricos de estaciones automáticas en Chile
   - **Endpoints:**
     - ✅ 🔑 `200` `JSON` `GET` [`https://climatologia.meteochile.gob.cl/application/servicios/getEstacion/330020?usuario=correo@correo.cl&token=apiKey_personal `](https://climatologia.meteochile.gob.cl/application/servicios/getEstacion/330020?usuario=correo@correo.cl&token=apiKey_personal ) — Datos meteorológicos en tiempo real e históricos
+
+  [⬆ Volver al índice](#top)
 
 <a id="cat-environment"></a>
 ### 🌿 Medio Ambiente (4 APIs)
@@ -182,12 +189,14 @@
     - ✅ `200` `JSON` `GET` [`https://datospararesiliencia.cl/api/search?q=sismo&type=dataset`](https://datospararesiliencia.cl/api/search?q=sismo&type=dataset) — Búsqueda pública de datasets. Parámetros: q, type, sort, order, fq, start, rows
     - ✅ 🔑 `200` `JSON` `GET` [`https://datospararesiliencia.cl/api/dataverses/inicio`](https://datospararesiliencia.cl/api/dataverses/inicio) — Info de colecciones, datasets y administración. Usa header X-Dataverse-key para autenticación
 
+  [⬆ Volver al índice](#top)
+
 <a id="cat-business"></a>
 ### 💼 Negocios y Comercio (6 APIs)
 
 *APIs de comercio, licitaciones, pagos y registro de empresas*
 
-- **Khipu - Pagos Online** ![Active](https%3A%2F%2Fimg.shields.io%2Fbadge%2F2_endpoints-active-brightgreen)
+- **Khipu - Pagos Online** ![Active](https%3A%2F%2Fimg.shields.io%2Fbadge%2F2_endpoints-active-brightgreen) [![paid](https%3A%2F%2Fimg.shields.io%2Fbadge%2Fpaid-red)](https://www.khipu.com/page/tarifas-instantaneos-chile)
   - 🌐 [https://docs.khipu.com/products](https://docs.khipu.com/products)
   - 📝 APIs de Khipu: Pagos Instantáneos, Pagos Automáticos y Open Finance para acceder a información bancaria
   - **Endpoints:**
@@ -195,33 +204,36 @@
     - ✅ 🔑 `405` `Other` `POST` [`https://payment-api.khipu.com/v1/automatic-payment/subscription`](https://payment-api.khipu.com/v1/automatic-payment/subscription) — Automatiza cobros recurrentes
     - ❌ 🔑 `404` `empty` `GET` [`https://api.khipu.com/v1/ar/banking/business`](https://api.khipu.com/v1/ar/banking/business) — Accede a información bancaria y financiera real desde múltiples instituciones
 
-- **Flow - Pagos Online** ![Active](https%3A%2F%2Fimg.shields.io%2Fbadge%2F1_endpoints-active-brightgreen)
+- **Flow - Pagos Online** ![Active](https%3A%2F%2Fimg.shields.io%2Fbadge%2F1_endpoints-active-brightgreen) ![paid](https%3A%2F%2Fimg.shields.io%2Fbadge%2Fpaid-red)
   - 🌐 [https://developers.flow.cl/api](https://developers.flow.cl/api)
+  - 📜 [OpenAPI Spec](https://developers.flow.cl/es-openApiFlow.yaml)
   - 📝 API REST de plataforma de pagos online chilena para pagos con tarjetas de crédito y débito
   - **Endpoints:**
     - ✅ 🔑 `301` `redirect` `POST` [`https://www.flow.cl/api`](https://www.flow.cl/api) — Pagos con tarjetas de crédito y débito
 
-- **Kushki - Pagos Globales** ![Active](https%3A%2F%2Fimg.shields.io%2Fbadge%2F1_endpoints-active-brightgreen)
+- **Kushki - Pagos Globales** ![Active](https%3A%2F%2Fimg.shields.io%2Fbadge%2F1_endpoints-active-brightgreen) [![paid](https%3A%2F%2Fimg.shields.io%2Fbadge%2Fpaid-red)](https://www.kushkipagos.com/api-integracion-pagos-kushki)
   - 🌐 [https://api-docs.kushkipagos.com/](https://api-docs.kushkipagos.com/)
   - 📝 API de pagos globales con recepción en moneda local, multi-medio de pago en cada país
   - **Endpoints:**
     - ✅ 🔑 `403` `auth_required` `POST` [`https://api.kushkipagos.com`](https://api.kushkipagos.com) — Pagos globales con múltiples medios de pago
 
-- **Reveniu - Suscripciones** 
+- **Reveniu - Suscripciones** [![paid](https%3A%2F%2Fimg.shields.io%2Fbadge%2Fpaid-red)](https://reveniu.com/#rec237022060)
   - 🌐 [https://docs.reveniu.com](https://docs.reveniu.com)
   - 📝 API REST para gestión de cobro de suscripciones y pagos recurrentes en Chile. Documentación desactualizada (~4 años sin cambios)
   - **Endpoints:**
     - ❌ 🔑 `404` `empty` `POST` [`https://production.reveniu.com`](https://production.reveniu.com) — Cobro de suscripciones y pagos recurrentes. Endpoints disponibles: /api/plans, /api/subscriptions, /api/webhooks
 
-- **Fintoc - Pagos por Transferencia** 
+- **Fintoc - Pagos por Transferencia** ![paid](https%3A%2F%2Fimg.shields.io%2Fbadge%2Fpaid-red)
   - 🌐 [https://docs.fintoc.com/reference/introduction](https://docs.fintoc.com/reference/introduction)
   - 📝 API REST para iniciación de pagos mediante transferencias bancarias, tarjetas y conciliación de movimientos
   - **Endpoints:**
     - ❌ 🔑 `404` `empty` `POST` [`https://api.fintoc.com`](https://api.fintoc.com) — Iniciación de pagos y conciliación bancaria
 
-- **Reqlut** 
+- **Reqlut** ![paid](https%3A%2F%2Fimg.shields.io%2Fbadge%2Fpaid-red)
   - 🌐 [https://reqlut.com/api/v3/doc](https://reqlut.com/api/v3/doc)
   - 📝 API REST para integración con el ecosistema de empleabilidad universitaria Reqlut. Requiere API key para uso institucional.
+
+  [⬆ Volver al índice](#top)
 
 <a id="cat-notifications"></a>
 ### 📢 Alertas y Notificaciones (3 APIs)
@@ -249,6 +261,8 @@
     - ✅ `200` `JSON` `GET` [`https://api.xor.cl/sismo/recent`](https://api.xor.cl/sismo/recent) — Lista de sismos recientes en Chile. Filtro opcional: ?magnitude=5
     - ✅ `200` `JSON` `GET` [`https://api.xor.cl/sismo/historic/20100227`](https://api.xor.cl/sismo/historic/20100227) — Sismos históricos por fecha (YYYYMMDD). Filtro opcional: ?magnitude=5
 
+  [⬆ Volver al índice](#top)
+
 <a id="cat-community"></a>
 ### 🤝 Comunidad y Otros (2 APIs)
 
@@ -265,6 +279,8 @@
   - 📝 Colección de APIs útiles y gratuitas para diversos propósitos
   - **Endpoints:**
     - ✅ `301` `redirect` `GET` [`https://api.boostr.cl/`](https://api.boostr.cl/) — Múltiples APIs de uso libre
+
+  [⬆ Volver al índice](#top)
 
 ---
 

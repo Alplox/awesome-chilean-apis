@@ -9,6 +9,7 @@ const ALLOWED_STATUSES = ['active', 'stale', 'broken', 'offline', 'no_endpoint',
 const ALLOWED_METHODS = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'];
 const ALLOWED_AUTH = ['none', 'api-key', 'oauth', 'basic', 'bearer'];
 const ALLOWED_FORMATS = ['JSON', 'XML', 'HTML', 'CSV', 'Other'];
+const ALLOWED_PRICING = ['free', 'freemium', 'paid'];
 const CATEGORY_KEYS = [
   'government', 'finance', 'transport', 'weather', 'environment',
   'education', 'health', 'maps', 'business', 'utilities',
@@ -109,6 +110,14 @@ function validateDatabase() {
 
     if (!api.description || typeof api.description !== 'string') {
       error(`${apiPath}.description`, 'Must be a non-empty string');
+    }
+
+    if (api.pricing !== undefined && !ALLOWED_PRICING.includes(api.pricing)) {
+      warn(`${apiPath}.pricing`, `Unknown pricing type "${api.pricing}". Allowed: ${ALLOWED_PRICING.join(', ')}`);
+    }
+
+    if (api.pricing_url !== undefined) {
+      validateUrl(api.pricing_url, `${apiPath}.pricing_url`);
     }
 
     if (!Array.isArray(api.endpoints)) {
