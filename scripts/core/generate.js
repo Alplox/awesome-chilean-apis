@@ -167,15 +167,14 @@ function generateReadme(database, categories, _regions) {
 
   const lines = [];
 
-  lines.push('# 🇨🇱 Awesome Chilean APIs');
+  lines.push('# 🇨🇱 Awesome Chilean APIs {#top}');
   lines.push('');
   lines.push(`[![Awesome](https://awesome.re/badge.svg)](https://github.com/alplox/awesome-chilean-apis)`);
-  lines.push(`![APIs](${encodeURIComponent(`https://img.shields.io/badge/apis-${apis.length}-brightgreen`)})`);
-  lines.push(`![Endpoints](${encodeURIComponent(`https://img.shields.io/badge/endpoints-${total_endpoints}-blue`)})`);
+  lines.push(`![APIs](https://img.shields.io/badge/apis-${apis.length}-brightgreen)`);
+  lines.push(`![Endpoints](https://img.shields.io/badge/endpoints-${total_endpoints}-blue)`);
   lines.push('');
   lines.push(`> Directorio curado de APIs chilenas públicas y privadas con endpoints verificados. **${apis.length} APIs** y **${total_endpoints} endpoints**, organizados por categoría y mantenidos activamente.`);
   lines.push('');
-  lines.push('<a id="top"></a>');
   lines.push('## 📑 Índice');
   lines.push('');
 
@@ -193,10 +192,9 @@ function generateReadme(database, categories, _regions) {
     const apiList = apisByCategory[key] || [];
     if (apiList.length === 0) continue;
 
-    lines.push(`<a id="cat-${key}"></a>`);
-    lines.push(`### ${cat.label} (${apiList.length} ${apiList.length === 1 ? 'API' : 'APIs'})`);
+    lines.push(`### ${cat.label} (${apiList.length} ${apiList.length === 1 ? 'API' : 'APIs'}) {#cat-${key}}`);
     lines.push('');
-    lines.push(`*${cat.description}*`);
+    lines.push(`**${cat.description}**`);
     lines.push('');
 
     for (const api of apiList) {
@@ -204,13 +202,13 @@ function generateReadme(database, categories, _regions) {
       const badges = [];
 
       if (apiActiveEndpoints > 0) {
-        badges.push(`![Active](${encodeURIComponent(`https://img.shields.io/badge/${apiActiveEndpoints}_endpoints-active-brightgreen`)})`);
+        badges.push(`![Active](${`https://img.shields.io/badge/${apiActiveEndpoints}_endpoints-active-brightgreen`})`);
       }
 
       if (api.pricing && api.pricing !== 'free') {
         const pricingColors = { paid: 'red', freemium: 'orange' };
         const color = pricingColors[api.pricing] || 'lightgrey';
-        const pricingBadge = `![${api.pricing}](${encodeURIComponent(`https://img.shields.io/badge/${api.pricing}-${color}`)})`;
+        const pricingBadge = `![${api.pricing}](${`https://img.shields.io/badge/${api.pricing}-${color}`})`;
         if (api.pricing_url) {
           badges.push(`[${pricingBadge}](${api.pricing_url})`);
         } else {
@@ -251,7 +249,7 @@ function generateReadme(database, categories, _regions) {
   lines.push('');
   lines.push('CC0-1.0 — Ver [LICENSE](LICENSE).');
 
-  writeFile('README.md', lines.join('\n'));
+  writeFile('README.md', lines.join('\n') + '\n');
   console.log(`✅ README.md generado: ${apis.length} APIs, ${total_endpoints} endpoints`);
 }
 

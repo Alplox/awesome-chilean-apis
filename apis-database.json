@@ -200,7 +200,7 @@
           "method": "GET",
           "auth": "none",
           "format": "JSON",
-          "description": "Órdenes de compra diarias, de compra por código, de compra diarias por estado, de compra por día, de compra por estado y día, de compra por código de organismo público o proveedor ",
+          "description": "Órdenes de compra diarias, de compra por código, de compra diarias por estado, de compra por día, de compra por estado y día, de compra por código de organismo público o proveedor",
           "status": "active",
           "last_checked": "2026-06-27T01:11:30.384Z",
           "last_status_code": 429,
@@ -624,7 +624,7 @@
         {
           "id": "meteochile-climatologia-api",
           "name": "API de Climatología",
-          "url": "https://climatologia.meteochile.gob.cl/application/servicios/getEstacion/330020?usuario=correo@correo.cl&token=apiKey_personal ",
+          "url": "https://climatologia.meteochile.gob.cl/application/servicios/getEstacion/330020?usuario=correo@correo.cl&token=apiKey_personal",
           "method": "GET",
           "auth": "api-key",
           "format": "JSON",
