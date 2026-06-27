@@ -1,10 +1,10 @@
 # 🇨🇱 Awesome Chilean APIs
 
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/alplox/awesome-chilean-apis)
-![APIs](https%3A%2F%2Fimg.shields.io%2Fbadge%2Fapis-31-brightgreen)
-![Endpoints](https%3A%2F%2Fimg.shields.io%2Fbadge%2Fendpoints-58-blue)
+![APIs](https%3A%2F%2Fimg.shields.io%2Fbadge%2Fapis-32-brightgreen)
+![Endpoints](https%3A%2F%2Fimg.shields.io%2Fbadge%2Fendpoints-60-blue)
 
-> Directorio curado de APIs chilenas públicas y privadas con endpoints verificados. **31 APIs** y **58 endpoints**, organizados por categoría y mantenidos activamente.
+> Directorio curado de APIs chilenas públicas y privadas con endpoints verificados. **32 APIs** y **60 endpoints**, organizados por categoría y mantenidos activamente.
 
 <a id="top"></a>
 ## 📑 Índice
@@ -13,11 +13,12 @@
 - [💰 Finanzas e Impuestos](#cat-finance) — 8 APIs
 - [🌤️ Clima y Meteorología](#cat-weather) — 1 API
 - [🌿 Medio Ambiente](#cat-environment) — 4 APIs
+- [🏥 Salud](#cat-health) — 1 API
 - [💼 Negocios y Comercio](#cat-business) — 6 APIs
 - [📢 Alertas y Notificaciones](#cat-notifications) — 3 APIs
 - [🤝 Comunidad y Otros](#cat-community) — 2 APIs
 
-> Última actualización: 26 de junio de 2026
+> Última actualización: 27 de junio de 2026
 
 <a id="cat-government"></a>
 ### 🏛️ Gobierno y Datos Públicos (7 APIs)
@@ -188,6 +189,20 @@
   - **Endpoints:**
     - ✅ `200` `JSON` `GET` [`https://datospararesiliencia.cl/api/search?q=sismo&type=dataset`](https://datospararesiliencia.cl/api/search?q=sismo&type=dataset) — Búsqueda pública de datasets. Parámetros: q, type, sort, order, fq, start, rows
     - ✅ 🔑 `200` `JSON` `GET` [`https://datospararesiliencia.cl/api/dataverses/inicio`](https://datospararesiliencia.cl/api/dataverses/inicio) — Info de colecciones, datasets y administración. Usa header X-Dataverse-key para autenticación
+
+  [⬆ Volver al índice](#top)
+
+<a id="cat-health"></a>
+### 🏥 Salud (1 API)
+
+*APIs de salud, hospitales y servicios médicos*
+
+- **Superintendencia de Salud** ![Active](https%3A%2F%2Fimg.shields.io%2Fbadge%2F2_endpoints-active-brightgreen)
+  - 🌐 [https://apis-documentacion.superdesalud.gob.cl/](https://apis-documentacion.superdesalud.gob.cl/)
+  - 📝 Portal de APIs de la Superintendencia de Salud con datos del Registro Nacional de Prestadores Individuales de Salud, búsqueda por RUT y número de registro
+  - **Endpoints:**
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://apis.superdesalud.gob.cl/api/v2/prestadores/rut/11111111`](https://apis.superdesalud.gob.cl/api/v2/prestadores/rut/11111111) — Ficha de un prestador de salud buscado por RUT (sin dígito verificador)
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://apis.superdesalud.gob.cl/api/v2/prestadores/registro/334583`](https://apis.superdesalud.gob.cl/api/v2/prestadores/registro/334583) — Ficha de un prestador de salud buscado por número de registro
 
   [⬆ Volver al índice](#top)
 

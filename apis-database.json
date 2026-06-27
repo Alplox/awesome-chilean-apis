@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-06-27T01:33:25.321Z",
-  "total_endpoints": 58,
+  "last_updated": "2026-06-27T04:19:40.852Z",
+  "total_endpoints": 60,
   "apis": [
     {
       "id": "datos-gob",
@@ -1050,6 +1050,42 @@
           "last_status_code": 200,
           "last_response_format": "JSON",
           "last_checked": "2026-06-27T01:12:15.956Z"
+        }
+      ]
+    },
+    {
+      "id": "super-salud",
+      "name": "Superintendencia de Salud",
+      "url": "https://apis-documentacion.superdesalud.gob.cl/",
+      "category": "health",
+      "pricing": "free",
+      "description": "Portal de APIs de la Superintendencia de Salud con datos del Registro Nacional de Prestadores Individuales de Salud, búsqueda por RUT y número de registro",
+      "endpoints": [
+        {
+          "id": "super-salud-rut",
+          "name": "Prestadores por RUT",
+          "url": "https://apis.superdesalud.gob.cl/api/v2/prestadores/rut/11111111",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Ficha de un prestador de salud buscado por RUT (sin dígito verificador)",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-06-27T04:19:39.002Z"
+        },
+        {
+          "id": "super-salud-registro",
+          "name": "Prestadores por Número de Registro",
+          "url": "https://apis.superdesalud.gob.cl/api/v2/prestadores/registro/334583",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Ficha de un prestador de salud buscado por número de registro",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-06-27T04:19:40.851Z"
         }
       ]
     }
