@@ -167,7 +167,8 @@ function generateReadme(database, categories, _regions) {
 
   const lines = [];
 
-  lines.push('# 🇨🇱 Awesome Chilean APIs {#top}');
+  lines.push('<a id="top"></a>');
+  lines.push('# 🇨🇱 Awesome Chilean APIs');
   lines.push('');
   lines.push(`[![Awesome](https://awesome.re/badge.svg)](https://github.com/alplox/awesome-chilean-apis)`);
   lines.push(`![APIs](https://img.shields.io/badge/apis-${apis.length}-brightgreen)`);
@@ -192,7 +193,9 @@ function generateReadme(database, categories, _regions) {
     const apiList = apisByCategory[key] || [];
     if (apiList.length === 0) continue;
 
-    lines.push(`### ${cat.label} (${apiList.length} ${apiList.length === 1 ? 'API' : 'APIs'}) {#cat-${key}}`);
+    lines.push(`<a id="cat-${key}"></a>`);
+    lines.push('');
+    lines.push(`### ${cat.label} (${apiList.length} ${apiList.length === 1 ? 'API' : 'APIs'})`);
     lines.push('');
     lines.push(`**${cat.description}**`);
     lines.push('');

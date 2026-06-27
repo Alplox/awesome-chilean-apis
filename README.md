@@ -1,4 +1,5 @@
-# 🇨🇱 Awesome Chilean APIs {#top}
+<a id="top"></a>
+# 🇨🇱 Awesome Chilean APIs
 
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/alplox/awesome-chilean-apis)
 ![APIs](https://img.shields.io/badge/apis-32-brightgreen)
@@ -19,7 +20,9 @@
 
 > Última actualización: 27 de junio de 2026
 
-### 🏛️ Gobierno y Datos Públicos (7 APIs) {#cat-government}
+<a id="cat-government"></a>
+
+### 🏛️ Gobierno y Datos Públicos (7 APIs)
 
 **APIs gubernamentales, datos abiertos y servicios del Estado**
 
@@ -82,7 +85,9 @@
 
   [⬆ Volver al índice](#top)
 
-### 💰 Finanzas e Impuestos (8 APIs) {#cat-finance}
+<a id="cat-finance"></a>
+
+### 💰 Finanzas e Impuestos (8 APIs)
 
 **APIs del sistema financiero, tributario y mercado de capitales**
 
@@ -144,7 +149,9 @@
 
   [⬆ Volver al índice](#top)
 
-### 🌤️ Clima y Meteorología (1 API) {#cat-weather}
+<a id="cat-weather"></a>
+
+### 🌤️ Clima y Meteorología (1 API)
 
 **APIs del clima, meteorología y condiciones ambientales**
 
@@ -156,7 +163,9 @@
 
   [⬆ Volver al índice](#top)
 
-### 🌿 Medio Ambiente (4 APIs) {#cat-environment}
+<a id="cat-environment"></a>
+
+### 🌿 Medio Ambiente (4 APIs)
 
 **APIs de calidad del aire, biodiversidad y datos ambientales**
 
@@ -187,7 +196,9 @@
 
   [⬆ Volver al índice](#top)
 
-### 🏥 Salud (1 API) {#cat-health}
+<a id="cat-health"></a>
+
+### 🏥 Salud (1 API)
 
 **APIs de salud, hospitales y servicios médicos**
 
@@ -200,7 +211,9 @@
 
   [⬆ Volver al índice](#top)
 
-### 💼 Negocios y Comercio (6 APIs) {#cat-business}
+<a id="cat-business"></a>
+
+### 💼 Negocios y Comercio (6 APIs)
 
 **APIs de comercio, licitaciones, pagos y registro de empresas**
 
@@ -243,7 +256,9 @@
 
   [⬆ Volver al índice](#top)
 
-### 📢 Alertas y Notificaciones (3 APIs) {#cat-notifications}
+<a id="cat-notifications"></a>
+
+### 📢 Alertas y Notificaciones (3 APIs)
 
 **APIs de alertas tempranas, emergencias y comunicaciones oficiales**
 
@@ -270,7 +285,9 @@
 
   [⬆ Volver al índice](#top)
 
-### 🤝 Comunidad y Otros (2 APIs) {#cat-community}
+<a id="cat-community"></a>
+
+### 🤝 Comunidad y Otros (2 APIs)
 
 **APIs comunitarias, adopción animal, feriados y utilidades varias**
 

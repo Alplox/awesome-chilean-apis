@@ -34,6 +34,7 @@ Directorio curado de APIs chilenas públicas y privadas, con endpoints verificad
 │   │   └── find-duplicates.js
 │   └── validation
 │       └── validate-json.js  ← Valida estructura JSON (CI)
+├── .markdownlint.jsonc
 ├── AGENTS.md  ← Este archivo (auto-generado)
 ├── apis-database.json  ← Base de datos central de APIs (NO EDITABLE MANUALMENTE)
 ├── categories.json  ← Definición de categorías con slugs
