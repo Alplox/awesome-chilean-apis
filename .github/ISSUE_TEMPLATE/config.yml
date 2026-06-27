@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 Discusión general
+    url: https://github.com/alplox/awesome-chilean-apis/discussions
+    about: Preguntas, ideas o sugerencias que no sean un reporte específico

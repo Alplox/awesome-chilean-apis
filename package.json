@@ -1,0 +1,28 @@
+{
+  "name": "awesome-chilean-apis",
+  "version": "1.0.0",
+  "description": "Directorio de APIs chilenas públicas y privadas con endpoints verificados",
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/core/generate.js",
+    "validate": "node scripts/core/validate_apis.js",
+    "validate:json": "node scripts/validation/validate-json.js",
+    "lint": "eslint .",
+    "ci": "npm run validate:json && npm run generate && git diff --exit-code README.md"
+  },
+  "dependencies": {
+    "fast-xml-parser": "5.8.0"
+  },
+  "author": {
+    "name": "Alplox",
+    "url": "https://github.com/alplox"
+  },
+  "engines": {
+    "node": ">=18.13.0"
+  },
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "eslint": "^10.5.0",
+    "globals": "^17.6.0"
+  }
+}

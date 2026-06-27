@@ -1,0 +1,35 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate JSON structure
+        run: npm run validate:json
+
+      - name: Generate README
+        run: npm run generate
+
+      - name: Check README is up-to-date
+        run: git diff --exit-code README.md
+
+      - name: Validate endpoints
+        run: npm run validate -- --automatic
+        continue-on-error: true

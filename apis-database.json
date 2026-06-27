@@ -1,0 +1,1047 @@
+{
+  "last_updated": "2026-06-27T01:33:25.321Z",
+  "total_endpoints": 58,
+  "apis": [
+    {
+      "id": "datos-gob",
+      "name": "datos.gob.cl - Portal de Datos Abiertos",
+      "url": "https://datos.gob.cl/guide_faq",
+      "category": "government",
+      "description": "Catálogo central de datasets públicos del Estado chileno, implementado sobre CKAN",
+      "endpoints": [
+        {
+          "id": "datos-gob-catalogo",
+          "name": "Listado de Datasets",
+          "url": "https://datos.gob.cl/api/3/action/package_list",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Listado de todos los datasets disponibles",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:11:14.846Z"
+        },
+        {
+          "id": "datos-gob-busqueda",
+          "name": "Búsqueda de Datasets",
+          "url": "https://datos.gob.cl/api/3/action/package_search",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Búsqueda avanzada en el catálogo de datasets con parámetros: q, rows, start",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:11:15.999Z"
+        },
+        {
+          "id": "datos-gob-datastore-search",
+          "name": "Consulta DataStore",
+          "url": "https://datos.gob.cl/api/action/datastore_search",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Consulta de datos de un recurso del DataStore. Parámetros: resource_id (obligatorio), limit, offset, q, records_format",
+          "status": "active",
+          "last_status_code": 409,
+          "last_response_format": "Other",
+          "last_checked": "2026-06-27T01:11:17.804Z"
+        },
+        {
+          "id": "datos-gob-datastore-sql",
+          "name": "Consulta SQL DataStore",
+          "url": "https://datos.gob.cl/api/action/datastore_search_sql",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Consulta de datos del DataStore mediante SQL. Parámetro: sql (obligatorio)",
+          "status": "active",
+          "last_status_code": 400,
+          "last_response_format": "Other",
+          "last_checked": "2026-06-27T01:11:19.800Z"
+        },
+        {
+          "id": "datos-gob-tags",
+          "name": "Listado de Etiquetas",
+          "url": "https://datos.gob.cl/api/3/action/tag_list",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Lista todas las etiquetas (tags) del catálogo de datos",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:11:22.068Z"
+        },
+        {
+          "id": "farmacias-turno-json",
+          "name": "Farmacias en JSON",
+          "url": "https://datos.gob.cl/dataset/farmacias-en-chile",
+          "method": "GET",
+          "auth": "none",
+          "format": "XML",
+          "description": "Farmacias del país con turnos nocturnos",
+          "status": "active",
+          "last_checked": "2026-06-27T01:11:23.824Z",
+          "last_status_code": 200,
+          "last_response_format": "XML"
+        }
+      ]
+    },
+    {
+      "id": "ley-chile",
+      "name": "Ley Chile - Biblioteca del Congreso Nacional",
+      "url": "https://www.bcn.cl/leychile/leychile-api-doc/leychile-api-doc",
+      "openapi": "https://www.bcn.cl/leychile/leychile-api-doc/assets/leychile-api-doc-v1.yaml",
+      "category": "government",
+      "description": "API REST de leyes, proyectos de ley y normas jurídicas chilenas del Congreso Nacional, con autenticación mediante API-Key",
+      "endpoints": [
+        {
+          "id": "ley-chile-api",
+          "name": "API REST Ley Chile",
+          "url": "https://www.bcn.cl/leychile/api/v1",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "XML",
+          "description": "API REST con autenticación API-Key para acceder a normas, leyes y documentos jurídicos",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "XML",
+          "last_checked": "2026-06-27T01:11:24.081Z"
+        }
+      ]
+    },
+    {
+      "id": "chileatiende",
+      "name": "ChileAtiende",
+      "url": "https://www.chileatiende.gob.cl/desarrolladores",
+      "category": "government",
+      "description": "API REST del Portal de Servicios del Estado, con fichas de trámites, servicios (instituciones) y sucursales en formato JSON o XML, requiere access_token",
+      "endpoints": [
+        {
+          "id": "chileatiende-fichas",
+          "name": "Fichas",
+          "url": "https://www.chileatiende.gob.cl/api/fichas",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Lista todas las fichas con paginación y búsqueda por texto. Para obtener por ID: GET /api/fichas/{id}",
+          "status": "active",
+          "last_status_code": 403,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-06-27T01:11:24.498Z"
+        },
+        {
+          "id": "chileatiende-servicios",
+          "name": "Servicios (Instituciones)",
+          "url": "https://www.chileatiende.gob.cl/api/servicios",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Lista todos los servicios que publican en el portal. Para obtener por ID: GET /api/servicios/{id}",
+          "status": "active",
+          "last_status_code": 403,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-06-27T01:11:26.308Z"
+        },
+        {
+          "id": "chileatiende-sucursales",
+          "name": "Sucursales",
+          "url": "https://www.chileatiende.gob.cl/api/sucursales",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Lista todas las sucursales, con filtro opcional por oficinas móviles. Para obtener por ID: GET /api/sucursales/{id}",
+          "status": "active",
+          "last_status_code": 403,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-06-27T01:11:28.350Z"
+        }
+      ]
+    },
+    {
+      "id": "chilecompra",
+      "name": "ChileCompra - Mercado Público",
+      "url": "https://www.chilecompra.cl/api/",
+      "category": "government",
+      "description": "API de la plataforma de compras públicas del Estado chileno",
+      "endpoints": [
+        {
+          "id": "chilecompra-api-licitaciones",
+          "name": "API Mercado Público - Licitaciones",
+          "url": "https://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?fecha=02022014&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Licitaciones diarias, por código, diarias por estado, por día, por estado y día, por código de organismo público o proveedor",
+          "status": "active",
+          "last_checked": "2026-06-27T01:11:28.892Z",
+          "last_status_code": 200,
+          "last_response_format": "JSON"
+        },
+        {
+          "id": "chilecompra-api-compraagil",
+          "name": "API Mercado Público -  Compra Ágil",
+          "url": "https://api2.mercadopublico.cl/",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Permite obtener, de forma estructurada y paginada, la información publicada en el mecanismo Compra Ágil de Mercado Público",
+          "status": "active",
+          "last_checked": "2026-06-27T01:11:29.409Z",
+          "last_status_code": 403,
+          "last_response_format": "auth_required"
+        },
+        {
+          "id": "chilecompra-api-ordenesdecompra",
+          "name": "API Mercado Público - Ordenes de compra",
+          "url": "https://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.json?codigo=2097-241-SE14&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Órdenes de compra diarias, de compra por código, de compra diarias por estado, de compra por día, de compra por estado y día, de compra por código de organismo público o proveedor ",
+          "status": "active",
+          "last_checked": "2026-06-27T01:11:30.384Z",
+          "last_status_code": 429,
+          "last_response_format": "Other"
+        },
+        {
+          "id": "chilecompra-api-codigoorganismopublico",
+          "name": "API Mercado Público -  Códigos organismos públicos",
+          "url": "https://api.mercadopublico.cl/servicios/v1/Publico/Empresas/BuscarComprador?ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Lista todos los organismos públicos de la plataforma Mercado Público",
+          "status": "active",
+          "last_checked": "2026-06-27T01:11:32.632Z",
+          "last_status_code": 200,
+          "last_response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "id": "feriados-cl-netlify",
+      "name": "Feriados Chile",
+      "url": "https://feriados-cl.netlify.app",
+      "category": "government",
+      "description": "API de feriados oficiales para Chile con datos actualizados",
+      "endpoints": [
+        {
+          "id": "feriados-cl-api",
+          "name": "API de Feriados",
+          "url": "https://feriados-cl.netlify.app/holidays/2026",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Feriados oficiales de Chile años 2026-2027",
+          "status": "active",
+          "last_checked": "2026-06-27T01:11:33.983Z",
+          "last_status_code": 200,
+          "last_response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "id": "ine",
+      "name": "INE - Instituto Nacional de Estadísticas",
+      "url": "https://www.ine.gob.cl/simel/guia-de-uso",
+      "category": "government",
+      "description": "Datos demográficos, económicos y sociales de Chile, incluyendo censos y proyecciones de población",
+      "endpoints": [
+        {
+          "id": "ine-api",
+          "name": "INE API",
+          "url": "https://sdmx.ine.gob.cl/rest/data/CL01,DF_TAT_SEXO,1.0?format=csv",
+          "method": "GET",
+          "auth": "none",
+          "format": "CSV",
+          "description": "SDMX REST API",
+          "status": "active",
+          "last_checked": "2026-06-27T01:11:34.735Z",
+          "last_status_code": 200,
+          "last_response_format": "CSV"
+        }
+      ]
+    },
+    {
+      "id": "bcentral",
+      "name": "Banco Central de Chile",
+      "url": "https://si3.bcentral.cl/estadisticas/Principal1/Web_Services/doc_es.htm",
+      "category": "finance",
+      "description": "Bases de Datos Estadísticos del Banco Central, con manuales y ejemplos en Python, R y C#",
+      "endpoints": [
+        {
+          "id": "bcentral-api",
+          "name": "API BDE",
+          "url": "https://si3.bcentral.cl/SieteRestWS/SieteRestWS.ashx?user=123456789&pass=tuPassword&firstdate=YYYY-MM-DD&lastdate=YYYY-MM-DD&timeseries=codigodeserie&function=GetSeries",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Bases de datos estadísticos con documentación y ejemplos",
+          "status": "active",
+          "last_checked": "2026-06-27T01:11:34.859Z",
+          "last_status_code": 200,
+          "last_response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "id": "cmf",
+      "name": "CMF - Comisión para el Mercado Financiero",
+      "url": "https://api.sbif.cl/index.html",
+      "category": "finance",
+      "description": "Indicadores financieros, instituciones fiscalizadas y reportes del mercado financiero chileno",
+      "endpoints": [
+        {
+          "id": "cmf-indicadores",
+          "name": "Indicadores Financieros",
+          "url": "https://api.sbif.cl/api-sbifv3/",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Indicadores financieros históricos (UF, UTM, dólar, etc.)",
+          "status": "active",
+          "last_status_code": 302,
+          "last_response_format": "redirect",
+          "last_checked": "2026-06-27T01:11:35.140Z",
+          "last_error": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "mindicador",
+      "name": "mindicador.cl",
+      "url": "https://mindicador.cl",
+      "category": "finance",
+      "description": "Web service open source con los principales indicadores económicos de Chile en formato JSON",
+      "endpoints": [
+        {
+          "id": "mindicador-api",
+          "name": "Indicadores Económicos",
+          "url": "https://mindicador.cl/api",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Indicadores diarios e históricos en formato JSON",
+          "status": "active",
+          "last_checked": "2026-06-27T01:11:35.968Z",
+          "last_status_code": 200,
+          "last_response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "id": "findic",
+      "name": "findic.cl",
+      "url": "https://findic.cl/docs/",
+      "category": "finance",
+      "description": "API gratuita con indicadores económicos de Chile en JSON, resúmenes diarios y CSVs históricos",
+      "endpoints": [
+        {
+          "id": "findic-api",
+          "name": "Indicadores Económicos",
+          "url": "https://findic.cl/api",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Indicadores económicos diarios e históricos",
+          "status": "active",
+          "last_checked": "2026-06-27T01:11:36.033Z",
+          "last_status_code": 301,
+          "last_response_format": "redirect",
+          "last_error": "HTTP 301"
+        }
+      ]
+    },
+    {
+      "id": "dolarapi",
+      "name": "DolarApi.com",
+      "url": "https://cl.dolarapi.com",
+      "category": "finance",
+      "description": "API gratuita para obtener el precio del dólar y otras monedas en Chile",
+      "endpoints": [
+        {
+          "id": "dolarapi-cotizaciones",
+          "name": "Todas las cotizaciones",
+          "url": "https://cl.dolarapi.com/v1/cotizaciones",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Cotización de todas las monedas disponibles en Chile (USD, EUR, BRL, ARS, UYU, etc.)",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:11:36.217Z"
+        },
+        {
+          "id": "dolarapi-cotizaciones-usd",
+          "name": "Cotización Dólar USD",
+          "url": "https://cl.dolarapi.com/v1/cotizaciones/usd",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Cotización del Dólar estadounidense en Chile",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:11:38.102Z"
+        },
+        {
+          "id": "dolarapi-cotizaciones-eur",
+          "name": "Cotización Euro EUR",
+          "url": "https://cl.dolarapi.com/v1/cotizaciones/eur",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Cotización del Euro en Chile",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:11:40.115Z"
+        },
+        {
+          "id": "dolarapi-cotizaciones-brl",
+          "name": "Cotización Real BRL",
+          "url": "https://cl.dolarapi.com/v1/cotizaciones/brl",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Cotización del Real brasileño en Chile",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:11:42.115Z"
+        },
+        {
+          "id": "dolarapi-cotizaciones-ars",
+          "name": "Cotización Peso ARS",
+          "url": "https://cl.dolarapi.com/v1/cotizaciones/ars",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Cotización del Peso argentino en Chile",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:11:44.127Z"
+        },
+        {
+          "id": "dolarapi-cotizaciones-uyu",
+          "name": "Cotización Peso UYU",
+          "url": "https://cl.dolarapi.com/v1/cotizaciones/uyu",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Cotización del Peso uruguayo en Chile",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:11:46.131Z"
+        },
+        {
+          "id": "dolarapi-estado",
+          "name": "Estado de la API",
+          "url": "https://cl.dolarapi.com/v1/estado",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Estado actual de la API dolarapi.com para Chile",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:11:48.134Z"
+        }
+      ]
+    },
+    {
+      "id": "buda",
+      "name": "Buda.com",
+      "url": "https://api.buda.com/#la-api-de-buda-com",
+      "category": "finance",
+      "description": "API REST del exchange de criptomonedas Buda.com, con órdenes, abonos e información del mercado en tiempo real",
+      "endpoints": [
+        {
+          "id": "buda-llamadas-publicas-mercados",
+          "name": "Buda API Llamadas Públicas - Mercados",
+          "url": "https://www.buda.com/api/v2/markets",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Endpoint público que devuelve la lista de todos los mercados disponibles en Buda, junto con la configuración de cada uno",
+          "status": "active",
+          "last_checked": "2026-06-27T01:11:48.650Z",
+          "last_status_code": 200,
+          "last_response_format": "JSON"
+        },
+        {
+          "id": "buda-llamadas-publicas-tickers",
+          "name": "Buda API Llamadas Públicas - Tickers",
+          "url": "https://www.buda.com/api/v2/tickers",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Entrega la varianción del precio en el último día y en la última semana, junto con el precio de la última transacción (last_price) para cada mercado",
+          "status": "active",
+          "last_checked": "2026-06-27T01:11:50.922Z",
+          "last_status_code": 200,
+          "last_response_format": "JSON"
+        },
+        {
+          "id": "buda-llamadas-privadas",
+          "name": "Buda API Llamadas Privadas",
+          "url": "https://www.buda.com/api/",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "XML",
+          "description": "Las llamadas privadas consisten en endpoints que acceden a información privada del usuario que las invocan, les permiten crear o cancelar órdenes o les permiten abonar o retirar dinero hacia o desde el exchange",
+          "status": "active",
+          "last_checked": "2026-06-27T01:11:52.174Z",
+          "last_status_code": 403,
+          "last_response_format": "auth_required"
+        }
+      ]
+    },
+    {
+      "id": "bci-apimarket",
+      "name": "BCI API Market",
+      "url": "https://www.bci.cl/apimarket",
+      "category": "finance",
+      "description": "APIs públicas del Banco de Crédito e Inversiones: cuentas, indicadores económicos e información del banco",
+      "endpoints": [
+        {
+          "id": "bci-apimarket-api",
+          "name": "API Market BCI",
+          "url": "https://www.bci.cl/apimarket",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "APIs financieras del Banco BCI",
+          "status": "active",
+          "last_checked": "2026-06-27T01:11:52.250Z",
+          "last_status_code": 403,
+          "last_response_format": "auth_required"
+        }
+      ]
+    },
+    {
+      "id": "quetalmiafp",
+      "name": "queTalMiAFP",
+      "url": "https://www.quetalmiafp.cl/AccederCuotas",
+      "category": "finance",
+      "description": "API de valores de cuotas de las AFP, gratuita y sin restricciones",
+      "endpoints": [
+        {
+          "id": "quetalmiafp-cuotas",
+          "name": "Valores de Cuotas",
+          "url": "https://www.quetalmiafp.cl/AccederCuotas",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "XML",
+          "description": "Valores diarios de las cuotas de las AFP",
+          "status": "active",
+          "last_checked": "2026-06-27T01:11:54.571Z",
+          "last_status_code": 200,
+          "last_response_format": "XML"
+        }
+      ]
+    },
+    {
+      "id": "sinca-calidad-aire",
+      "name": "SINCA - Sistema de Información Nacional de Calidad del Aire",
+      "url": "https://sinca.mma.gob.cl",
+      "category": "environment",
+      "description": "API Pública (Sin Documentación) con información en tiempo real de calidad del aire de estaciones de monitoreo en todo Chile",
+      "endpoints": [
+        {
+          "id": "sinca-json",
+          "name": "JSON Calidad del Aire",
+          "url": "https://sinca.mma.gob.cl/index.php/json/listadomapa2k19",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Datos en tiempo real de estaciones de calidad del aire",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:11:55.546Z"
+        }
+      ]
+    },
+    {
+      "id": "arclim",
+      "name": "ARClim - Atlas de Riesgo Climático",
+      "url": "https://arclim.mma.gob.cl/atlas/api",
+      "category": "environment",
+      "description": "Indicadores climáticos históricos y proyectados con capas geográficas para análisis de riesgos climáticos",
+      "endpoints": [
+        {
+          "id": "arclim-api",
+          "name": "API ARClim",
+          "url": "https://arclim.mma.gob.cl/api",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Indicadores climáticos históricos y proyectados",
+          "status": "active",
+          "last_status_code": 301,
+          "last_response_format": "redirect",
+          "last_checked": "2026-06-27T01:11:55.617Z",
+          "last_error": "HTTP 301"
+        }
+      ]
+    },
+    {
+      "id": "chilean-birds",
+      "name": "Chilean Birds",
+      "url": "https://aves.ninjas.cl",
+      "category": "environment",
+      "description": "API (Sin documentación) con información sobre aves de Chile usando datos de Buscaves.cl",
+      "endpoints": [
+        {
+          "id": "chilean-birds-api",
+          "name": "Aves de Chile",
+          "url": "https://aves.ninjas.cl/api/birds",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Información sobre especies de aves chilenas",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:11:56.827Z"
+        }
+      ]
+    },
+    {
+      "id": "meteochile-climatologia",
+      "name": "Dirección Meteorológica de Chile - Climatología",
+      "url": "https://climatologia.meteochile.gob.cl/application/index/menuTematicoJson",
+      "category": "weather",
+      "description": "Datos meteorológicos en tiempo real y registros históricos de estaciones automáticas en Chile",
+      "endpoints": [
+        {
+          "id": "meteochile-climatologia-api",
+          "name": "API de Climatología",
+          "url": "https://climatologia.meteochile.gob.cl/application/servicios/getEstacion/330020?usuario=correo@correo.cl&token=apiKey_personal ",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Datos meteorológicos en tiempo real e históricos",
+          "status": "active",
+          "last_checked": "2026-06-27T01:11:56.912Z",
+          "last_status_code": 200,
+          "last_response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "id": "csn-sismologia",
+      "name": "CSN - Centro Sismológico Nacional",
+      "url": "https://eew.csn.uchile.cl/",
+      "category": "notifications",
+      "description": "API FDSN Web Services del Centro Sismológico Nacional con datos sísmicos en tiempo real, estaciones y disponibilidad",
+      "endpoints": [
+        {
+          "id": "csn-stations",
+          "name": "Información de Estaciones (FDSNWS)",
+          "url": "https://eew.csn.uchile.cl/fdsnws/station/1/",
+          "method": "GET",
+          "auth": "none",
+          "format": "XML",
+          "description": "Información de estaciones sismológicas de la red del CSN vía FDSNWS",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "XML",
+          "last_checked": "2026-06-27T01:11:56.959Z"
+        },
+        {
+          "id": "csn-dataselect",
+          "name": "Descarga de Datos (FDSNWS)",
+          "url": "https://eew.csn.uchile.cl/fdsnws/dataselect/1/",
+          "method": "GET",
+          "auth": "none",
+          "format": "XML",
+          "description": "Descarga de datos sísmicos en formato MiniSEED vía FDSNWS",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "XML",
+          "last_checked": "2026-06-27T01:11:58.927Z"
+        },
+        {
+          "id": "csn-availability",
+          "name": "Disponibilidad de Datos (FDSNWS)",
+          "url": "https://eew.csn.uchile.cl/fdsnws/availability/1/",
+          "method": "GET",
+          "auth": "none",
+          "format": "XML",
+          "description": "Disponibilidad de datos sísmicos por estación vía FDSNWS",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "XML",
+          "last_checked": "2026-06-27T01:12:00.945Z"
+        }
+      ]
+    },
+    {
+      "id": "sismos-gael",
+      "name": "Sismos Chile - Gael",
+      "url": "https://api.gael.cloud",
+      "category": "notifications",
+      "description": "API pública de últimos sismos en Chile",
+      "endpoints": [
+        {
+          "id": "sismos-gael-api",
+          "name": "Últimos Sismos",
+          "url": "https://api.gael.cloud/general/public/sismos",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Últimos sismos registrados en Chile",
+          "status": "active",
+          "last_checked": "2026-06-27T01:12:01.152Z",
+          "last_status_code": 200,
+          "last_response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "id": "xorcl-sismo",
+      "name": "XORCL - API Sismología",
+      "url": "https://github.com/xorcl/api-sismo",
+      "category": "notifications",
+      "description": "API pública de sismología con sismos recientes e históricos en Chile",
+      "endpoints": [
+        {
+          "id": "xorcl-sismo-recent",
+          "name": "Sismos Recientes",
+          "url": "https://api.xor.cl/sismo/recent",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Lista de sismos recientes en Chile. Filtro opcional: ?magnitude=5",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:12:02.826Z"
+        },
+        {
+          "id": "xorcl-sismo-historic",
+          "name": "Sismos Históricos por Día",
+          "url": "https://api.xor.cl/sismo/historic/20100227",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Sismos históricos por fecha (YYYYMMDD). Filtro opcional: ?magnitude=5",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:12:03.993Z"
+        }
+      ]
+    },
+    {
+      "id": "khipu",
+      "name": "Khipu - Pagos Online",
+      "url": "https://docs.khipu.com/products",
+      "category": "business",
+      "description": "APIs de Khipu: Pagos Instantáneos, Pagos Automáticos y Open Finance para acceder a información bancaria",
+      "endpoints": [
+        {
+          "id": "khipu-instant-payments",
+          "name": "API Pagos Instantáneos",
+          "url": "https://payment-api.khipu.com/v3/banks",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Convierte transferencias bancarias en pagos digitales",
+          "status": "active",
+          "last_checked": "2026-06-27T01:12:04.876Z",
+          "last_status_code": 403,
+          "last_response_format": "auth_required"
+        },
+        {
+          "id": "khipu-automatic-payments",
+          "name": "API Pagos Automáticos",
+          "url": "https://payment-api.khipu.com/v1/automatic-payment/subscription",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Automatiza cobros recurrentes",
+          "status": "active",
+          "last_checked": "2026-06-27T01:12:06.170Z",
+          "last_status_code": 405,
+          "last_response_format": "Other"
+        },
+        {
+          "id": "khipu-open-finance",
+          "name": "Open Finance (API & WaaS)",
+          "url": "https://api.khipu.com/v1/ar/banking/business",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Accede a información bancaria y financiera real desde múltiples instituciones",
+          "status": "broken",
+          "last_checked": "2026-06-27T01:12:06.252Z",
+          "last_status_code": 404,
+          "last_response_format": "empty",
+          "last_error": "HTTP 404"
+        }
+      ]
+    },
+    {
+      "id": "flow",
+      "name": "Flow - Pagos Online",
+      "url": "https://developers.flow.cl/api",
+      "category": "business",
+      "description": "API REST de plataforma de pagos online chilena para pagos con tarjetas de crédito y débito",
+      "endpoints": [
+        {
+          "id": "flow-api",
+          "name": "API Flow",
+          "url": "https://www.flow.cl/api",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Pagos con tarjetas de crédito y débito",
+          "status": "active",
+          "last_checked": "2026-06-27T01:12:06.989Z",
+          "last_status_code": 301,
+          "last_response_format": "redirect",
+          "last_error": "HTTP 301"
+        }
+      ]
+    },
+    {
+      "id": "kushki",
+      "name": "Kushki - Pagos Globales",
+      "url": "https://api-docs.kushkipagos.com/",
+      "category": "business",
+      "description": "API de pagos globales con recepción en moneda local, multi-medio de pago en cada país",
+      "endpoints": [
+        {
+          "id": "kushki-api",
+          "name": "API Kushki",
+          "url": "https://api.kushkipagos.com",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Pagos globales con múltiples medios de pago",
+          "status": "active",
+          "last_checked": "2026-06-27T01:12:07.491Z",
+          "last_status_code": 403,
+          "last_response_format": "auth_required"
+        }
+      ]
+    },
+    {
+      "id": "reveniu",
+      "name": "Reveniu - Suscripciones",
+      "url": "https://docs.reveniu.com",
+      "category": "business",
+      "description": "API REST para gestión de cobro de suscripciones y pagos recurrentes en Chile. Documentación desactualizada (~4 años sin cambios)",
+      "endpoints": [
+        {
+          "id": "reveniu-api",
+          "name": "API Reveniu",
+          "url": "https://production.reveniu.com",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Cobro de suscripciones y pagos recurrentes. Endpoints disponibles: /api/plans, /api/subscriptions, /api/webhooks",
+          "status": "broken",
+          "last_checked": "2026-06-27T01:12:08.053Z",
+          "last_status_code": 404,
+          "last_response_format": "empty",
+          "last_error": "HTTP 404"
+        }
+      ]
+    },
+    {
+      "id": "fintoc",
+      "name": "Fintoc - Pagos por Transferencia",
+      "url": "https://docs.fintoc.com/reference/introduction",
+      "category": "business",
+      "description": "API REST para iniciación de pagos mediante transferencias bancarias, tarjetas y conciliación de movimientos",
+      "endpoints": [
+        {
+          "id": "fintoc-api",
+          "name": "API Fintoc",
+          "url": "https://api.fintoc.com",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Iniciación de pagos y conciliación bancaria",
+          "status": "broken",
+          "last_checked": "2026-06-27T01:12:08.380Z",
+          "last_status_code": 404,
+          "last_response_format": "empty",
+          "last_error": "HTTP 404"
+        }
+      ]
+    },
+    {
+      "id": "huachitos",
+      "name": "Huachitos - Plataforma de Adopción Animal",
+      "url": "https://huachitos.cl/docs",
+      "category": "community",
+      "description": "API abierta con animales disponibles para adopción, encontrados o perdidos, organizados por región y comuna",
+      "endpoints": [
+        {
+          "id": "huachitos-api",
+          "name": "API Huachitos",
+          "url": "https://huachitos.cl/api/animales/",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Animales en adopción, perdidos y encontrados por región",
+          "status": "active",
+          "last_checked": "2026-06-27T01:12:09.092Z",
+          "last_status_code": 200,
+          "last_response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "id": "boostr",
+      "name": "boostr.cl - APIs de Uso Libre",
+      "url": "https://docs.boostr.cl/reference/welcome",
+      "category": "community",
+      "description": "Colección de APIs útiles y gratuitas para diversos propósitos",
+      "endpoints": [
+        {
+          "id": "boostr-api",
+          "name": "API boostr",
+          "url": "https://api.boostr.cl/",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Múltiples APIs de uso libre",
+          "status": "active",
+          "last_checked": "2026-06-27T01:12:09.246Z",
+          "last_status_code": 301,
+          "last_response_format": "redirect",
+          "last_error": "HTTP 301"
+        }
+      ]
+    },
+    {
+      "id": "chileabierto",
+      "name": "Chile Abierto",
+      "url": "https://www.chileabierto.cl/api",
+      "category": "government",
+      "description": "API pública con indicadores comunales de Chile: economía, demografía, educación, salud, seguridad, medio ambiente y gobierno. No requiere autenticación, 60 req/min.",
+      "endpoints": [
+        {
+          "id": "chileabierto-comunas",
+          "name": "Listado de Comunas",
+          "url": "https://chileabierto.cl/api/v1/comunas",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Retorna listado de todas las comunas con datos básicos. Filtros: region, search",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:33:17.334Z"
+        },
+        {
+          "id": "chileabierto-comuna",
+          "name": "Datos de Comuna",
+          "url": "https://chileabierto.cl/api/v1/comunas/13101",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Retorna datos de una comuna específica con todos sus indicadores. Parámetro: code",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:33:20.575Z"
+        },
+        {
+          "id": "chileabierto-indicators",
+          "name": "Listado de Indicadores",
+          "url": "https://chileabierto.cl/api/v1/indicators",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Retorna listado de todos los indicadores disponibles con metadatos. Filtro: category",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:33:21.140Z"
+        },
+        {
+          "id": "chileabierto-indicator",
+          "name": "Indicador Específico",
+          "url": "https://chileabierto.cl/api/v1/indicators/poverty_rate_pct",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Retorna metadatos de un indicador con valores de todas las comunas. Parámetro: code",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:33:23.139Z"
+        },
+        {
+          "id": "chileabierto-compare",
+          "name": "Comparar Comunas",
+          "url": "https://chileabierto.cl/api/v1/compare?comunas=13101,13119&indicators=crime_rate_per_100k,poverty_rate_pct",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Compara 2+ comunas en múltiples indicadores. Parámetros: comunas, indicators",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:33:25.320Z"
+        }
+      ]
+    },
+    {
+      "id": "reqlut",
+      "name": "Reqlut",
+      "url": "https://reqlut.com/api/v3/doc",
+      "category": "business",
+      "description": "API REST para integración con el ecosistema de empleabilidad universitaria Reqlut. Requiere API key para uso institucional.",
+      "endpoints": []
+    },
+    {
+      "id": "datos-resiliencia",
+      "name": "Datos para Resiliencia ante Desastres - Itrend",
+      "url": "https://guides.dataverse.org/en/latest/api/index.html",
+      "category": "environment",
+      "description": "Repositorio de datos abiertos sobre desastres naturales en Chile: sismos, tsunamis, incendios, volcanes, meteorología y vulnerabilidad (Harvard Dataverse). Endpoints públicos y autenticados con API key.",
+      "endpoints": [
+        {
+          "id": "datos-resiliencia-search",
+          "name": "Search API (público)",
+          "url": "https://datospararesiliencia.cl/api/search?q=sismo&type=dataset",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Búsqueda pública de datasets. Parámetros: q, type, sort, order, fq, start, rows",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:12:15.788Z"
+        },
+        {
+          "id": "datos-resiliencia-native",
+          "name": "Native API (requiere API key)",
+          "url": "https://datospararesiliencia.cl/api/dataverses/inicio",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Info de colecciones, datasets y administración. Usa header X-Dataverse-key para autenticación",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-06-27T01:12:15.956Z"
+        }
+      ]
+    }
+  ]
+}

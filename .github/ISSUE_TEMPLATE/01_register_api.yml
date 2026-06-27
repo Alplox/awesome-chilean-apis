@@ -1,0 +1,74 @@
+name: 📡 Registrar nueva API
+description: Sugiere una API chilena que no esté en el directorio
+labels: [new-api]
+body:
+  - type: input
+    id: api_name
+    attributes:
+      label: Nombre de la API
+      description: Nombre oficial del servicio
+      placeholder: ej. API RedCompra
+    validations:
+      required: true
+
+  - type: input
+    id: api_url
+    attributes:
+      label: URL del sitio
+      description: Sitio web oficial de la API o documentación
+      placeholder: https://api.ejemplo.cl
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Categoría
+      description: Categoría principal de la API
+      options:
+        - government
+        - finance
+        - transport
+        - weather
+        - environment
+        - education
+        - health
+        - maps
+        - business
+        - utilities
+        - notifications
+        - community
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción
+      description: Describe brevemente qué hace la API y qué datos entrega
+      placeholder: API que permite consultar...
+    validations:
+      required: true
+
+  - type: textarea
+    id: endpoints
+    attributes:
+      label: Endpoints (opcional)
+      description: Si conoces URLs de endpoints, listalos aquí
+      placeholder: |
+        - GET /v1/recurso (JSON, auth: none)
+        - POST /v1/accion (JSON, auth: api_key)
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: requirements
+    attributes:
+      label: Requisitos
+      options:
+        - label: La API es chilena o tiene datos específicos de Chile
+          required: true
+        - label: Verifiqué que no esté ya en el directorio
+          required: true
+        - label: La API está pública o tiene un medio de acceso claro
+          required: true

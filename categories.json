@@ -1,0 +1,74 @@
+{
+  "government": {
+    "label": "🏛️ Gobierno y Datos Públicos",
+    "slugs": ["gobierno", "datos-publicos", "transparencia", "municipal", "legislativo"],
+    "order": 1,
+    "description": "APIs gubernamentales, datos abiertos y servicios del Estado"
+  },
+  "finance": {
+    "label": "💰 Finanzas e Impuestos",
+    "slugs": ["finanzas", "impuestos", "banca", "mercados"],
+    "order": 2,
+    "description": "APIs del sistema financiero, tributario y mercado de capitales"
+  },
+  "transport": {
+    "label": "🚌 Transporte y Tránsito",
+    "slugs": ["transporte", "transito", "trafico", "movilidad"],
+    "order": 3,
+    "description": "APIs de transporte público, tránsito y movilidad urbana"
+  },
+  "weather": {
+    "label": "🌤️ Clima y Meteorología",
+    "slugs": ["clima", "meteorologia", "tiempo", "tiempo-actual"],
+    "order": 4,
+    "description": "APIs del clima, meteorología y condiciones ambientales"
+  },
+  "environment": {
+    "label": "🌿 Medio Ambiente",
+    "slugs": ["medio-ambiente", "calidad-aire", "naturaleza", "cambio-climatico"],
+    "order": 5,
+    "description": "APIs de calidad del aire, biodiversidad y datos ambientales"
+  },
+  "education": {
+    "label": "📚 Educación",
+    "slugs": ["educacion", "universidad", "colegio", "academia"],
+    "order": 6,
+    "description": "APIs educativas, universitarias y de admisión"
+  },
+  "health": {
+    "label": "🏥 Salud",
+    "slugs": ["salud", "medicina", "hospital", "farmacia"],
+    "order": 7,
+    "description": "APIs de salud, hospitales y servicios médicos"
+  },
+  "maps": {
+    "label": "🗺️ Geografía y Mapas",
+    "slugs": ["geografia", "mapas", "territorio", "cartografia"],
+    "order": 8,
+    "description": "APIs geoespaciales, mapas y datos territoriales"
+  },
+  "business": {
+    "label": "💼 Negocios y Comercio",
+    "slugs": ["negocios", "comercio", "empresas", "licitaciones"],
+    "order": 9,
+    "description": "APIs de comercio, licitaciones, pagos y registro de empresas"
+  },
+  "utilities": {
+    "label": "🔧 Servicios Básicos",
+    "slugs": ["servicios-basicos", "agua", "luz", "combustible", "telecomunicaciones"],
+    "order": 10,
+    "description": "APIs de servicios básicos, energía y telecomunicaciones"
+  },
+  "notifications": {
+    "label": "📢 Alertas y Notificaciones",
+    "slugs": ["alertas", "notificaciones", "emergencias", "sismos"],
+    "order": 11,
+    "description": "APIs de alertas tempranas, emergencias y comunicaciones oficiales"
+  },
+  "community": {
+    "label": "🤝 Comunidad y Otros",
+    "slugs": ["comunidad", "social", "animales", "ocio"],
+    "order": 12,
+    "description": "APIs comunitarias, adopción animal, feriados y utilidades varias"
+  }
+}

@@ -1,0 +1,205 @@
+[
+  {
+    "id": "ministerio-salud",
+    "name": "MINSAL - Ministerio de Salud",
+    "url": "https://www.minsal.cl",
+    "category": "health",
+    "description": "API del Ministerio de Salud con datos epidemiológicos y campañas",
+    "reason": "Sin endpoint API público verificado",
+    "endpoints": []
+  },
+  {
+    "id": "onemi",
+    "name": "ONEMI - Servicio Nacional de Prevención y Respuesta ante Desastres",
+    "url": "https://www.onemi.gov.cl",
+    "category": "notifications",
+    "description": "API de alertas y emergencias del sistema nacional de protección civil",
+    "reason": "Sin endpoint API público verificado",
+    "endpoints": []
+  },
+  {
+    "id": "ide-chile",
+    "name": "IDE Chile - Infraestructura de Datos Geoespaciales",
+    "url": "https://www.ide.cl",
+    "category": "maps",
+    "description": "API geoespacial con datos cartográficos y límites territoriales de Chile",
+    "reason": "Sin endpoint API público verificado",
+    "endpoints": []
+  },
+  {
+    "id": "meteochile",
+    "name": "Dirección Meteorológica de Chile",
+    "url": "https://www.meteochile.gob.cl",
+    "category": "weather",
+    "description": "API meteorológica con pronósticos, estaciones y alertas climáticas",
+    "reason": "Sin endpoint API público verificado",
+    "endpoints": []
+  },
+  {
+    "id": "carabineros-transito",
+    "name": "Carabineros de Chile - Tránsito",
+    "url": "https://www.carabineros.cl",
+    "category": "transport",
+    "description": "API de información de tránsito y seguridad vial de Carabineros",
+    "reason": "Sin endpoint API público verificado",
+    "endpoints": []
+  },
+  {
+    "id": "super-salud",
+    "name": "Superintendencia de Salud",
+    "url": "https://www.supersalud.gob.cl",
+    "category": "health",
+    "description": "API de la Superintendencia de Salud con indicadores Isapres y Fonasa",
+    "reason": "Sin endpoint API público verificado",
+    "endpoints": []
+  },
+  {
+    "id": "tgr",
+    "name": "TGR - Tesorería General de la República",
+    "url": "https://www.tgr.cl",
+    "category": "finance",
+    "description": "API de la Tesorería General de la República para pagos y devoluciones",
+    "reason": "Sin endpoint API público verificado",
+    "endpoints": []
+  },
+  {
+    "id": "biblioteca-nacional",
+    "name": "Biblioteca Nacional de Chile",
+    "url": "https://www.bibliotecanacional.cl",
+    "category": "education",
+    "description": "API del catálogo digital de la Biblioteca Nacional de Chile",
+    "reason": "Sin endpoint API público verificado",
+    "endpoints": []
+  },
+  {
+    "id": "serviu",
+    "name": "SERVIU - Servicios de Vivienda y Urbanización",
+    "url": "https://www.serviu.cl",
+    "category": "government",
+    "description": "API de los Servicios de Vivienda y Urbanización",
+    "reason": "Sin endpoint API público verificado",
+    "endpoints": []
+  },
+  {
+    "id": "ley-lobby",
+    "name": "Plataforma Ley de Lobby",
+    "url": "https://www.leylobby.gob.cl",
+    "category": "government",
+    "description": "API de la plataforma de lobby del Gobierno de Chile",
+    "reason": "Sitio en mantenimiento, solo hay documentación sin API verificable",
+    "endpoints": []
+  },
+  {
+    "id": "queafp",
+    "name": "queAFP",
+    "url": "https://queafp.cl",
+    "category": "finance",
+    "description": "API de datos de las AFP en Chile, con información de multifondos y rentabilidad",
+    "endpoints": [
+      {
+        "id": "queafp-api",
+        "name": "API AFP",
+        "url": "https://queafp.cl/api",
+        "method": "GET",
+        "auth": "none",
+        "format": "JSON",
+        "description": "Datos de las AFP y sus multifondos",
+        "status": "broken",
+        "last_checked": "2026-06-23T04:23:28.163Z",
+        "last_error": "HTTP 404",
+        "last_status_code": 404,
+        "last_response_format": "error"
+      }
+    ]
+  },
+  {
+    "id": "indicadores-deldia",
+    "name": "Indicadores del Día",
+    "url": "https://indicadoresdeldia.cl",
+    "category": "finance",
+    "description": "Indicadores del Banco Central servidos en XML, JSON, CSV y JavaScript, actualizados cada hora",
+    "endpoints": [
+      {
+        "id": "indicadores-deldia-api",
+        "name": "Indicadores",
+        "url": "https://indicadoresdeldia.cl/pages/code",
+        "method": "GET",
+        "auth": "none",
+        "format": "JSON",
+        "description": "Indicadores en múltiples formatos",
+        "status": "broken",
+        "last_checked": "2026-06-23T04:23:25.493Z",
+        "last_error": "The operation was aborted: AbortError: This operation was aborted",
+        "last_status_code": 0,
+        "last_response_format": "error"
+      }
+    ]
+  },
+  {
+    "id": "registro-civil",
+    "name": "Registro Civil e Identificación",
+    "url": "https://www.registrocivil.cl",
+    "category": "government",
+    "description": "Servicios del Registro Civil para obtención de certificados y trámites en línea",
+    "endpoints": []
+  },
+  {
+    "id": "red-metropolitana",
+    "name": "Red Metropolitana de Movilidad",
+    "url": "https://www.red.cl",
+    "category": "transport",
+    "description": "API del transporte público de Santiago: paraderos, recorridos y estado del servicio",
+    "endpoints": [
+      {
+        "id": "red-paraderos",
+        "name": "Paraderos Cercanos",
+        "url": "https://www.red.cl/restservice_v2/rest/conocedor/paraderosCercanos",
+        "method": "GET",
+        "auth": "none",
+        "format": "JSON",
+        "description": "Paraderos cercanos a una ubicación geográfica",
+        "status": "broken",
+        "last_status_code": 404,
+        "last_response_format": "empty",
+        "last_checked": "2026-06-26T22:08:38.293Z",
+        "last_error": "HTTP 404"
+      },
+      {
+        "id": "red-estado-servicio",
+        "name": "Estado del Servicio",
+        "url": "https://www.red.cl/restservice_v2/rest/mensaje",
+        "method": "GET",
+        "auth": "none",
+        "format": "JSON",
+        "description": "Estado operacional del servicio de transporte",
+        "status": "broken",
+        "last_status_code": 404,
+        "last_response_format": "empty",
+        "last_checked": "2026-06-26T22:08:40.142Z",
+        "last_error": "HTTP 404"
+      }
+    ]
+  },
+  {
+    "id": "redmeteo",
+    "name": "RedMeteo - Red Meteorológica Aficionada de Chile",
+    "url": "https://redmeteo.cl",
+    "category": "weather",
+    "description": "Observaciones meteorológicas de estaciones ciudadanas, actualizadas cada 5 minutos en JSON o CSV",
+    "reason": "Sitio menciona que hay que contactar por correo para obtener acceso",
+    "endpoints": [
+      {
+        "id": "redmeteo-api",
+        "name": "API RedMeteo",
+        "url": "https://redmeteo.cl/api.html",
+        "method": "GET",
+        "auth": "none",
+        "format": "XML",
+        "description": "Observaciones meteorológicas cada 5 minutos",
+        "status": "active",
+        "verified": true,
+        "last_checked": "2026-06-23T04:28:42.679Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,33 @@
+name: 🐛 Reportar problema
+description: Reporta un error, enlace roto o problema de validación
+labels: [bug]
+body:
+  - type: input
+    id: api_id
+    attributes:
+      label: API afectada
+      description: ID o nombre de la API con problemas
+      placeholder: ej. nombre-api
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción del problema
+      description: Explica claramente qué ocurre
+      placeholder: El endpoint X devuelve error 500...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs o evidencias (opcional)
+      description: Salida de error, captura, etc.
+      placeholder: |
+        GET https://api.ejemplo.cl/v1/recurso
+        Response: 500 Internal Server Error
+      render: shell
+    validations:
+      required: false

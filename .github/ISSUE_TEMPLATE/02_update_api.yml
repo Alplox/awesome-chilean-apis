@@ -1,0 +1,33 @@
+name: 🔄 Actualizar API existente
+description: Reporta cambios en una API ya registrada (URL nueva, endpoint caído, etc.)
+labels: [update]
+body:
+  - type: input
+    id: api_id
+    attributes:
+      label: ID de la API
+      description: El identificador en apis-database.json (campo "id")
+      placeholder: ej. nombre-api
+    validations:
+      required: true
+
+  - type: textarea
+    id: changes
+    attributes:
+      label: Cambios
+      description: Describe qué cambió
+      placeholder: |
+        - URL base cambió a https://nueva-url.cl/v2
+        - Endpoint "x" ya no funciona
+        - Nuevo endpoint disponible: GET /v2/nuevo
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Fuente (opcional)
+      description: Enlace a la documentación o anuncio del cambio
+      placeholder: https://ejemplo.cl/changelog
+    validations:
+      required: false
