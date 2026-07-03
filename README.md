@@ -2,27 +2,28 @@
 # 🇨🇱 Awesome Chilean APIs
 
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/alplox/awesome-chilean-apis)
-![APIs](https://img.shields.io/badge/apis-32-brightgreen)
-![Endpoints](https://img.shields.io/badge/endpoints-60-blue)
+![APIs](https://img.shields.io/badge/apis-40-brightgreen)
+![Endpoints](https://img.shields.io/badge/endpoints-110-blue)
 
-> Directorio curado de APIs chilenas públicas y privadas con endpoints verificados. **32 APIs** y **60 endpoints**, organizados por categoría y mantenidos activamente.
+> Directorio curado de APIs chilenas públicas y privadas con endpoints verificados. **40 APIs** y **110 endpoints**, organizados por categoría y mantenidos activamente.
 
 ## 📑 Índice
 
-- [🏛️ Gobierno y Datos Públicos](#cat-government) — 7 APIs
-- [💰 Finanzas e Impuestos](#cat-finance) — 8 APIs
+- [🏛️ Gobierno y Datos Públicos](#cat-government) — 10 APIs
+- [💰 Finanzas e Impuestos](#cat-finance) — 10 APIs
+- [🚌 Transporte y Tránsito](#cat-transport) — 2 APIs
 - [🌤️ Clima y Meteorología](#cat-weather) — 1 API
 - [🌿 Medio Ambiente](#cat-environment) — 4 APIs
 - [🏥 Salud](#cat-health) — 1 API
-- [💼 Negocios y Comercio](#cat-business) — 6 APIs
+- [💼 Negocios y Comercio](#cat-business) — 7 APIs
 - [📢 Alertas y Notificaciones](#cat-notifications) — 3 APIs
 - [🤝 Comunidad y Otros](#cat-community) — 2 APIs
 
-> Última actualización: 27 de junio de 2026
+> Última actualización: 2 de julio de 2026
 
 <a id="cat-government"></a>
 
-### 🏛️ Gobierno y Datos Públicos (7 APIs)
+### 🏛️ Gobierno y Datos Públicos (10 APIs)
 
 **APIs gubernamentales, datos abiertos y servicios del Estado**
 
@@ -58,7 +59,7 @@
   - **Endpoints:**
     - ✅ `200` `JSON` `GET` [`https://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?fecha=02022014&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844`](https://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?fecha=02022014&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844) — Licitaciones diarias, por código, diarias por estado, por día, por estado y día, por código de organismo público o proveedor
     - ✅ 🔑 `403` `auth_required` `GET` [`https://api2.mercadopublico.cl/`](https://api2.mercadopublico.cl/) — Permite obtener, de forma estructurada y paginada, la información publicada en el mecanismo Compra Ágil de Mercado Público
-    - ✅ `429` `Other` `GET` [`https://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.json?codigo=2097-241-SE14&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844`](https://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.json?codigo=2097-241-SE14&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844) — Órdenes de compra diarias, de compra por código, de compra diarias por estado, de compra por día, de compra por estado y día, de compra por código de organismo público o proveedor
+    - ✅ `200` `JSON` `GET` [`https://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.json?codigo=2097-241-SE14&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844`](https://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.json?codigo=2097-241-SE14&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844) — Órdenes de compra diarias, de compra por código, de compra diarias por estado, de compra por día, de compra por estado y día, de compra por código de organismo público o proveedor
     - ✅ `200` `JSON` `GET` [`https://api.mercadopublico.cl/servicios/v1/Publico/Empresas/BuscarComprador?ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844`](https://api.mercadopublico.cl/servicios/v1/Publico/Empresas/BuscarComprador?ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844) — Lista todos los organismos públicos de la plataforma Mercado Público
 
 - **Feriados Chile** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
@@ -83,11 +84,45 @@
     - ✅ `200` `JSON` `GET` [`https://chileabierto.cl/api/v1/indicators/poverty_rate_pct`](https://chileabierto.cl/api/v1/indicators/poverty_rate_pct) — Retorna metadatos de un indicador con valores de todas las comunas. Parámetro: code
     - ✅ `200` `JSON` `GET` [`https://chileabierto.cl/api/v1/compare?comunas=13101,13119&indicators=crime_rate_per_100k,poverty_rate_pct`](https://chileabierto.cl/api/v1/compare?comunas=13101,13119&indicators=crime_rate_per_100k,poverty_rate_pct) — Compara 2+ comunas en múltiples indicadores. Parámetros: comunas, indicators
 
+- **DataEstado - API de Autoridades del Estado** ![Active](https://img.shields.io/badge/7_endpoints-active-brightgreen)
+  - 🌐 [https://dataestado.cl/docs](https://dataestado.cl/docs)
+  - 📝 API pública con datos históricos y actuales de autoridades del Estado chileno: ministros, subsecretarios, gobiernos, ministerios desde 1990. Sin autenticación.
+  - **Endpoints:**
+    - ✅ `200` `JSON` `GET` [`https://api.dataestado.cl/health`](https://api.dataestado.cl/health) — Devuelve estado de la API, nombre del servicio y timestamp en formato ISO 8601
+    - ✅ `200` `JSON` `GET` [`https://api.dataestado.cl/v1/autoridades`](https://api.dataestado.cl/v1/autoridades) — Listado completo de ministros y subsecretarios registrados, con filtro opcional por gobierno (ej: ?gobierno=Boric)
+    - ✅ `200` `JSON` `GET` [`https://api.dataestado.cl/v1/gobiernos`](https://api.dataestado.cl/v1/gobiernos) — Gobiernos disponibles, presidentes y rangos presidenciales desde 1990
+    - ✅ `200` `JSON` `GET` [`https://api.dataestado.cl/v1/ministerios`](https://api.dataestado.cl/v1/ministerios) — Ministerios vigentes con autoridades actuales y códigos internos
+    - ✅ `200` `JSON` `GET` [`https://api.dataestado.cl/v1/personas`](https://api.dataestado.cl/v1/personas) — Listado de personas registradas en el sistema, con posibilidad de filtro por diferentes criterios
+    - ✅ `200` `JSON` `GET` [`https://api.dataestado.cl/v1/autoridades/estadisticas`](https://api.dataestado.cl/v1/autoridades/estadisticas) — Estadísticas agregadas de autoridades agrupadas por gobierno
+    - ✅ `400` `Other` `GET` [`https://api.dataestado.cl/v1/search?q=&limit=20`](https://api.dataestado.cl/v1/search?q=&limit=20) — Búsqueda de datos en el sistema por diferentes criterios
+
+- **BaseAPI - Infraestructura Tributaria** ![Active](https://img.shields.io/badge/11_endpoints-active-brightgreen) [![paid](https://img.shields.io/badge/paid-red)](https://baseapi.cl#precios)
+  - 🌐 [https://baseapi.cl](https://baseapi.cl)
+  - 📝 API REST tributaria con datos del SII, Previred y Tesorería: consulta RCV, DTEs, contribuyentes, cesiones; emisión de boletas de honorarios y facturación electrónica. Servicio disponible hasta el 11 de diciembre de 2026 solo para suscripciones de pago activas.
+  - **Endpoints:**
+    - ✅ 🔑 `404` `auth_required` `GET` [`https://api.baseapi.cl/v1/sii/contribuyente/11111111-1`](https://api.baseapi.cl/v1/sii/contribuyente/11111111-1) — Razón social, giro, dirección y situación tributaria de un contribuyente
+    - ✅ 🔑 `404` `auth_required` `GET` [`https://api.baseapi.cl/v1/sii/rcv`](https://api.baseapi.cl/v1/sii/rcv) — Registro de Compras y Ventas mensual y anual del SII
+    - ✅ 🔑 `404` `auth_required` `GET` [`https://api.baseapi.cl/v1/sii/boletas`](https://api.baseapi.cl/v1/sii/boletas) — Boletas de Honorarios Electrónicas (BHE) recibidas y BTE emitidas, con detalle y PDF
+    - ✅ 🔑 `404` `auth_required` `GET` [`https://api.baseapi.cl/v1/sii/dte/emitidos`](https://api.baseapi.cl/v1/sii/dte/emitidos) — Facturas y documentos emitidos por período
+    - ✅ 🔑 `404` `auth_required` `GET` [`https://api.baseapi.cl/v1/sii/dte/recibidos`](https://api.baseapi.cl/v1/sii/dte/recibidos) — Facturas de proveedores con detalle e ítems
+    - ✅ 🔑 `404` `auth_required` `GET` [`https://api.baseapi.cl/v1/sii/cesiones`](https://api.baseapi.cl/v1/sii/cesiones) — Registro Electrónico de Cesión de Créditos (factoring)
+    - ✅ 🔑 `404` `auth_required` `GET` [`https://api.baseapi.cl/v1/sii/verificar`](https://api.baseapi.cl/v1/sii/verificar) — Validación de comprobantes y facturas de terceros contra el SII (anti-fraude)
+    - ✅ 🔑 `404` `auth_required` `GET` [`https://api.baseapi.cl/v1/previred/deudas`](https://api.baseapi.cl/v1/previred/deudas) — Deudas previsionales, certificados AFP y planillas pagadas de Previred
+    - ✅ 🔑 `404` `auth_required` `GET` [`https://api.baseapi.cl/v1/tgr/cartola`](https://api.baseapi.cl/v1/tgr/cartola) — Cartola fiscal, certificado de deuda y convenios de Tesorería
+    - ✅ 🔑 `404` `auth_required` `GET` [`https://api.baseapi.cl/v1/riesgo/boletin-concursal`](https://api.baseapi.cl/v1/riesgo/boletin-concursal) — Procedimientos de insolvencia (Ley 20.720): búsqueda, detalle y PDF oficial
+    - ✅ 🔑 `404` `auth_required` `POST` [`https://api.baseapi.cl/v1/dte/emitir`](https://api.baseapi.cl/v1/dte/emitir) — Emisión de facturas afectas (33), exentas (34) y guías de despacho (52)
+
+- **CNE - API de Combustibles** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+  - 🌐 [https://apidocs.cne.cl/](https://apidocs.cne.cl/)
+  - 📝 API gratuita (con registro) de la Comisión Nacional de Energía con datos de precios de combustibles en Chile: bencina, gas, parafina y estaciones de servicio a nivel nacional
+  - **Endpoints:**
+    - ✅ 🔑 `404` `auth_required` `GET` [`https://api.tramites.cne.cl/api/v1/bencina`](https://api.tramites.cne.cl/api/v1/bencina) — Datos de estaciones de servicio y precios de combustibles vehiculares. Requiere registro gratuito en api.tramites.cne.cl/register
+
   [⬆ Volver al índice](#top)
 
 <a id="cat-finance"></a>
 
-### 💰 Finanzas e Impuestos (8 APIs)
+### 💰 Finanzas e Impuestos (10 APIs)
 
 **APIs del sistema financiero, tributario y mercado de capitales**
 
@@ -146,6 +181,59 @@
   - 📝 API de valores de cuotas de las AFP, gratuita y sin restricciones
   - **Endpoints:**
     - ✅ 🔑 `200` `XML` `GET` [`https://www.quetalmiafp.cl/AccederCuotas`](https://www.quetalmiafp.cl/AccederCuotas) — Valores diarios de las cuotas de las AFP
+
+- **Magnet Data - API de Datos Públicos Chilenos** ![Active](https://img.shields.io/badge/4_endpoints-active-brightgreen)
+  - 🌐 [https://data.magnet.cl/](https://data.magnet.cl/)
+  - 📝 API gratuita con datos públicos de Chile: monedas (UF, USD, EUR, CLF a CLP), feriados, días hábiles, Isapres y AFP. Sin autenticación.
+  - **Endpoints:**
+    - ✅ `200` `JSON` `GET` [`https://data.magnet.cl/api/v1/currencies/usd/clp/`](https://data.magnet.cl/api/v1/currencies/usd/clp/) — Valor actual de monedas en CLP. Ej: usd/clp, eur/clp, clf/clp, utm/clp. Soporta consultas por fecha (/?YYYY/MM/DD)
+    - ✅ `200` `JSON` `GET` [`https://data.magnet.cl/api/v1/holidays/cl/`](https://data.magnet.cl/api/v1/holidays/cl/) — Feriados chilenos y días hábiles con endpoint working-days-count
+    - ✅ `200` `JSON` `GET` [`https://data.magnet.cl/api/v1/prevision/health/`](https://data.magnet.cl/api/v1/prevision/health/) — Listado de Isapres con comisiones y datos de afiliación
+    - ✅ `200` `JSON` `GET` [`https://data.magnet.cl/api/v1/prevision/pension/`](https://data.magnet.cl/api/v1/prevision/pension/) — Listado de AFP con comisiones, código Previred y RUT
+
+- **Floid - Open Finance API** ![Active](https://img.shields.io/badge/6_endpoints-active-brightgreen) [![paid](https://img.shields.io/badge/paid-red)](https://www.floid.io/pricing)
+  - 🌐 [https://docs.floid.io](https://docs.floid.io)
+  - 📝 API REST B2B para Open Finance en Chile, Perú y México: cuentas bancarias, tarjetas de crédito, créditos, ahorros y consent manager RDC30
+  - **Endpoints:**
+    - ✅ 🔑 `401` `auth_required` `POST` [`https://api.floid.app/cl/bank/get_bank_accounts`](https://api.floid.app/cl/bank/get_bank_accounts) — Retorna las cuentas bancarias del usuario autenticado vía Open Finance
+    - ✅ 🔑 `401` `auth_required` `POST` [`https://api.floid.app/cl/bank/get_credit_cards`](https://api.floid.app/cl/bank/get_credit_cards) — Retorna las tarjetas de crédito del usuario autenticado
+    - ✅ 🔑 `401` `auth_required` `POST` [`https://api.floid.app/cl/consent_manager/create_consent`](https://api.floid.app/cl/consent_manager/create_consent) — Crea un consentimiento RDC30 para acceso a datos financieros del usuario
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://api.floid.app/cl/consent_manager/list_consents`](https://api.floid.app/cl/consent_manager/list_consents) — Lista todos los consentimientos activos del cliente
+    - ✅ 🔑 `401` `auth_required` `POST` [`https://api.floid.app/cl/consent_manager/revoke_consent`](https://api.floid.app/cl/consent_manager/revoke_consent) — Revoca un consentimiento RDC30 existente
+    - ✅ 🔑 `401` `auth_required` `POST` [`https://api.floid.app/cl/bank/get_loans`](https://api.floid.app/cl/bank/get_loans) — Retorna los créditos del usuario autenticado
+
+  [⬆ Volver al índice](#top)
+
+<a id="cat-transport"></a>
+
+### 🚌 Transporte y Tránsito (2 APIs)
+
+**APIs de transporte público, tránsito y movilidad urbana**
+
+- **Observatorio Logístico - API de Datos Logísticos** ![Active](https://img.shields.io/badge/3_endpoints-active-brightgreen)
+  - 🌐 [https://filesprod.observatoriologistico.cl/assets/frontend-graficos/api-datastream-docs/datastreams_api_docs.html](https://filesprod.observatoriologistico.cl/assets/frontend-graficos/api-datastream-docs/datastreams_api_docs.html)
+  - 📝 API RESTful pública del Ministerio de Transportes con datos de logística y comercio exterior de Chile: puertos, carga aérea, ferroviaria, carretera, indicadores. Sin autenticación, 100 req/min.
+  - **Endpoints:**
+    - ✅ `200` `JSON` `GET` [`https://www.observatoriologistico.cl/api/v1/datastreams/lists`](https://www.observatoriologistico.cl/api/v1/datastreams/lists) — Obtiene una lista paginada de todos los datastreams disponibles en el sistema con información básica y URLs para acceder a sus datos y metadatos.
+    - ✅ `200` `JSON` `GET` [`https://www.observatoriologistico.cl/api/v1/datastreams/C010/metadata`](https://www.observatoriologistico.cl/api/v1/datastreams/C010/metadata) — /datastreams/{code}/metadata. Obtiene los metadatos de un datastream específico con información sobre la estructura de datos, variables disponibles y descripciones detalladas.
+    - ✅ `200` `JSON` `GET` [`https://www.observatoriologistico.cl/api/v1/datastreams/C010/data`](https://www.observatoriologistico.cl/api/v1/datastreams/C010/data) — /datastreams/{code}/data. Obtiene los datos de un datastream específico con opciones avanzadas de paginación, filtrado dinámico y ordenamiento
+
+- **GetAPI Chile - Vehículos y Peajes** ![Active](https://img.shields.io/badge/12_endpoints-active-brightgreen) [![paid](https://img.shields.io/badge/paid-red)](https://getapi.cl/planes/)
+  - 🌐 [https://getapi.cl/docs/](https://getapi.cl/docs/)
+  - 📝 API REST para consulta de vehículos chilenos (patente, tasación, VIN, recalls, alertas por robo) y cálculo de costos de peajes en autopistas de Chile
+  - **Endpoints:**
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://chile.getapi.cl/v1/vehicles/plate/{plate}`](https://chile.getapi.cl/v1/vehicles/plate/{plate}) — Retorna datos del vehículo: marca, modelo, año, motor, transmisión, resultados de revisión técnica
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://chile.getapi.cl/v1/vehicles/appraisal/{plate}`](https://chile.getapi.cl/v1/vehicles/appraisal/{plate}) — Retorna tasación fiscal, precio usado y precio retoma del vehículo
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://chile.getapi.cl/v1/vehicles/vin/{vin}`](https://chile.getapi.cl/v1/vehicles/vin/{vin}) — Decodifica un número VIN de 17 caracteres (PRO)
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://chile.getapi.cl/v1/vehicles/recall/{vin}`](https://chile.getapi.cl/v1/vehicles/recall/{vin}) — Retorna campañas de recall asociadas a un VIN
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://chile.getapi.cl/v1/vehicles/stolen/{patente}`](https://chile.getapi.cl/v1/vehicles/stolen/{patente}) — Consulta si un vehículo tiene alerta por robo (PRO)
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://chile.getapi.cl/v1/vehicles/stolen/latest`](https://chile.getapi.cl/v1/vehicles/stolen/latest) — Retorna los vehículos robados más recientes (PRO)
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://chile.getapi.cl/v1/tollroutes/api/route-cost`](https://chile.getapi.cl/v1/tollroutes/api/route-cost) — Calcula costo de peajes entre dos ciudades origen/destino
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://chile.getapi.cl/v1/tollroutes/api/highways`](https://chile.getapi.cl/v1/tollroutes/api/highways) — Lista todas las autopistas disponibles en Chile
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://chile.getapi.cl/v1/tollroutes/api/categories`](https://chile.getapi.cl/v1/tollroutes/api/categories) — Lista las categorías de vehículos (LIVIANO, PESADO)
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://chile.getapi.cl/v1/tollroutes/api/locations`](https://chile.getapi.cl/v1/tollroutes/api/locations) — Lista las ciudades disponibles como origen/destino
+    - ✅ 🔑 `404` `auth_required` `POST` [`https://chile.getapi.cl/v1/tollroutes/api/calculate-by-path`](https://chile.getapi.cl/v1/tollroutes/api/calculate-by-path) — Calcula peajes desde un recorrido GPS
+    - ✅ 🔑 `404` `auth_required` `POST` [`https://chile.getapi.cl/v1/tollroutes/api/route-cost-by-coords`](https://chile.getapi.cl/v1/tollroutes/api/route-cost-by-coords) — Calcula peajes entre dos coordenadas GPS
 
   [⬆ Volver al índice](#top)
 
@@ -213,7 +301,7 @@
 
 <a id="cat-business"></a>
 
-### 💼 Negocios y Comercio (6 APIs)
+### 💼 Negocios y Comercio (7 APIs)
 
 **APIs de comercio, licitaciones, pagos y registro de empresas**
 
@@ -253,6 +341,17 @@
 - **Reqlut** ![paid](https://img.shields.io/badge/paid-red)
   - 🌐 [https://reqlut.com/api/v3/doc](https://reqlut.com/api/v3/doc)
   - 📝 API REST para integración con el ecosistema de empleabilidad universitaria Reqlut. Requiere API key para uso institucional.
+
+- **feriados.io - Motor de Calendario Operativo LATAM** ![Active](https://img.shields.io/badge/6_endpoints-active-brightgreen) [![freemium](https://img.shields.io/badge/freemium-orange)](https://feriados.io/pricing)
+  - 🌐 [https://feriados.io/docs](https://feriados.io/docs)
+  - 📝 API REST con feriados, días hábiles y calendarios personalizados para 11 países LATAM. Plan Free: 1,000 req/mes. Para Chile: feriados civiles, religiosos y regionales
+  - **Endpoints:**
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://api.feriados.io/v1/countries`](https://api.feriados.io/v1/countries) — Lista los países soportados con sus códigos ISO y nombres
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://api.feriados.io/v1/CL/holidays/{year}`](https://api.feriados.io/v1/CL/holidays/{year}) — Retorna los feriados de Chile para un año específico (incluye regionales)
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://api.feriados.io/v1/CL/is-business-day/{date}`](https://api.feriados.io/v1/CL/is-business-day/{date}) — Indica si una fecha es día hábil (Free: limitado a 90 días adelante)
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://api.feriados.io/v1/CL/next-holiday`](https://api.feriados.io/v1/CL/next-holiday) — Retorna el próximo feriado en el calendario chileno
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://api.feriados.io/v1/CL/calendar/{year}`](https://api.feriados.io/v1/CL/calendar/{year}) — Retorna el calendario anual completo (cada día marcado como hábil o feriado)
+    - ✅ 🔑 `401` `auth_required` `POST` [`https://api.feriados.io/v1/CL/business-days/add`](https://api.feriados.io/v1/CL/business-days/add) — Calcula fecha sumando o restando días hábiles desde una fecha base (plan Developer+)
 
   [⬆ Volver al índice](#top)
 

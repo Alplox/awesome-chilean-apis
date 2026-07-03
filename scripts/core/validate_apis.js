@@ -87,7 +87,7 @@ async function validateAll() {
       const startTime = Date.now();
 
       try {
-        const result = await checkEndpoint(endpoint.url, endpoint.method);
+        const result = await checkEndpoint(endpoint.url, endpoint.method, endpoint.auth);
         const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
         const previousStatus = endpoint.status;
 

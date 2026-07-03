@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-06-27T04:19:40.852Z",
-  "total_endpoints": 60,
+  "last_updated": "2026-07-03T02:06:50.377Z",
+  "total_endpoints": 110,
   "apis": [
     {
       "id": "datos-gob",
@@ -20,7 +20,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:11:14.846Z"
+          "last_checked": "2026-07-03T02:00:20.359Z"
         },
         {
           "id": "datos-gob-busqueda",
@@ -33,7 +33,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:11:15.999Z"
+          "last_checked": "2026-07-03T02:00:21.475Z"
         },
         {
           "id": "datos-gob-datastore-search",
@@ -46,7 +46,7 @@
           "status": "active",
           "last_status_code": 409,
           "last_response_format": "Other",
-          "last_checked": "2026-06-27T01:11:17.804Z"
+          "last_checked": "2026-07-03T02:00:23.279Z"
         },
         {
           "id": "datos-gob-datastore-sql",
@@ -59,7 +59,7 @@
           "status": "active",
           "last_status_code": 400,
           "last_response_format": "Other",
-          "last_checked": "2026-06-27T01:11:19.800Z"
+          "last_checked": "2026-07-03T02:00:25.287Z"
         },
         {
           "id": "datos-gob-tags",
@@ -72,7 +72,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:11:22.068Z"
+          "last_checked": "2026-07-03T02:00:27.338Z"
         },
         {
           "id": "farmacias-turno-json",
@@ -83,7 +83,7 @@
           "format": "XML",
           "description": "Farmacias del país con turnos nocturnos",
           "status": "active",
-          "last_checked": "2026-06-27T01:11:23.824Z",
+          "last_checked": "2026-07-03T02:00:29.309Z",
           "last_status_code": 200,
           "last_response_format": "XML"
         }
@@ -108,7 +108,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "XML",
-          "last_checked": "2026-06-27T01:11:24.081Z"
+          "last_checked": "2026-07-03T02:00:29.666Z"
         }
       ]
     },
@@ -130,7 +130,7 @@
           "status": "active",
           "last_status_code": 403,
           "last_response_format": "auth_required",
-          "last_checked": "2026-06-27T01:11:24.498Z"
+          "last_checked": "2026-07-03T02:00:30.131Z"
         },
         {
           "id": "chileatiende-servicios",
@@ -143,7 +143,7 @@
           "status": "active",
           "last_status_code": 403,
           "last_response_format": "auth_required",
-          "last_checked": "2026-06-27T01:11:26.308Z"
+          "last_checked": "2026-07-03T02:00:31.930Z"
         },
         {
           "id": "chileatiende-sucursales",
@@ -156,7 +156,7 @@
           "status": "active",
           "last_status_code": 403,
           "last_response_format": "auth_required",
-          "last_checked": "2026-06-27T01:11:28.350Z"
+          "last_checked": "2026-07-03T02:00:33.937Z"
         }
       ]
     },
@@ -176,7 +176,7 @@
           "format": "JSON",
           "description": "Licitaciones diarias, por código, diarias por estado, por día, por estado y día, por código de organismo público o proveedor",
           "status": "active",
-          "last_checked": "2026-06-27T01:11:28.892Z",
+          "last_checked": "2026-07-03T02:00:34.531Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         },
@@ -189,7 +189,7 @@
           "format": "JSON",
           "description": "Permite obtener, de forma estructurada y paginada, la información publicada en el mecanismo Compra Ágil de Mercado Público",
           "status": "active",
-          "last_checked": "2026-06-27T01:11:29.409Z",
+          "last_checked": "2026-07-03T02:00:34.960Z",
           "last_status_code": 403,
           "last_response_format": "auth_required"
         },
@@ -202,9 +202,9 @@
           "format": "JSON",
           "description": "Órdenes de compra diarias, de compra por código, de compra diarias por estado, de compra por día, de compra por estado y día, de compra por código de organismo público o proveedor",
           "status": "active",
-          "last_checked": "2026-06-27T01:11:30.384Z",
-          "last_status_code": 429,
-          "last_response_format": "Other"
+          "last_checked": "2026-07-03T02:00:36.069Z",
+          "last_status_code": 200,
+          "last_response_format": "JSON"
         },
         {
           "id": "chilecompra-api-codigoorganismopublico",
@@ -215,7 +215,7 @@
           "format": "JSON",
           "description": "Lista todos los organismos públicos de la plataforma Mercado Público",
           "status": "active",
-          "last_checked": "2026-06-27T01:11:32.632Z",
+          "last_checked": "2026-07-03T02:00:38.101Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         }
@@ -237,7 +237,7 @@
           "format": "JSON",
           "description": "Feriados oficiales de Chile años 2026-2027",
           "status": "active",
-          "last_checked": "2026-06-27T01:11:33.983Z",
+          "last_checked": "2026-07-03T02:00:39.425Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         }
@@ -259,7 +259,7 @@
           "format": "CSV",
           "description": "SDMX REST API",
           "status": "active",
-          "last_checked": "2026-06-27T01:11:34.735Z",
+          "last_checked": "2026-07-03T02:00:40.297Z",
           "last_status_code": 200,
           "last_response_format": "CSV"
         }
@@ -281,7 +281,7 @@
           "format": "JSON",
           "description": "Bases de datos estadísticos con documentación y ejemplos",
           "status": "active",
-          "last_checked": "2026-06-27T01:11:34.859Z",
+          "last_checked": "2026-07-03T02:00:40.488Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         }
@@ -305,7 +305,7 @@
           "status": "active",
           "last_status_code": 302,
           "last_response_format": "redirect",
-          "last_checked": "2026-06-27T01:11:35.140Z",
+          "last_checked": "2026-07-03T02:00:40.660Z",
           "last_error": "HTTP 302"
         }
       ]
@@ -326,7 +326,7 @@
           "format": "JSON",
           "description": "Indicadores diarios e históricos en formato JSON",
           "status": "active",
-          "last_checked": "2026-06-27T01:11:35.968Z",
+          "last_checked": "2026-07-03T02:00:41.744Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         }
@@ -348,7 +348,7 @@
           "format": "JSON",
           "description": "Indicadores económicos diarios e históricos",
           "status": "active",
-          "last_checked": "2026-06-27T01:11:36.033Z",
+          "last_checked": "2026-07-03T02:00:41.818Z",
           "last_status_code": 301,
           "last_response_format": "redirect",
           "last_error": "HTTP 301"
@@ -373,7 +373,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:11:36.217Z"
+          "last_checked": "2026-07-03T02:00:42.016Z"
         },
         {
           "id": "dolarapi-cotizaciones-usd",
@@ -386,7 +386,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:11:38.102Z"
+          "last_checked": "2026-07-03T02:00:43.904Z"
         },
         {
           "id": "dolarapi-cotizaciones-eur",
@@ -399,7 +399,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:11:40.115Z"
+          "last_checked": "2026-07-03T02:00:46.085Z"
         },
         {
           "id": "dolarapi-cotizaciones-brl",
@@ -412,7 +412,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:11:42.115Z"
+          "last_checked": "2026-07-03T02:00:48.089Z"
         },
         {
           "id": "dolarapi-cotizaciones-ars",
@@ -425,7 +425,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:11:44.127Z"
+          "last_checked": "2026-07-03T02:00:50.228Z"
         },
         {
           "id": "dolarapi-cotizaciones-uyu",
@@ -438,7 +438,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:11:46.131Z"
+          "last_checked": "2026-07-03T02:00:52.100Z"
         },
         {
           "id": "dolarapi-estado",
@@ -451,7 +451,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:11:48.134Z"
+          "last_checked": "2026-07-03T02:00:53.945Z"
         }
       ]
     },
@@ -471,7 +471,7 @@
           "format": "JSON",
           "description": "Endpoint público que devuelve la lista de todos los mercados disponibles en Buda, junto con la configuración de cada uno",
           "status": "active",
-          "last_checked": "2026-06-27T01:11:48.650Z",
+          "last_checked": "2026-07-03T02:00:54.650Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         },
@@ -484,7 +484,7 @@
           "format": "JSON",
           "description": "Entrega la varianción del precio en el último día y en la última semana, junto con el precio de la última transacción (last_price) para cada mercado",
           "status": "active",
-          "last_checked": "2026-06-27T01:11:50.922Z",
+          "last_checked": "2026-07-03T02:00:56.627Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         },
@@ -497,7 +497,7 @@
           "format": "XML",
           "description": "Las llamadas privadas consisten en endpoints que acceden a información privada del usuario que las invocan, les permiten crear o cancelar órdenes o les permiten abonar o retirar dinero hacia o desde el exchange",
           "status": "active",
-          "last_checked": "2026-06-27T01:11:52.174Z",
+          "last_checked": "2026-07-03T02:00:57.974Z",
           "last_status_code": 403,
           "last_response_format": "auth_required"
         }
@@ -519,7 +519,7 @@
           "format": "JSON",
           "description": "APIs financieras del Banco BCI",
           "status": "active",
-          "last_checked": "2026-06-27T01:11:52.250Z",
+          "last_checked": "2026-07-03T02:00:58.082Z",
           "last_status_code": 403,
           "last_response_format": "auth_required"
         }
@@ -541,7 +541,7 @@
           "format": "XML",
           "description": "Valores diarios de las cuotas de las AFP",
           "status": "active",
-          "last_checked": "2026-06-27T01:11:54.571Z",
+          "last_checked": "2026-07-03T02:00:59.056Z",
           "last_status_code": 200,
           "last_response_format": "XML"
         }
@@ -565,7 +565,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:11:55.546Z"
+          "last_checked": "2026-07-03T02:01:00.129Z"
         }
       ]
     },
@@ -587,7 +587,7 @@
           "status": "active",
           "last_status_code": 301,
           "last_response_format": "redirect",
-          "last_checked": "2026-06-27T01:11:55.617Z",
+          "last_checked": "2026-07-03T02:01:00.221Z",
           "last_error": "HTTP 301"
         }
       ]
@@ -610,7 +610,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:11:56.827Z"
+          "last_checked": "2026-07-03T02:01:01.432Z"
         }
       ]
     },
@@ -630,7 +630,7 @@
           "format": "JSON",
           "description": "Datos meteorológicos en tiempo real e históricos",
           "status": "active",
-          "last_checked": "2026-06-27T01:11:56.912Z",
+          "last_checked": "2026-07-03T02:01:01.579Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         }
@@ -654,7 +654,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "XML",
-          "last_checked": "2026-06-27T01:11:56.959Z"
+          "last_checked": "2026-07-03T02:01:01.684Z"
         },
         {
           "id": "csn-dataselect",
@@ -667,7 +667,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "XML",
-          "last_checked": "2026-06-27T01:11:58.927Z"
+          "last_checked": "2026-07-03T02:01:03.617Z"
         },
         {
           "id": "csn-availability",
@@ -680,7 +680,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "XML",
-          "last_checked": "2026-06-27T01:12:00.945Z"
+          "last_checked": "2026-07-03T02:01:05.623Z"
         }
       ]
     },
@@ -700,7 +700,7 @@
           "format": "JSON",
           "description": "Últimos sismos registrados en Chile",
           "status": "active",
-          "last_checked": "2026-06-27T01:12:01.152Z",
+          "last_checked": "2026-07-03T02:01:06.089Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         }
@@ -724,7 +724,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:12:02.826Z"
+          "last_checked": "2026-07-03T02:01:07.756Z"
         },
         {
           "id": "xorcl-sismo-historic",
@@ -737,7 +737,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:12:03.993Z"
+          "last_checked": "2026-07-03T02:01:09.081Z"
         }
       ]
     },
@@ -759,7 +759,7 @@
           "format": "JSON",
           "description": "Convierte transferencias bancarias en pagos digitales",
           "status": "active",
-          "last_checked": "2026-06-27T01:12:04.876Z",
+          "last_checked": "2026-07-03T02:01:09.847Z",
           "last_status_code": 403,
           "last_response_format": "auth_required"
         },
@@ -772,7 +772,7 @@
           "format": "JSON",
           "description": "Automatiza cobros recurrentes",
           "status": "active",
-          "last_checked": "2026-06-27T01:12:06.170Z",
+          "last_checked": "2026-07-03T02:01:11.276Z",
           "last_status_code": 405,
           "last_response_format": "Other"
         },
@@ -785,7 +785,7 @@
           "format": "JSON",
           "description": "Accede a información bancaria y financiera real desde múltiples instituciones",
           "status": "broken",
-          "last_checked": "2026-06-27T01:12:06.252Z",
+          "last_checked": "2026-07-03T02:01:11.629Z",
           "last_status_code": 404,
           "last_response_format": "empty",
           "last_error": "HTTP 404"
@@ -810,7 +810,7 @@
           "format": "JSON",
           "description": "Pagos con tarjetas de crédito y débito",
           "status": "active",
-          "last_checked": "2026-06-27T01:12:06.989Z",
+          "last_checked": "2026-07-03T02:01:12.273Z",
           "last_status_code": 301,
           "last_response_format": "redirect",
           "last_error": "HTTP 301"
@@ -835,7 +835,7 @@
           "format": "JSON",
           "description": "Pagos globales con múltiples medios de pago",
           "status": "active",
-          "last_checked": "2026-06-27T01:12:07.491Z",
+          "last_checked": "2026-07-03T02:01:12.553Z",
           "last_status_code": 403,
           "last_response_format": "auth_required"
         }
@@ -859,7 +859,7 @@
           "format": "JSON",
           "description": "Cobro de suscripciones y pagos recurrentes. Endpoints disponibles: /api/plans, /api/subscriptions, /api/webhooks",
           "status": "broken",
-          "last_checked": "2026-06-27T01:12:08.053Z",
+          "last_checked": "2026-07-03T02:01:13.226Z",
           "last_status_code": 404,
           "last_response_format": "empty",
           "last_error": "HTTP 404"
@@ -883,7 +883,7 @@
           "format": "JSON",
           "description": "Iniciación de pagos y conciliación bancaria",
           "status": "broken",
-          "last_checked": "2026-06-27T01:12:08.380Z",
+          "last_checked": "2026-07-03T02:01:13.615Z",
           "last_status_code": 404,
           "last_response_format": "empty",
           "last_error": "HTTP 404"
@@ -906,7 +906,7 @@
           "format": "JSON",
           "description": "Animales en adopción, perdidos y encontrados por región",
           "status": "active",
-          "last_checked": "2026-06-27T01:12:09.092Z",
+          "last_checked": "2026-07-03T02:01:14.793Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         }
@@ -928,7 +928,7 @@
           "format": "JSON",
           "description": "Múltiples APIs de uso libre",
           "status": "active",
-          "last_checked": "2026-06-27T01:12:09.246Z",
+          "last_checked": "2026-07-03T02:01:14.953Z",
           "last_status_code": 301,
           "last_response_format": "redirect",
           "last_error": "HTTP 301"
@@ -953,7 +953,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:33:17.334Z"
+          "last_checked": "2026-07-03T02:01:16.560Z"
         },
         {
           "id": "chileabierto-comuna",
@@ -966,7 +966,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:33:20.575Z"
+          "last_checked": "2026-07-03T02:01:18.381Z"
         },
         {
           "id": "chileabierto-indicators",
@@ -979,7 +979,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:33:21.140Z"
+          "last_checked": "2026-07-03T02:01:19.545Z"
         },
         {
           "id": "chileabierto-indicator",
@@ -992,7 +992,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:33:23.139Z"
+          "last_checked": "2026-07-03T02:01:21.409Z"
         },
         {
           "id": "chileabierto-compare",
@@ -1005,7 +1005,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:33:25.320Z"
+          "last_checked": "2026-07-03T02:01:23.513Z"
         }
       ]
     },
@@ -1036,7 +1036,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:12:15.788Z"
+          "last_checked": "2026-07-03T02:01:29.592Z"
         },
         {
           "id": "datos-resiliencia-native",
@@ -1049,7 +1049,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-06-27T01:12:15.956Z"
+          "last_checked": "2026-07-03T02:01:29.751Z"
         }
       ]
     },
@@ -1072,7 +1072,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-06-27T04:19:39.002Z"
+          "last_checked": "2026-07-03T02:01:29.855Z"
         },
         {
           "id": "super-salud-registro",
@@ -1085,7 +1085,755 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-06-27T04:19:40.851Z"
+          "last_checked": "2026-07-03T02:01:31.771Z"
+        }
+      ]
+    },
+    {
+      "id": "dataestado",
+      "name": "DataEstado - API de Autoridades del Estado",
+      "url": "https://dataestado.cl/docs",
+      "category": "government",
+      "pricing": "free",
+      "description": "API pública con datos históricos y actuales de autoridades del Estado chileno: ministros, subsecretarios, gobiernos, ministerios desde 1990. Sin autenticación.",
+      "endpoints": [
+        {
+          "id": "dataestado-health",
+          "name": "Salud de la API",
+          "url": "https://api.dataestado.cl/health",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Devuelve estado de la API, nombre del servicio y timestamp en formato ISO 8601",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-07-03T02:01:32.222Z"
+        },
+        {
+          "id": "dataestado-autoridades",
+          "name": "Autoridades por Gobierno",
+          "url": "https://api.dataestado.cl/v1/autoridades",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Listado completo de ministros y subsecretarios registrados, con filtro opcional por gobierno (ej: ?gobierno=Boric)",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-07-03T02:01:34.136Z"
+        },
+        {
+          "id": "dataestado-gobiernos",
+          "name": "Listado de Gobiernos",
+          "url": "https://api.dataestado.cl/v1/gobiernos",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Gobiernos disponibles, presidentes y rangos presidenciales desde 1990",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-07-03T02:01:35.944Z"
+        },
+        {
+          "id": "dataestado-ministerios",
+          "name": "Ministerios Vigentes",
+          "url": "https://api.dataestado.cl/v1/ministerios",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Ministerios vigentes con autoridades actuales y códigos internos",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-07-03T02:01:38.109Z"
+        },
+        {
+          "id": "dataestado-personas",
+          "name": "Personas Registradas",
+          "url": "https://api.dataestado.cl/v1/personas",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Listado de personas registradas en el sistema, con posibilidad de filtro por diferentes criterios",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-07-03T02:01:39.959Z"
+        },
+        {
+          "id": "dataestado-estadisticas",
+          "name": "Estadísticas de Autoridades",
+          "url": "https://api.dataestado.cl/v1/autoridades/estadisticas",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Estadísticas agregadas de autoridades agrupadas por gobierno",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-07-03T02:01:41.961Z"
+        },
+        {
+          "id": "dataestado-search",
+          "name": "Búsqueda de Datos",
+          "url": "https://api.dataestado.cl/v1/search?q=&limit=20",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Búsqueda de datos en el sistema por diferentes criterios",
+          "status": "active",
+          "last_status_code": 400,
+          "last_response_format": "Other",
+          "last_checked": "2026-07-03T02:01:43.959Z"
+        }
+      ]
+    },
+    {
+      "id": "magnet-data",
+      "name": "Magnet Data - API de Datos Públicos Chilenos",
+      "url": "https://data.magnet.cl/",
+      "category": "finance",
+      "pricing": "free",
+      "description": "API gratuita con datos públicos de Chile: monedas (UF, USD, EUR, CLF a CLP), feriados, días hábiles, Isapres y AFP. Sin autenticación.",
+      "endpoints": [
+        {
+          "id": "magnet-data-currencies",
+          "name": "Monedas y UF",
+          "url": "https://data.magnet.cl/api/v1/currencies/usd/clp/",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Valor actual de monedas en CLP. Ej: usd/clp, eur/clp, clf/clp, utm/clp. Soporta consultas por fecha (/?YYYY/MM/DD)",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-07-03T02:01:44.697Z"
+        },
+        {
+          "id": "magnet-data-holidays",
+          "name": "Feriados de Chile",
+          "url": "https://data.magnet.cl/api/v1/holidays/cl/",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Feriados chilenos y días hábiles con endpoint working-days-count",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-07-03T02:01:46.152Z"
+        },
+        {
+          "id": "magnet-data-health",
+          "name": "Isapres - Instituciones de Salud Previsional",
+          "url": "https://data.magnet.cl/api/v1/prevision/health/",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Listado de Isapres con comisiones y datos de afiliación",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-07-03T02:01:48.149Z"
+        },
+        {
+          "id": "magnet-data-pension",
+          "name": "AFP - Administradoras de Fondos de Pensiones",
+          "url": "https://data.magnet.cl/api/v1/prevision/pension/",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Listado de AFP con comisiones, código Previred y RUT",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-07-03T02:01:50.210Z"
+        }
+      ]
+    },
+    {
+      "id": "observatorio-logistico",
+      "name": "Observatorio Logístico - API de Datos Logísticos",
+      "url": "https://filesprod.observatoriologistico.cl/assets/frontend-graficos/api-datastream-docs/datastreams_api_docs.html",
+      "category": "transport",
+      "pricing": "free",
+      "description": "API RESTful pública del Ministerio de Transportes con datos de logística y comercio exterior de Chile: puertos, carga aérea, ferroviaria, carretera, indicadores. Sin autenticación, 100 req/min.",
+      "endpoints": [
+        {
+          "id": "observatorio-list",
+          "name": "Lista de Datastreams",
+          "url": "https://www.observatoriologistico.cl/api/v1/datastreams/lists",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Obtiene una lista paginada de todos los datastreams disponibles en el sistema con información básica y URLs para acceder a sus datos y metadatos.",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-07-03T02:01:50.361Z"
+        },
+        {
+          "id": "observatorio-metadata",
+          "name": "Metadatos de Datastream",
+          "url": "https://www.observatoriologistico.cl/api/v1/datastreams/C010/metadata",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "/datastreams/{code}/metadata. Obtiene los metadatos de un datastream específico con información sobre la estructura de datos, variables disponibles y descripciones detalladas.",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-07-03T02:01:52.293Z"
+        },
+        {
+          "id": "observatorio-data",
+          "name": "Datos de Datastream",
+          "url": "https://www.observatoriologistico.cl/api/v1/datastreams/C010/data",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "/datastreams/{code}/data. Obtiene los datos de un datastream específico con opciones avanzadas de paginación, filtrado dinámico y ordenamiento",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-07-03T02:01:54.332Z"
+        }
+      ]
+    },
+    {
+      "id": "baseapi",
+      "name": "BaseAPI - Infraestructura Tributaria",
+      "url": "https://baseapi.cl",
+      "category": "government",
+      "pricing": "paid",
+      "pricing_url": "https://baseapi.cl#precios",
+      "description": "API REST tributaria con datos del SII, Previred y Tesorería: consulta RCV, DTEs, contribuyentes, cesiones; emisión de boletas de honorarios y facturación electrónica. Servicio disponible hasta el 11 de diciembre de 2026 solo para suscripciones de pago activas.",
+      "endpoints": [
+        {
+          "id": "baseapi-contribuyente",
+          "name": "Información de Contribuyente",
+          "url": "https://api.baseapi.cl/v1/sii/contribuyente/11111111-1",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Razón social, giro, dirección y situación tributaria de un contribuyente",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:05:30.009Z",
+          "last_error": "HTTP 404 (auth required)"
+        },
+        {
+          "id": "baseapi-rcv",
+          "name": "Registro de Compras y Ventas (RCV)",
+          "url": "https://api.baseapi.cl/v1/sii/rcv",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Registro de Compras y Ventas mensual y anual del SII",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:05:31.636Z",
+          "last_error": "HTTP 404 (auth required)"
+        },
+        {
+          "id": "baseapi-boletas",
+          "name": "Boletas de Honorarios",
+          "url": "https://api.baseapi.cl/v1/sii/boletas",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Boletas de Honorarios Electrónicas (BHE) recibidas y BTE emitidas, con detalle y PDF",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:05:33.640Z",
+          "last_error": "HTTP 404 (auth required)"
+        },
+        {
+          "id": "baseapi-dte-emitidos",
+          "name": "DTEs Emitidos",
+          "url": "https://api.baseapi.cl/v1/sii/dte/emitidos",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Facturas y documentos emitidos por período",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:05:35.643Z",
+          "last_error": "HTTP 404 (auth required)"
+        },
+        {
+          "id": "baseapi-dte-recibidos",
+          "name": "DTEs Recibidos",
+          "url": "https://api.baseapi.cl/v1/sii/dte/recibidos",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Facturas de proveedores con detalle e ítems",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:05:37.658Z",
+          "last_error": "HTTP 404 (auth required)"
+        },
+        {
+          "id": "baseapi-cesiones",
+          "name": "Cesiones de Facturas",
+          "url": "https://api.baseapi.cl/v1/sii/cesiones",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Registro Electrónico de Cesión de Créditos (factoring)",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:05:39.667Z",
+          "last_error": "HTTP 404 (auth required)"
+        },
+        {
+          "id": "baseapi-verificar-dte",
+          "name": "Verificar Boleta y DTE",
+          "url": "https://api.baseapi.cl/v1/sii/verificar",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Validación de comprobantes y facturas de terceros contra el SII (anti-fraude)",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:05:41.681Z",
+          "last_error": "HTTP 404 (auth required)"
+        },
+        {
+          "id": "baseapi-previred",
+          "name": "Previred - Deudas Previsionales",
+          "url": "https://api.baseapi.cl/v1/previred/deudas",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Deudas previsionales, certificados AFP y planillas pagadas de Previred",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:05:43.686Z",
+          "last_error": "HTTP 404 (auth required)"
+        },
+        {
+          "id": "baseapi-tgr",
+          "name": "TGR - Tesorería General de la República",
+          "url": "https://api.baseapi.cl/v1/tgr/cartola",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Cartola fiscal, certificado de deuda y convenios de Tesorería",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:05:45.702Z",
+          "last_error": "HTTP 404 (auth required)"
+        },
+        {
+          "id": "baseapi-boletin-concursal",
+          "name": "Boletín Concursal",
+          "url": "https://api.baseapi.cl/v1/riesgo/boletin-concursal",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Procedimientos de insolvencia (Ley 20.720): búsqueda, detalle y PDF oficial",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:05:47.711Z",
+          "last_error": "HTTP 404 (auth required)"
+        },
+        {
+          "id": "baseapi-facturacion",
+          "name": "Facturación Electrónica",
+          "url": "https://api.baseapi.cl/v1/dte/emitir",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Emisión de facturas afectas (33), exentas (34) y guías de despacho (52)",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:05:49.717Z",
+          "last_error": "HTTP 404 (auth required)"
+        }
+      ]
+    },
+    {
+      "id": "cne-combustibles",
+      "name": "CNE - API de Combustibles",
+      "url": "https://apidocs.cne.cl/",
+      "category": "government",
+      "pricing": "free",
+      "description": "API gratuita (con registro) de la Comisión Nacional de Energía con datos de precios de combustibles en Chile: bencina, gas, parafina y estaciones de servicio a nivel nacional",
+      "endpoints": [
+        {
+          "id": "cne-combustibles-api",
+          "name": "API Combustibles CNE",
+          "url": "https://api.tramites.cne.cl/api/v1/bencina",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Datos de estaciones de servicio y precios de combustibles vehiculares. Requiere registro gratuito en api.tramites.cne.cl/register",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:06:50.376Z",
+          "last_error": "HTTP 404 (auth required)"
+        }
+      ]
+    },
+    {
+      "id": "floid",
+      "name": "Floid - Open Finance API",
+      "url": "https://docs.floid.io",
+      "category": "finance",
+      "pricing": "paid",
+      "pricing_url": "https://www.floid.io/pricing",
+      "description": "API REST B2B para Open Finance en Chile, Perú y México: cuentas bancarias, tarjetas de crédito, créditos, ahorros y consent manager RDC30",
+      "endpoints": [
+        {
+          "id": "floid-get-bank-accounts",
+          "name": "Obtener Cuentas Bancarias",
+          "url": "https://api.floid.app/cl/bank/get_bank_accounts",
+          "method": "POST",
+          "auth": "bearer",
+          "format": "JSON",
+          "description": "Retorna las cuentas bancarias del usuario autenticado vía Open Finance",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:02:15.438Z"
+        },
+        {
+          "id": "floid-get-credit-cards",
+          "name": "Obtener Tarjetas de Crédito",
+          "url": "https://api.floid.app/cl/bank/get_credit_cards",
+          "method": "POST",
+          "auth": "bearer",
+          "format": "JSON",
+          "description": "Retorna las tarjetas de crédito del usuario autenticado",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:02:17.047Z"
+        },
+        {
+          "id": "floid-consent-create",
+          "name": "Crear Consentimiento RDC30",
+          "url": "https://api.floid.app/cl/consent_manager/create_consent",
+          "method": "POST",
+          "auth": "bearer",
+          "format": "JSON",
+          "description": "Crea un consentimiento RDC30 para acceso a datos financieros del usuario",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:02:19.053Z"
+        },
+        {
+          "id": "floid-list-consents",
+          "name": "Listar Consentimientos",
+          "url": "https://api.floid.app/cl/consent_manager/list_consents",
+          "method": "GET",
+          "auth": "bearer",
+          "format": "JSON",
+          "description": "Lista todos los consentimientos activos del cliente",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:02:21.059Z"
+        },
+        {
+          "id": "floid-revoke-consent",
+          "name": "Revocar Consentimiento",
+          "url": "https://api.floid.app/cl/consent_manager/revoke_consent",
+          "method": "POST",
+          "auth": "bearer",
+          "format": "JSON",
+          "description": "Revoca un consentimiento RDC30 existente",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:02:23.058Z"
+        },
+        {
+          "id": "floid-get-loans",
+          "name": "Obtener Créditos",
+          "url": "https://api.floid.app/cl/bank/get_loans",
+          "method": "POST",
+          "auth": "bearer",
+          "format": "JSON",
+          "description": "Retorna los créditos del usuario autenticado",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:02:25.083Z"
+        }
+      ]
+    },
+    {
+      "id": "feriados-io",
+      "name": "feriados.io - Motor de Calendario Operativo LATAM",
+      "url": "https://feriados.io/docs",
+      "category": "business",
+      "pricing": "freemium",
+      "pricing_url": "https://feriados.io/pricing",
+      "description": "API REST con feriados, días hábiles y calendarios personalizados para 11 países LATAM. Plan Free: 1,000 req/mes. Para Chile: feriados civiles, religiosos y regionales",
+      "endpoints": [
+        {
+          "id": "feriados-io-countries",
+          "name": "Países Soportados",
+          "url": "https://api.feriados.io/v1/countries",
+          "method": "GET",
+          "auth": "bearer",
+          "format": "JSON",
+          "description": "Lista los países soportados con sus códigos ISO y nombres",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:02:25.538Z"
+        },
+        {
+          "id": "feriados-io-holidays",
+          "name": "Feriados por Año",
+          "url": "https://api.feriados.io/v1/CL/holidays/{year}",
+          "method": "GET",
+          "auth": "bearer",
+          "format": "JSON",
+          "description": "Retorna los feriados de Chile para un año específico (incluye regionales)",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:02:27.135Z"
+        },
+        {
+          "id": "feriados-io-is-business-day",
+          "name": "Validar Día Hábil",
+          "url": "https://api.feriados.io/v1/CL/is-business-day/{date}",
+          "method": "GET",
+          "auth": "bearer",
+          "format": "JSON",
+          "description": "Indica si una fecha es día hábil (Free: limitado a 90 días adelante)",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:02:29.147Z"
+        },
+        {
+          "id": "feriados-io-next-holiday",
+          "name": "Próximo Feriado",
+          "url": "https://api.feriados.io/v1/CL/next-holiday",
+          "method": "GET",
+          "auth": "bearer",
+          "format": "JSON",
+          "description": "Retorna el próximo feriado en el calendario chileno",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:02:31.154Z"
+        },
+        {
+          "id": "feriados-io-calendar",
+          "name": "Calendario Anual",
+          "url": "https://api.feriados.io/v1/CL/calendar/{year}",
+          "method": "GET",
+          "auth": "bearer",
+          "format": "JSON",
+          "description": "Retorna el calendario anual completo (cada día marcado como hábil o feriado)",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:02:33.162Z"
+        },
+        {
+          "id": "feriados-io-business-days-add",
+          "name": "Sumar Días Hábiles",
+          "url": "https://api.feriados.io/v1/CL/business-days/add",
+          "method": "POST",
+          "auth": "bearer",
+          "format": "JSON",
+          "description": "Calcula fecha sumando o restando días hábiles desde una fecha base (plan Developer+)",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:02:35.159Z"
+        }
+      ]
+    },
+    {
+      "id": "getapi",
+      "name": "GetAPI Chile - Vehículos y Peajes",
+      "url": "https://getapi.cl/docs/",
+      "category": "transport",
+      "pricing": "paid",
+      "pricing_url": "https://getapi.cl/planes/",
+      "description": "API REST para consulta de vehículos chilenos (patente, tasación, VIN, recalls, alertas por robo) y cálculo de costos de peajes en autopistas de Chile",
+      "endpoints": [
+        {
+          "id": "getapi-plate",
+          "name": "Información por Patente",
+          "url": "https://chile.getapi.cl/v1/vehicles/plate/{plate}",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Retorna datos del vehículo: marca, modelo, año, motor, transmisión, resultados de revisión técnica",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:06:22.838Z"
+        },
+        {
+          "id": "getapi-appraisal",
+          "name": "Tasación por Patente",
+          "url": "https://chile.getapi.cl/v1/vehicles/appraisal/{plate}",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Retorna tasación fiscal, precio usado y precio retoma del vehículo",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:06:24.550Z"
+        },
+        {
+          "id": "getapi-vin",
+          "name": "Decodificar VIN",
+          "url": "https://chile.getapi.cl/v1/vehicles/vin/{vin}",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Decodifica un número VIN de 17 caracteres (PRO)",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:06:26.551Z"
+        },
+        {
+          "id": "getapi-recall",
+          "name": "Recall por VIN",
+          "url": "https://chile.getapi.cl/v1/vehicles/recall/{vin}",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Retorna campañas de recall asociadas a un VIN",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:06:28.551Z"
+        },
+        {
+          "id": "getapi-stolen",
+          "name": "Alerta por Robo",
+          "url": "https://chile.getapi.cl/v1/vehicles/stolen/{patente}",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Consulta si un vehículo tiene alerta por robo (PRO)",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:06:30.566Z"
+        },
+        {
+          "id": "getapi-stolen-latest",
+          "name": "Últimos Robos",
+          "url": "https://chile.getapi.cl/v1/vehicles/stolen/latest",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Retorna los vehículos robados más recientes (PRO)",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:06:32.577Z"
+        },
+        {
+          "id": "getapi-route-cost",
+          "name": "Costo Ruta por Ciudades",
+          "url": "https://chile.getapi.cl/v1/tollroutes/api/route-cost",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Calcula costo de peajes entre dos ciudades origen/destino",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:06:34.577Z"
+        },
+        {
+          "id": "getapi-highways",
+          "name": "Listar Autopistas",
+          "url": "https://chile.getapi.cl/v1/tollroutes/api/highways",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Lista todas las autopistas disponibles en Chile",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:06:36.589Z"
+        },
+        {
+          "id": "getapi-categories",
+          "name": "Categorías de Vehículos",
+          "url": "https://chile.getapi.cl/v1/tollroutes/api/categories",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Lista las categorías de vehículos (LIVIANO, PESADO)",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:06:38.594Z"
+        },
+        {
+          "id": "getapi-locations",
+          "name": "Ciudades Disponibles",
+          "url": "https://chile.getapi.cl/v1/tollroutes/api/locations",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Lista las ciudades disponibles como origen/destino",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:06:40.604Z"
+        },
+        {
+          "id": "getapi-calculate-by-path",
+          "name": "Calcular Ruta por GPS",
+          "url": "https://chile.getapi.cl/v1/tollroutes/api/calculate-by-path",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Calcula peajes desde un recorrido GPS",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:06:42.617Z",
+          "last_error": "HTTP 404 (auth required)"
+        },
+        {
+          "id": "getapi-route-cost-by-coords",
+          "name": "Costo Ruta por Coordenadas",
+          "url": "https://chile.getapi.cl/v1/tollroutes/api/route-cost-by-coords",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Calcula peajes entre dos coordenadas GPS",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-07-03T02:06:44.624Z",
+          "last_error": "HTTP 404 (auth required)"
         }
       ]
     }

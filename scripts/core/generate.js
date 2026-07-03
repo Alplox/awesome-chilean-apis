@@ -230,7 +230,7 @@ function generateReadme(database, categories, _regions) {
         lines.push('  - **Endpoints:**');
         for (const ep of api.endpoints) {
           const statusIcon = ep.status === 'active' ? '✅' : ep.status === 'stale' ? '⚠️' : '❌';
-          const authTag = ep.auth === 'api-key' ? ' 🔑' : '';
+          const authTag = ep.auth && ep.auth !== 'none' ? ' 🔑' : '';
           const codeTag = ep.last_status_code !== null && ep.last_status_code !== undefined ? ` \`${ep.last_status_code}\`` : '';
           const formatTag = ep.last_response_format && ep.last_response_format !== 'null' ? ` \`${ep.last_response_format}\`` : '';
           const epDesc = ep.description ? ` — ${ep.description}` : '';

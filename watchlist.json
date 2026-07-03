@@ -201,5 +201,26 @@
         "last_checked": "2026-06-23T04:28:42.679Z"
       }
     ]
+  },
+  {
+    "id": "roison-cl",
+    "name": "api.roison.cl",
+    "url": "https://api.roison.cl",
+    "category": "business",
+    "description": "API REST que entrega feriados chilenos (incluye regionales) en formato JSON",
+    "reason": "Endpoint activo pero datos desactualizados (última actualización 2024-05-22)",
+    "endpoints": [
+      {
+        "id": "roison-cl-api",
+        "name": "Feriados chilenos",
+        "url": "https://api.roison.cl/feriados",
+        "method": "GET",
+        "auth": "none",
+        "format": "JSON",
+        "description": "Feriados chilenos con regionales (datos estancados en 2024)",
+        "status": "active",
+        "last_checked": "2026-07-02T00:00:00.000Z"
+      }
+    ]
   }
 ]
