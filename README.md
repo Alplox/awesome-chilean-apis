@@ -2,28 +2,29 @@
 # 🇨🇱 Awesome Chilean APIs
 
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/alplox/awesome-chilean-apis)
-![APIs](https://img.shields.io/badge/apis-40-brightgreen)
-![Endpoints](https://img.shields.io/badge/endpoints-110-blue)
+![APIs](https://img.shields.io/badge/apis-43-brightgreen)
+![Endpoints](https://img.shields.io/badge/endpoints-115-blue)
 
-> Directorio curado de APIs chilenas públicas y privadas con endpoints verificados. **40 APIs** y **110 endpoints**, organizados por categoría y mantenidos activamente.
+> Directorio curado de APIs chilenas públicas y privadas con endpoints verificados. **43 APIs** y **115 endpoints**, organizados por categoría y mantenidos activamente.
 
 ## 📑 Índice
 
-- [🏛️ Gobierno y Datos Públicos](#cat-government) — 10 APIs
+- [🏛️ Gobierno y Datos Públicos](#cat-government) — 11 APIs
 - [💰 Finanzas e Impuestos](#cat-finance) — 10 APIs
 - [🚌 Transporte y Tránsito](#cat-transport) — 2 APIs
 - [🌤️ Clima y Meteorología](#cat-weather) — 1 API
 - [🌿 Medio Ambiente](#cat-environment) — 4 APIs
 - [🏥 Salud](#cat-health) — 1 API
-- [💼 Negocios y Comercio](#cat-business) — 7 APIs
+- [🗺️ Geografía y Mapas](#cat-maps) — 1 API
+- [💼 Negocios y Comercio](#cat-business) — 8 APIs
 - [📢 Alertas y Notificaciones](#cat-notifications) — 3 APIs
 - [🤝 Comunidad y Otros](#cat-community) — 2 APIs
 
-> Última actualización: 2 de julio de 2026
+> Última actualización: 31 de julio de 2026
 
 <a id="cat-government"></a>
 
-### 🏛️ Gobierno y Datos Públicos (10 APIs)
+### 🏛️ Gobierno y Datos Públicos (11 APIs)
 
 **APIs gubernamentales, datos abiertos y servicios del Estado**
 
@@ -44,6 +45,13 @@
   - 📝 API REST de leyes, proyectos de ley y normas jurídicas chilenas del Congreso Nacional, con autenticación mediante API-Key
   - **Endpoints:**
     - ✅ 🔑 `200` `XML` `GET` [`https://www.bcn.cl/leychile/api/v1`](https://www.bcn.cl/leychile/api/v1) — API REST con autenticación API-Key para acceder a normas, leyes y documentos jurídicos
+
+- **Datos BCN - Linked Data Legislativo** ![Active](https://img.shields.io/badge/2_endpoints-active-brightgreen)
+  - 🌐 [https://datos.bcn.cl/es/documentacion](https://datos.bcn.cl/es/documentacion)
+  - 📝 Datos abiertos de la Biblioteca del Congreso Nacional vía Linked Open Data: consultas SPARQL de leyes, proyectos de ley y sesiones parlamentarias, sin autenticación
+  - **Endpoints:**
+    - ✅ `200` `XML` `GET` [`https://datos.bcn.cl/sparql`](https://datos.bcn.cl/sparql) — Consulta SPARQL de normas, proyectos de ley y sesiones parlamentarias (Accept: application/json)
+    - ✅ `200` `JSON` `GET` [`https://datos.bcn.cl/recurso/cl/ley/330/datos.json`](https://datos.bcn.cl/recurso/cl/ley/330/datos.json) — Acceso directo a recursos en JSON/RDF. Patrón: /recurso/cl/{tipo}/{path}/datos.{format}
 
 - **ChileAtiende** ![Active](https://img.shields.io/badge/3_endpoints-active-brightgreen)
   - 🌐 [https://www.chileatiende.gob.cl/desarrolladores](https://www.chileatiende.gob.cl/desarrolladores)
@@ -299,9 +307,24 @@
 
   [⬆ Volver al índice](#top)
 
+<a id="cat-maps"></a>
+
+### 🗺️ Geografía y Mapas (1 API)
+
+**APIs geoespaciales, mapas y datos territoriales**
+
+- **SMA - Infraestructura de Datos Geoespaciales** ![Active](https://img.shields.io/badge/2_endpoints-active-brightgreen)
+  - 🌐 [https://ideserver.sma.gob.cl/arcgis/rest/services/IDE](https://ideserver.sma.gob.cl/arcgis/rest/services/IDE)
+  - 📝 Servicios ArcGIS REST de la Superintendencia del Medio Ambiente: capas de biodiversidad, energía, planes reguladores y otras capas territoriales
+  - **Endpoints:**
+    - ✅ `200` `JSON` `GET` [`https://ideserver.sma.gob.cl/arcgis/rest/services/IDE?f=pjson`](https://ideserver.sma.gob.cl/arcgis/rest/services/IDE?f=pjson) — Listado de capas geoespaciales disponibles de la IDE institucional
+    - ✅ `200` `JSON` `GET` [`https://ideserver.sma.gob.cl/arcgis/rest/services/IDE/Energia/MapServer/0/query?where=1%3D1&outFields=nombre%2Ccomuna%2Cregion&returnGeometry=true&outSR=4326&f=pjson`](https://ideserver.sma.gob.cl/arcgis/rest/services/IDE/Energia/MapServer/0/query?where=1%3D1&outFields=nombre%2Ccomuna%2Cregion&returnGeometry=true&outSR=4326&f=pjson) — Consulta de features de una capa. OJO: este servidor da error 400 si se incluye resultRecordCount
+
+  [⬆ Volver al índice](#top)
+
 <a id="cat-business"></a>
 
-### 💼 Negocios y Comercio (7 APIs)
+### 💼 Negocios y Comercio (8 APIs)
 
 **APIs de comercio, licitaciones, pagos y registro de empresas**
 
@@ -337,6 +360,12 @@
   - 📝 API REST para iniciación de pagos mediante transferencias bancarias, tarjetas y conciliación de movimientos
   - **Endpoints:**
     - ❌ 🔑 `404` `empty` `POST` [`https://api.fintoc.com`](https://api.fintoc.com) — Iniciación de pagos y conciliación bancaria
+
+- **Transbank - Webpay** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://www.transbankdevelopers.cl](https://www.transbankdevelopers.cl)
+  - 📝 API REST de Webpay Plus para pagos con tarjeta de crédito y débito en Chile, con integración en línea (Oneclick, Transbank Onepay y Mall)
+  - **Endpoints:**
+    - ✅ 🔑 `401` `auth_required` `POST` [`https://webpay3g.transbank.cl/rswebpaytransaction/api/webpay/v1.2/transactions`](https://webpay3g.transbank.cl/rswebpaytransaction/api/webpay/v1.2/transactions) — Creación de transacciones Webpay (requiere Tbk-Api-Key-Id y Tbk-Api-Key-Secret)
 
 - **Reqlut** ![paid](https://img.shields.io/badge/paid-red)
   - 🌐 [https://reqlut.com/api/v3/doc](https://reqlut.com/api/v3/doc)
