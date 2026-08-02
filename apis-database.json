@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-31T16:41:57.725Z",
-  "total_endpoints": 115,
+  "last_updated": "2026-08-02T19:36:17.912Z",
+  "total_endpoints": 118,
   "apis": [
     {
       "id": "datos-gob",
@@ -1929,6 +1929,66 @@
           "last_response_format": "auth_required",
           "last_checked": "2026-07-03T02:06:44.624Z",
           "last_error": "HTTP 404 (auth required)"
+        }
+      ]
+    },
+    {
+      "id": "sismos-en-chile",
+      "name": "Sismos en Chile",
+      "url": "https://sismosenchile.cl/",
+      "category": "notifications",
+      "pricing": "free",
+      "description": "API JSON con recompilado de los ultimos sismos de Chile (CSN) con estadisticas",
+      "endpoints": [
+        {
+          "id": "sismos-en-chile-recientes",
+          "name": "Sismos Recientes",
+          "url": "https://sismosenchile.cl/api/earthquakes/recent?limit=10",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Ultimos sismos registrados. Parametros: limit",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-02T19:35:16.928Z"
+        },
+        {
+          "id": "sismos-en-chile-estadisticas",
+          "name": "Estadisticas de Sismos",
+          "url": "https://sismosenchile.cl/api/earthquakes/stats",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Estadisticas generales: total de sismos, sismos de hoy, magnitud maxima",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-02T19:35:18.735Z"
+        }
+      ]
+    },
+    {
+      "id": "temblores-24",
+      "name": "Temblores 24",
+      "url": "https://temblores24.cl/",
+      "category": "notifications",
+      "pricing": "free",
+      "description": "Mapa de sismos en tiempo real basado en el Centro Sismologico Nacional, con endpoint JSON de sismos",
+      "endpoints": [
+        {
+          "id": "temblores-24-sismos",
+          "name": "Sismos",
+          "url": "https://temblores24.cl/api/sismos",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Listado de sismos con campos: count, campos, data",
+          "status": "active",
+          "last_status_code": 301,
+          "last_response_format": "redirect",
+          "last_checked": "2026-08-02T19:36:17.909Z",
+          "last_error": "HTTP 301"
         }
       ]
     }

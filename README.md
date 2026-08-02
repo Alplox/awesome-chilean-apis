@@ -2,10 +2,10 @@
 # 🇨🇱 Awesome Chilean APIs
 
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/alplox/awesome-chilean-apis)
-![APIs](https://img.shields.io/badge/apis-43-brightgreen)
-![Endpoints](https://img.shields.io/badge/endpoints-115-blue)
+![APIs](https://img.shields.io/badge/apis-45-brightgreen)
+![Endpoints](https://img.shields.io/badge/endpoints-118-blue)
 
-> Directorio curado de APIs chilenas públicas y privadas con endpoints verificados. **43 APIs** y **115 endpoints**, organizados por categoría y mantenidos activamente.
+> Directorio curado de APIs chilenas públicas y privadas con endpoints verificados. **45 APIs** y **118 endpoints**, organizados por categoría y mantenidos activamente.
 
 ## 📑 Índice
 
@@ -17,10 +17,10 @@
 - [🏥 Salud](#cat-health) — 1 API
 - [🗺️ Geografía y Mapas](#cat-maps) — 1 API
 - [💼 Negocios y Comercio](#cat-business) — 8 APIs
-- [📢 Alertas y Notificaciones](#cat-notifications) — 3 APIs
+- [📢 Alertas y Notificaciones](#cat-notifications) — 5 APIs
 - [🤝 Comunidad y Otros](#cat-community) — 2 APIs
 
-> Última actualización: 31 de julio de 2026
+> Última actualización: 2 de agosto de 2026
 
 <a id="cat-government"></a>
 
@@ -386,7 +386,7 @@
 
 <a id="cat-notifications"></a>
 
-### 📢 Alertas y Notificaciones (3 APIs)
+### 📢 Alertas y Notificaciones (5 APIs)
 
 **APIs de alertas tempranas, emergencias y comunicaciones oficiales**
 
@@ -410,6 +410,19 @@
   - **Endpoints:**
     - ✅ `200` `JSON` `GET` [`https://api.xor.cl/sismo/recent`](https://api.xor.cl/sismo/recent) — Lista de sismos recientes en Chile. Filtro opcional: ?magnitude=5
     - ✅ `200` `JSON` `GET` [`https://api.xor.cl/sismo/historic/20100227`](https://api.xor.cl/sismo/historic/20100227) — Sismos históricos por fecha (YYYYMMDD). Filtro opcional: ?magnitude=5
+
+- **Sismos en Chile** ![Active](https://img.shields.io/badge/2_endpoints-active-brightgreen)
+  - 🌐 [https://sismosenchile.cl/](https://sismosenchile.cl/)
+  - 📝 API JSON con recompilado de los ultimos sismos de Chile (CSN) con estadisticas
+  - **Endpoints:**
+    - ✅ `200` `JSON` `GET` [`https://sismosenchile.cl/api/earthquakes/recent?limit=10`](https://sismosenchile.cl/api/earthquakes/recent?limit=10) — Ultimos sismos registrados. Parametros: limit
+    - ✅ `200` `JSON` `GET` [`https://sismosenchile.cl/api/earthquakes/stats`](https://sismosenchile.cl/api/earthquakes/stats) — Estadisticas generales: total de sismos, sismos de hoy, magnitud maxima
+
+- **Temblores 24** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+  - 🌐 [https://temblores24.cl/](https://temblores24.cl/)
+  - 📝 Mapa de sismos en tiempo real basado en el Centro Sismologico Nacional, con endpoint JSON de sismos
+  - **Endpoints:**
+    - ✅ `301` `redirect` `GET` [`https://temblores24.cl/api/sismos`](https://temblores24.cl/api/sismos) — Listado de sismos con campos: count, campos, data
 
   [⬆ Volver al índice](#top)
 
