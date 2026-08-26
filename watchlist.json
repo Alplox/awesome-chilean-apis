@@ -110,7 +110,8 @@
         "last_status_code": 404,
         "last_response_format": "error"
       }
-    ]
+    ],
+    "reason": "Endpoint principal caído (HTTP 404); se mantiene en watchlist hasta confirmar una nueva ubicación"
   },
   {
     "id": "indicadores-deldia",
@@ -133,7 +134,8 @@
         "last_status_code": 0,
         "last_response_format": "error"
       }
-    ]
+    ],
+    "reason": "Endpoint sin respuesta (timeout) en la última verificación; pendiente de re-chequeo"
   },
   {
     "id": "registro-civil",
@@ -141,7 +143,8 @@
     "url": "https://www.registrocivil.cl",
     "category": "government",
     "description": "Servicios del Registro Civil para obtención de certificados y trámites en línea",
-    "endpoints": []
+    "endpoints": [],
+    "reason": "Sin endpoint API público verificado"
   },
   {
     "id": "red-metropolitana",
@@ -178,29 +181,8 @@
         "last_checked": "2026-06-26T22:08:40.142Z",
         "last_error": "HTTP 404"
       }
-    ]
-  },
-  {
-    "id": "redmeteo",
-    "name": "RedMeteo - Red Meteorológica Aficionada de Chile",
-    "url": "https://redmeteo.cl",
-    "category": "weather",
-    "description": "Observaciones meteorológicas de estaciones ciudadanas, actualizadas cada 5 minutos en JSON o CSV",
-    "reason": "Sitio menciona que hay que contactar por correo para obtener acceso",
-    "endpoints": [
-      {
-        "id": "redmeteo-api",
-        "name": "API RedMeteo",
-        "url": "https://redmeteo.cl/api.html",
-        "method": "GET",
-        "auth": "none",
-        "format": "XML",
-        "description": "Observaciones meteorológicas cada 5 minutos",
-        "status": "active",
-        "verified": true,
-        "last_checked": "2026-06-23T04:28:42.679Z"
-      }
-    ]
+    ],
+    "reason": "Endpoints caídos en la última verificación; requieren revisión antes de promocionar a la base de datos"
   },
   {
     "id": "roison-cl",
@@ -222,5 +204,32 @@
         "last_checked": "2026-07-02T00:00:00.000Z"
       }
     ]
+  },
+  {
+    "id": "redmeteo",
+    "name": "RedMeteo - Red Meteorológica Aficionada de Chile",
+    "url": "https://redmeteo.cl/api.html",
+    "category": "weather",
+    "description": "Observaciones meteorológicas de estaciones ciudadanas chilenas, actualizadas cada 5 minutos en JSON o CSV",
+    "reason": "Sin endpoint público verificado: el acceso se solicita por correo según su documentación",
+    "endpoints": []
+  },
+  {
+    "id": "interoperabilidad-minsal",
+    "name": "Interoperabilidad MINSAL",
+    "url": "https://interoperabilidad.minsal.cl/",
+    "category": "health",
+    "description": "Arquitectura nacional de interoperabilidad en salud: guias HL7 FHIR del Indice Maestro de Pacientes (MPI) y Directorio de Prestadores (HPD)",
+    "reason": "No hay servidor FHIR publico consumible; el sitio publica guias de implementacion HL7 FHIR para integradores",
+    "endpoints": []
+  },
+  {
+    "id": "correos-chile-developers",
+    "name": "CorreosChile Developers",
+    "url": "https://developers.correos.cl/",
+    "category": "transport",
+    "description": "APIs de CorreosChile: tarifificacion, cobertura, sucursales, etiquetas y trazabilidad (SOAP v1 / REST v2)",
+    "reason": "Las APIs requieren credenciales de cliente CorreosChile; los hosts productivos no son publicos (api.correos.cl no resuelve)",
+    "endpoints": []
   }
 ]

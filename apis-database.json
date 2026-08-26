@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-08-02T19:36:17.912Z",
-  "total_endpoints": 118,
+  "last_updated": "2026-08-26T00:49:01.772Z",
+  "total_endpoints": 171,
   "apis": [
     {
       "id": "datos-gob",
@@ -757,28 +757,6 @@
       ]
     },
     {
-      "id": "sismos-gael",
-      "name": "Sismos Chile - Gael",
-      "url": "https://api.gael.cloud",
-      "category": "notifications",
-      "description": "API pública de últimos sismos en Chile",
-      "endpoints": [
-        {
-          "id": "sismos-gael-api",
-          "name": "Últimos Sismos",
-          "url": "https://api.gael.cloud/general/public/sismos",
-          "method": "GET",
-          "auth": "none",
-          "format": "JSON",
-          "description": "Últimos sismos registrados en Chile",
-          "status": "active",
-          "last_checked": "2026-07-03T02:01:06.089Z",
-          "last_status_code": 200,
-          "last_response_format": "JSON"
-        }
-      ]
-    },
-    {
       "id": "xorcl-sismo",
       "name": "XORCL - API Sismología",
       "url": "https://github.com/xorcl/api-sismo",
@@ -831,7 +809,7 @@
           "format": "JSON",
           "description": "Convierte transferencias bancarias en pagos digitales",
           "status": "active",
-          "last_checked": "2026-07-03T02:01:09.847Z",
+          "last_checked": "2026-08-26T00:49:00.072Z",
           "last_status_code": 403,
           "last_response_format": "auth_required"
         },
@@ -844,23 +822,23 @@
           "format": "JSON",
           "description": "Automatiza cobros recurrentes",
           "status": "active",
-          "last_checked": "2026-07-03T02:01:11.276Z",
+          "last_checked": "2026-08-26T00:49:01.667Z",
           "last_status_code": 405,
           "last_response_format": "Other"
         },
         {
           "id": "khipu-open-finance",
           "name": "Open Finance (API & WaaS)",
-          "url": "https://api.khipu.com/v1/ar/banking/business",
+          "url": "https://api.khipu.com/v1/cl/banking/business",
           "method": "GET",
           "auth": "api-key",
           "format": "JSON",
-          "description": "Accede a información bancaria y financiera real desde múltiples instituciones",
-          "status": "broken",
-          "last_checked": "2026-07-03T02:01:11.629Z",
+          "description": "Open Finance Khipu: datos bancarios de empresas en Chile. Requiere credenciales de partner; el gateway solo enruta rutas exactas",
+          "status": "active",
+          "last_checked": "2026-08-26T00:49:01.771Z",
           "last_status_code": 404,
-          "last_response_format": "empty",
-          "last_error": "HTTP 404"
+          "last_response_format": "auth_required",
+          "last_error": "HTTP 404 (auth required)"
         }
       ]
     },
@@ -925,16 +903,16 @@
         {
           "id": "reveniu-api",
           "name": "API Reveniu",
-          "url": "https://production.reveniu.com",
+          "url": "https://production.reveniu.com/api/v1/plans",
           "method": "POST",
           "auth": "api-key",
           "format": "JSON",
-          "description": "Cobro de suscripciones y pagos recurrentes. Endpoints disponibles: /api/plans, /api/subscriptions, /api/webhooks",
-          "status": "broken",
-          "last_checked": "2026-07-03T02:01:13.226Z",
-          "last_status_code": 404,
-          "last_response_format": "empty",
-          "last_error": "HTTP 404"
+          "description": "Planes de suscripcion via POST con header Reveniu-Secret-Key. Verificado: sin key responde 401",
+          "status": "active",
+          "last_checked": "2026-08-26T00:48:59.234Z",
+          "last_status_code": 301,
+          "last_response_format": "redirect",
+          "last_error": "HTTP 301"
         }
       ]
     },
@@ -949,16 +927,15 @@
         {
           "id": "fintoc-api",
           "name": "API Fintoc",
-          "url": "https://api.fintoc.com",
-          "method": "POST",
-          "auth": "api-key",
+          "url": "https://api.fintoc.com/v1/payment_intents",
+          "method": "GET",
+          "auth": "bearer",
           "format": "JSON",
-          "description": "Iniciación de pagos y conciliación bancaria",
-          "status": "broken",
-          "last_checked": "2026-07-03T02:01:13.615Z",
-          "last_status_code": 404,
-          "last_response_format": "empty",
-          "last_error": "HTTP 404"
+          "description": "Intentos de pago via API v1. Requiere header Authorization Bearer con secret key; sin key responde 401",
+          "status": "active",
+          "last_checked": "2026-08-26T00:48:58.625Z",
+          "last_status_code": 401,
+          "last_response_format": "auth_required"
         }
       ]
     },
@@ -1012,6 +989,7 @@
       "name": "boostr.cl - APIs de Uso Libre",
       "url": "https://docs.boostr.cl/reference/welcome",
       "category": "community",
+      "pricing": "freemium",
       "description": "Colección de APIs útiles y gratuitas para diversos propósitos",
       "endpoints": [
         {
@@ -1027,6 +1005,58 @@
           "last_status_code": 301,
           "last_response_format": "redirect",
           "last_error": "HTTP 301"
+        },
+        {
+          "id": "boostr-vehicle",
+          "name": "Consulta por Patente",
+          "url": "https://api.boostr.cl/vehicle/{patente}.json",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Información del vehículo: marca, modelo, año, motor, transmisión, tipo combustible",
+          "status": "active",
+          "last_status_code": 403,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-25T23:23:54.252Z"
+        },
+        {
+          "id": "boostr-holidays",
+          "name": "Feriados Chile",
+          "url": "https://api.boostr.cl/holidays.json",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Todos los días feriados del año actual en Chile",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-25T23:23:55.835Z"
+        },
+        {
+          "id": "boostr-sismos",
+          "name": "Sismos Chile",
+          "url": "https://api.boostr.cl/sismos.json",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Información sísmológica reciente de Chile. Fuente: sismologia.cl",
+          "status": "active",
+          "last_status_code": 403,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-25T23:23:57.813Z"
+        },
+        {
+          "id": "boostr-rut",
+          "name": "Validación RUT",
+          "url": "https://api.boostr.cl/rut/{rut}.json",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Validación de RUT chileno con dígito verificador",
+          "status": "active",
+          "last_status_code": 403,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-25T23:23:59.814Z"
         }
       ]
     },
@@ -1035,7 +1065,7 @@
       "name": "Chile Abierto",
       "url": "https://www.chileabierto.cl/api",
       "category": "government",
-      "description": "API pública con indicadores comunales de Chile: economía, demografía, educación, salud, seguridad, medio ambiente y gobierno. No requiere autenticación, 60 req/min.",
+      "description": "API pública con indicadores comunales de Chile: economía, demografía, educación, salud, seguridad, medio ambiente y gobierno. No requiere autenticación, 60 req/min",
       "endpoints": [
         {
           "id": "chileabierto-comunas",
@@ -1110,7 +1140,7 @@
       "url": "https://reqlut.com/api/v3/doc",
       "category": "business",
       "pricing": "paid",
-      "description": "API REST para integración con el ecosistema de empleabilidad universitaria Reqlut. Requiere API key para uso institucional.",
+      "description": "API REST para integración con el ecosistema de empleabilidad universitaria Reqlut. Requiere API key para uso institucional",
       "endpoints": []
     },
     {
@@ -1118,7 +1148,7 @@
       "name": "Datos para Resiliencia ante Desastres - Itrend",
       "url": "https://guides.dataverse.org/en/latest/api/index.html",
       "category": "environment",
-      "description": "Repositorio de datos abiertos sobre desastres naturales en Chile: sismos, tsunamis, incendios, volcanes, meteorología y vulnerabilidad (Harvard Dataverse). Endpoints públicos y autenticados con API key.",
+      "description": "Repositorio de datos abiertos sobre desastres naturales en Chile: sismos, tsunamis, incendios, volcanes, meteorología y vulnerabilidad (Harvard Dataverse). Endpoints públicos y autenticados con API key",
       "endpoints": [
         {
           "id": "datos-resiliencia-search",
@@ -1190,7 +1220,7 @@
       "url": "https://dataestado.cl/docs",
       "category": "government",
       "pricing": "free",
-      "description": "API pública con datos históricos y actuales de autoridades del Estado chileno: ministros, subsecretarios, gobiernos, ministerios desde 1990. Sin autenticación.",
+      "description": "API pública con datos históricos y actuales de autoridades del Estado chileno: ministros, subsecretarios, gobiernos, ministerios desde 1990. Sin autenticación",
       "endpoints": [
         {
           "id": "dataestado-health",
@@ -1291,7 +1321,7 @@
       "url": "https://data.magnet.cl/",
       "category": "finance",
       "pricing": "free",
-      "description": "API gratuita con datos públicos de Chile: monedas (UF, USD, EUR, CLF a CLP), feriados, días hábiles, Isapres y AFP. Sin autenticación.",
+      "description": "API gratuita con datos públicos de Chile: monedas (UF, USD, EUR, CLF a CLP), feriados, días hábiles, Isapres y AFP. Sin autenticación",
       "endpoints": [
         {
           "id": "magnet-data-currencies",
@@ -1353,7 +1383,7 @@
       "url": "https://filesprod.observatoriologistico.cl/assets/frontend-graficos/api-datastream-docs/datastreams_api_docs.html",
       "category": "transport",
       "pricing": "free",
-      "description": "API RESTful pública del Ministerio de Transportes con datos de logística y comercio exterior de Chile: puertos, carga aérea, ferroviaria, carretera, indicadores. Sin autenticación, 100 req/min.",
+      "description": "API RESTful pública del Ministerio de Transportes con datos de logística y comercio exterior de Chile: puertos, carga aérea, ferroviaria, carretera, indicadores. Sin autenticación, 100 req/min",
       "endpoints": [
         {
           "id": "observatorio-list",
@@ -1362,7 +1392,7 @@
           "method": "GET",
           "auth": "none",
           "format": "JSON",
-          "description": "Obtiene una lista paginada de todos los datastreams disponibles en el sistema con información básica y URLs para acceder a sus datos y metadatos.",
+          "description": "Obtiene una lista paginada de todos los datastreams disponibles en el sistema con información básica y URLs para acceder a sus datos y metadatos",
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
@@ -1375,7 +1405,7 @@
           "method": "GET",
           "auth": "none",
           "format": "JSON",
-          "description": "/datastreams/{code}/metadata. Obtiene los metadatos de un datastream específico con información sobre la estructura de datos, variables disponibles y descripciones detalladas.",
+          "description": "/datastreams/{code}/metadata. Obtiene los metadatos de un datastream específico con información sobre la estructura de datos, variables disponibles y descripciones detalladas",
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
@@ -1403,7 +1433,7 @@
       "category": "government",
       "pricing": "paid",
       "pricing_url": "https://baseapi.cl#precios",
-      "description": "API REST tributaria con datos del SII, Previred y Tesorería: consulta RCV, DTEs, contribuyentes, cesiones; emisión de boletas de honorarios y facturación electrónica. Servicio disponible hasta el 11 de diciembre de 2026 solo para suscripciones de pago activas.",
+      "description": "API REST tributaria con datos del SII, Previred y Tesorería: consulta RCV, DTEs, contribuyentes, cesiones; emisión de boletas de honorarios y facturación electrónica. Servicio disponible hasta el 11 de diciembre de 2026 solo para suscripciones de pago activas",
       "endpoints": [
         {
           "id": "baseapi-contribuyente",
@@ -1989,6 +2019,1050 @@
           "last_response_format": "redirect",
           "last_checked": "2026-08-02T19:36:17.909Z",
           "last_error": "HTTP 301"
+        }
+      ]
+    },
+    {
+      "id": "datainnovacion-corfo",
+      "name": "DataInnovación - InnovaChile CORFO",
+      "url": "https://datainnovacion.cl/api",
+      "category": "government",
+      "pricing": "free",
+      "description": "API REST con datos públicos de más de 10.300 proyectos beneficiados por InnovaChile/CORFO. Permite consultar el portafolio de proyectos de I+D+i empresarial con filtros por código, beneficiario, tipo de intervención, estado y año",
+      "endpoints": [
+        {
+          "id": "datainnovacion-proyectos",
+          "name": "Proyectos InnovaChile",
+          "url": "https://datainnovacion.cl/api/v1/proyectos",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Consulta del portafolio de proyectos. Parámetros: filter[codigo], filter[rut_beneficiario], filter[tipo_intervencion], filter[estado_data], filter[sostenible], filter[año_adjudicacion], limit. Requiere token JWT público en header Authorization",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-23T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "simpleapi",
+      "name": "SimpleAPI - Facturación Electrónica SII",
+      "url": "https://www.simpleapi.cl/",
+      "category": "business",
+      "pricing": "freemium",
+      "pricing_url": "https://www.simpleapi.cl/",
+      "description": "API REST y SDK .NET para integración con el SII: emisión de facturas, boletas, guías de despacho y cesiones. Gratuita hasta 500 req/mes",
+      "endpoints": [
+        {
+          "id": "simpleapi-dte",
+          "name": "API REST SimpleAPI",
+          "url": "https://www.simpleapi.cl/api/",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Emisión de DTEs al SII. Requiere certificado digital y CAF autorizado",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-23T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "simplefactura",
+      "name": "SimpleFactura - API Facturación Electrónica",
+      "url": "https://www.simplefactura.cl/soluciones/desarrolladores",
+      "category": "business",
+      "pricing": "paid",
+      "description": "API de SimpleFactura (ChileSystems) para emitir DTE y boletas de honorarios, recuperar PDF y XML, administrar folios, clientes, productos y sucursales. Integración con el SII en un solo paso",
+      "endpoints": [
+        {
+          "id": "simplefactura-api",
+          "name": "API SimpleFactura",
+          "url": "https://api.simplefactura.cl/",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Emisión de DTEs, boletas de honorarios, gestión de folios y clientes",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-25T01:08:00.703Z",
+          "last_error": "HTTP 404 (auth required)"
+        }
+      ]
+    },
+    {
+      "id": "apigateway-cl",
+      "name": "API Gateway CL",
+      "url": "https://www.apigateway.cl/",
+      "category": "business",
+      "pricing": "paid",
+      "description": "API REST con acceso a datos del SII, Previred, TGR y más fuentes oficiales de Chile",
+      "endpoints": [
+        {
+          "id": "apigateway-api",
+          "name": "API Gateway V2",
+          "url": "https://www.apigateway.cl/docs/api",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Consulta SII, Previred, TGR y otras fuentes oficiales",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-23T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "mercadolibre-chile",
+      "name": "MercadoLibre Chile",
+      "url": "https://developers.mercadolibre.com/",
+      "category": "business",
+      "pricing": "free",
+      "description": "API REST del marketplace MercadoLibre para Chile: productos, pedidos, envíos, usuarios. OAuth 2.0",
+      "endpoints": [
+        {
+          "id": "mercadolibre-api",
+          "name": "MercadoLibre API",
+          "url": "https://api.mercadolibre.com/sites/MLC",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "API del marketplace para Chile (MLC). Endpoints de items, categorías, pedidos, etc",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-23T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "geoportal-chile",
+      "name": "Geoportal de Chile",
+      "url": "https://geoportal.cl/",
+      "category": "maps",
+      "pricing": "free",
+      "description": "Catálogo Nacional de Información Geoespacial del Estado de Chile. Servicios WMS/WFS de múltiples instituciones públicas",
+      "endpoints": [
+        {
+          "id": "geoportal-catalogo",
+          "name": "Catálogo Geoespacial",
+          "url": "https://geoportal.cl/",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Acceso a metadatos y servicios geoespaciales del Estado",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-23T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "gtfs-red-metropolitana",
+      "name": "GTFS Red Metropolitana de Movilidad",
+      "url": "https://www.dtpm.cl/index.php/noticias/gtfs-vigente",
+      "category": "transport",
+      "pricing": "free",
+      "description": "Datos abiertos GTFS del transporte público de Santiago: ~380 servicios de bus, 136 estaciones de Metro, 11.000+ paraderos",
+      "endpoints": [
+        {
+          "id": "gtfs-feed",
+          "name": "GTFS Feed",
+          "url": "https://www.dtpm.cl/index.php/noticias/gtfs-vigente",
+          "method": "GET",
+          "auth": "none",
+          "format": "Other",
+          "description": "Descarga del feed GTFS con horarios, rutas, paradas y shapes del transporte público",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "HTML",
+          "last_checked": "2026-08-23T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "bsale",
+      "name": "Bsale - API Punto de Venta",
+      "url": "https://docs.bsale.dev/",
+      "category": "business",
+      "pricing": "paid",
+      "description": "API REST para integración con Bsale: facturación electrónica, inventario, clientes y e-commerce para PyMEs en Chile",
+      "endpoints": [
+        {
+          "id": "bsale-api",
+          "name": "API Bsale",
+          "url": "https://api.bsale.io/v1/",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "API REST para gestión de ventas, inventario y facturación",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-23T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "boufin",
+      "name": "Boufin - Open Finance API",
+      "url": "https://boufin.com/",
+      "category": "finance",
+      "pricing": "paid",
+      "description": "API de datos financieros para Chile: conecta bancos, SII, TGR y AFP a través de endpoints estandarizados. Open Banking API para bancos y fintechs",
+      "endpoints": [
+        {
+          "id": "boufin-api",
+          "name": "Boufin API",
+          "url": "https://api.boufin.com/",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "API de datos financieros: cuentas bancarias, información tributaria (SII), TGR y AFP",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-23T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "apipay",
+      "name": "Apipay - Orquestador de Pagos",
+      "url": "https://apipay.cl/",
+      "category": "business",
+      "pricing": "paid",
+      "description": "Startup chilena: orquestador de medios de pago, recargas telefónicas, criptomonedas y transferencias. API REST para integración",
+      "endpoints": [
+        {
+          "id": "apipay-api",
+          "name": "API Apipay",
+          "url": "https://api.apipay.cl/",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Orquestador de pagos: múltiples medios de pago y transferencias",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-23T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "shinkansen",
+      "name": "Shinkansen Finance - Payouts API",
+      "url": "https://shinkansen.finance/",
+      "category": "business",
+      "pricing": "paid",
+      "description": "API de payouts y transferencias bancarias automáticas en Chile. Automatiza envíos de fondos con IA. Cámara de pagos autorizada por CMF",
+      "endpoints": [
+        {
+          "id": "shinkansen-payouts",
+          "name": "Shinkansen Payouts",
+          "url": "https://api.shinkansen.finance/v1/payouts",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Envio de payouts via POST. Host actual segun docs oficiales (docs.shinkansen.tech); el antiguo api.shinkansen.tech tiene DNS roto",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-26T00:48:57.134Z",
+          "last_error": "HTTP 404 (auth required)"
+        }
+      ]
+    },
+    {
+      "id": "belvo",
+      "name": "Belvo - Open Finance API LATAM",
+      "url": "https://belvo.com/",
+      "category": "finance",
+      "pricing": "paid",
+      "description": "Open Banking API para Latinoamérica: datos bancarios, empleo y pagos. Soporta Chile, Brasil, México, Colombia",
+      "endpoints": [
+        {
+          "id": "belvo-api",
+          "name": "Belvo API",
+          "url": "https://api.belvo.com/",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Open Banking: aggregación de datos bancarios y pagos A2A",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-23T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "payu-latam",
+      "name": "PayU Latam - API de Pagos Chile",
+      "url": "https://developers.payulatam.com/",
+      "category": "business",
+      "pricing": "paid",
+      "description": "API de procesamiento de pagos para Chile: tarjetas de crédito/débito, transferencias bancarias vía Khipu, y otros medios de pago",
+      "endpoints": [
+        {
+          "id": "payu-pagos-chile",
+          "name": "Payments API Chile",
+          "url": "https://sandbox.api.payulatam.com/payments-api/4.0/service/es/CHL",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Procesamiento de pagos: tarjetas, transferencias Khipu, y otros medios en Chile",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-23T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "bidat",
+      "name": "BIDAT - Banco Integrado de Datos",
+      "url": "https://bidat.gob.cl/",
+      "category": "government",
+      "pricing": "free",
+      "description": "Datos abiertos del Ministerio de Desarrollo Social y Familia: información social, económica y de inversión pública",
+      "endpoints": [
+        {
+          "id": "bidat-datos-abiertos",
+          "name": "Datos Abiertos BIDAT",
+          "url": "https://bidat.gob.cl/datos-abiertos",
+          "method": "GET",
+          "auth": "none",
+          "format": "CSV",
+          "description": "Descarga de datos sociales y de inversión pública del Ministerio",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "HTML",
+          "last_checked": "2026-08-23T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "centro-estudios-mineduc",
+      "name": "Centro de Estudios Mineduc - Datos Abiertos",
+      "url": "https://datosabiertos.mineduc.cl/",
+      "category": "education",
+      "pricing": "free",
+      "description": "Plataforma de datos abiertos del Ministerio de Educación: 21+ conjuntos de datos sobre matrícula, docentes, establecimientos y sostenedores",
+      "endpoints": [
+        {
+          "id": "mineduc-datos-abiertos",
+          "name": "Datos Abiertos Mineduc",
+          "url": "https://datosabiertos.mineduc.cl/",
+          "method": "GET",
+          "auth": "none",
+          "format": "XML",
+          "description": "Bases de datos descargables: matrícula, docentes, establecimientos, asistentes de la educación",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "XML",
+          "last_checked": "2026-08-25T23:20:29.762Z"
+        }
+      ]
+    },
+    {
+      "id": "supereduc-datos",
+      "name": "Superintendencia de Educación - Datos Abiertos",
+      "url": "https://www.supereduc.cl/datosabiertos/",
+      "category": "education",
+      "pricing": "free",
+      "description": "Repositorio de datos y estadísticas de la Superintendencia de Educación: denuncias, mediaciones, procesos administrativos sancionatorios",
+      "endpoints": [
+        {
+          "id": "supereduc-catalogo",
+          "name": "Catálogo de Datos Supereduc",
+          "url": "https://www.supereduc.cl/datosabiertos/",
+          "method": "GET",
+          "auth": "none",
+          "format": "XML",
+          "description": "Bases de datos descargables organizadas por año con esquemas de registros detallados",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "XML",
+          "last_checked": "2026-08-25T23:23:15.244Z"
+        }
+      ]
+    },
+    {
+      "id": "agencia-calidad-educacion",
+      "name": "Agencia de Calidad de la Educación - Bases de Datos",
+      "url": "https://informacionestadistica.agenciaeducacion.cl/",
+      "category": "education",
+      "pricing": "free",
+      "description": "Bases de datos de resultados de acceso público de la Agencia de Calidad de la Educación",
+      "endpoints": [
+        {
+          "id": "agencia-calidad-bases",
+          "name": "Bases de Datos Agencia Calidad",
+          "url": "https://informacionestadistica.agenciaeducacion.cl/",
+          "method": "GET",
+          "auth": "none",
+          "format": "XML",
+          "description": "Bases de datos de resultados educativos para descarga pública",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "XML",
+          "last_checked": "2026-08-25T23:23:15.811Z"
+        }
+      ]
+    },
+    {
+      "id": "floid-registro-civil",
+      "name": "Floid - API Registro Civil Chile",
+      "url": "https://www.floid.io/servicios/api-registro-civil",
+      "category": "business",
+      "pricing": "paid",
+      "description": "API para verificación de identidad contra el Registro Civil de Chile: validación de RUT y vigencia de cédula",
+      "endpoints": [
+        {
+          "id": "floid-registro-civil-api",
+          "name": "API Registro Civil Floid",
+          "url": "https://api.floid.app/cl/civil_registry/validate_id",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Validación de cédula de identidad chilena contra el Registro Civil",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-25T23:23:16.906Z"
+        }
+      ]
+    },
+    {
+      "id": "impish-api",
+      "name": "Impish API - Vigencia Documento Identidad",
+      "url": "https://impishapi.com/vigencia-documento-identidad/",
+      "category": "business",
+      "pricing": "freemium",
+      "description": "API SaaS para consultar vigencia de cédula de identidad o pasaporte chileno. Conexión directa con Registro Civil. CLP$5 por consulta, 10 gratis/hora",
+      "endpoints": [
+        {
+          "id": "impish-vigencia",
+          "name": "Vigencia Documento Identidad",
+          "url": "https://regcivil.impish.top/query",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Vigencia de cedula/pasaporte via POST (run + tipo y numero de documento). Key por correo; tier gratuito limita 10 req/hora por IP. Verificado manualmente: POST sin key devuelve 400 INVALID_PARAM",
+          "status": "active",
+          "last_status_code": 400,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-26T00:35:35.455Z"
+        }
+      ]
+    },
+    {
+      "id": "shipit",
+      "name": "Shipit - API de Logística",
+      "url": "https://developers.shipit.cl/",
+      "category": "transport",
+      "pricing": "paid",
+      "description": "API de logística para ecommerce: múltiples couriers, cotización, seguimiento, inventario y fulfillment",
+      "endpoints": [
+        {
+          "id": "shipit-api",
+          "name": "Shipit API",
+          "url": "https://api.shipit.cl/",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "API REST: ventas, envíos, seguimiento, cotización, couriers, inventario, webhooks",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-25T23:23:19.749Z",
+          "last_error": "HTTP 404 (auth required)"
+        }
+      ]
+    },
+    {
+      "id": "starken",
+      "name": "Starken - API de Envíos",
+      "url": "https://starken.cl/integraciones",
+      "category": "transport",
+      "pricing": "paid",
+      "description": "API REST y SOAP para envíos a todo Chile: cotización, generación de órdenes de flete y seguimiento",
+      "endpoints": [
+        {
+          "id": "starken-api",
+          "name": "Starken API REST",
+          "url": "https://gateway.starken.cl/",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "API REST: cotización, ciudades, agencias, órdenes de flete",
+          "status": "broken",
+          "last_status_code": 0,
+          "last_response_format": "error",
+          "last_checked": "2026-08-25T23:23:21.557Z",
+          "last_error": "socket hang up"
+        }
+      ]
+    },
+    {
+      "id": "chilenvios",
+      "name": "Chilenvíos - API Multi-courier",
+      "url": "https://chilenvios.cl/",
+      "category": "transport",
+      "pricing": "paid",
+      "description": "API de envíos multi-courier para Chile: Starken, Chilexpress y Bluexpress en una sola integración JSON",
+      "endpoints": [
+        {
+          "id": "chilenvios-api",
+          "name": "Chilenvíos API",
+          "url": "https://multicourier.p.rapidapi.com/quote",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Cotizacion multi-courier (POST /quote): Starken, Chilexpress, Bluexpress. Hospedada en RapidAPI, requiere x-rapidapi-key",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-26T00:35:49.153Z"
+        }
+      ]
+    },
+    {
+      "id": "mercadopago-chile",
+      "name": "Mercado Pago Chile - API de Pagos",
+      "url": "https://www.mercadopago.cl/developers/es",
+      "category": "business",
+      "pricing": "freemium",
+      "description": "API de pagos para Chile: Checkout API, pagos recurrentes, Checkout Pro. Base URL: api.mercadopago.com",
+      "endpoints": [
+        {
+          "id": "mercadopago-api",
+          "name": "Mercado Pago API",
+          "url": "https://api.mercadopago.com/v1/payments",
+          "method": "POST",
+          "auth": "bearer",
+          "format": "JSON",
+          "description": "API de pagos: creación de pagos, consultas, reembolsos. Autenticación vía Access Token",
+          "status": "active",
+          "last_status_code": 405,
+          "last_response_format": "Other",
+          "last_checked": "2026-08-25T23:23:25.654Z"
+        }
+      ]
+    },
+    {
+      "id": "banco-chile-api-store",
+      "name": "Banco de Chile - API Store",
+      "url": "https://sitiospublicos.bancochile.cl/api-store",
+      "category": "finance",
+      "pricing": "paid",
+      "description": "APIs del Banco de Chile: abonos en línea, saldos y movimientos. Transferencias 24/7 a otros bancos",
+      "endpoints": [
+        {
+          "id": "banco-chile-abonos",
+          "name": "API Abonos en Línea",
+          "url": "https://sitiospublicos.bancochile.cl/api-store/abono-en-linea",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "XML",
+          "description": "Transferencias electrónicas automáticas desde cuentas de la empresa hacia clientes",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "XML",
+          "last_checked": "2026-08-25T23:23:26.619Z"
+        }
+      ]
+    },
+    {
+      "id": "clay",
+      "name": "Clay - API Bancos, SII, Contabilidad e IA",
+      "url": "https://www.clay.cl/apis-bancarias-y-sii",
+      "category": "finance",
+      "pricing": "paid",
+      "description": "API REST: movimientos bancarios (14 bancos), DTEs del SII, asientos contables. Compatible con LLMs y agentes IA. Actualización cada 2 horas",
+      "endpoints": [
+        {
+          "id": "clay-api",
+          "name": "Clay API",
+          "url": "https://api.clay.cl/",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "API de datos financieros: bancos, SII, contabilidad. Un token para todas las empresas",
+          "status": "active",
+          "last_status_code": 307,
+          "last_response_format": "redirect",
+          "last_checked": "2026-08-25T23:23:27.800Z",
+          "last_error": "HTTP 307"
+        }
+      ]
+    },
+    {
+      "id": "apipyme",
+      "name": "ApiPyme - API SII Chile",
+      "url": "https://apipyme.cl/",
+      "category": "finance",
+      "pricing": "paid",
+      "description": "API REST: Registro de Compras, Ventas, F29 y honorarios del SII. Datos actualizados cada 2 horas",
+      "endpoints": [
+        {
+          "id": "apipyme-ventas",
+          "name": "Consulta Ventas",
+          "url": "https://apipyme.cl/api/v1/ventas/{periodo}",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Descarga del libro de ventas del SII con detalle de documentos tributarios",
+          "status": "active",
+          "last_status_code": 301,
+          "last_response_format": "redirect",
+          "last_checked": "2026-08-26T00:35:44.341Z",
+          "last_error": "HTTP 301"
+        },
+        {
+          "id": "apipyme-compras",
+          "name": "Consulta Compras",
+          "url": "https://apipyme.cl/api/v1/compras/{periodo}",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Documentos recibidos consolidados para integración contable",
+          "status": "active",
+          "last_status_code": 301,
+          "last_response_format": "redirect",
+          "last_checked": "2026-08-26T00:35:46.030Z",
+          "last_error": "HTTP 301"
+        },
+        {
+          "id": "apipyme-f29",
+          "name": "Formulario 29",
+          "url": "https://apipyme.cl/api/v1/f29/{periodo}",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Datos del F29 declarado: IVA débito, crédito, ventas y compras afectas",
+          "status": "active",
+          "last_status_code": 301,
+          "last_response_format": "redirect",
+          "last_checked": "2026-08-26T00:35:48.031Z",
+          "last_error": "HTTP 301"
+        }
+      ]
+    },
+    {
+      "id": "gears",
+      "name": "Gears - API SII y Bancos",
+      "url": "https://www.gears.cl/",
+      "category": "finance",
+      "pricing": "paid",
+      "description": "API para conectar al SII y bancos de Chile: Libro IVA, boletas honorarios, F22/F29 y movimientos bancarios",
+      "endpoints": [
+        {
+          "id": "gears-api",
+          "name": "Gears API",
+          "url": "https://api.gears.cl/",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "API de datos SII y bancarios: Libro IVA, honorarios, movimientos",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-25T23:23:39.397Z",
+          "last_error": "HTTP 404 (auth required)"
+        }
+      ]
+    },
+    {
+      "id": "bice-connect",
+      "name": "BICE Connect - Banking as a Service",
+      "url": "https://banco.bice.cl/empresas/bice-connect",
+      "category": "finance",
+      "pricing": "paid",
+      "description": "Banking as a Service del Banco BICE: APIs de pagos (payout), recaudación (payin) y datos financieros. Transferencias unitarias y masivas",
+      "endpoints": [
+        {
+          "id": "bice-connect-payout",
+          "name": "API Payout",
+          "url": "https://connect.bice.cl/api/v1/payout",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Transferencias bancarias: pagos de sueldos, envíos de dinero programados, dispersión de pagos",
+          "status": "active",
+          "last_status_code": 400,
+          "last_response_format": "Other",
+          "last_checked": "2026-08-25T23:23:40.026Z"
+        }
+      ]
+    },
+    {
+      "id": "chipax",
+      "name": "Chipax - Automatización Financiera Pymes",
+      "url": "https://www.chipax.com/",
+      "category": "finance",
+      "pricing": "paid",
+      "description": "Software de automatización financiera para pymes: sincroniza bancos y SII, conciliación automática, reportes",
+      "endpoints": [
+        {
+          "id": "chipax-api",
+          "name": "Chipax API",
+          "url": "https://api.chipax.com/",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "API de datos financieros: movimientos bancarios, DTEs del SII, conciliación",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-25T23:23:41.085Z"
+        }
+      ]
+    },
+    {
+      "id": "gael-cloud",
+      "name": "Gael Cloud - API Pública Chile",
+      "url": "https://api.gael.cloud/",
+      "category": "community",
+      "pricing": "free",
+      "description": "API pública y gratuita con múltiples servicios: monedas (UF, USD, UTM), clima de estaciones meteorológicas, sismos recientes, e indicadores Previred e Impuesto Único. Rate limit: 9 req/10s",
+      "endpoints": [
+        {
+          "id": "gael-monedas",
+          "name": "Todas las Monedas",
+          "url": "https://api.gael.cloud/general/public/monedas",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Valores actuales de cambio nominal (CLP) de UF, USD, UTM y otras monedas. Datos del Banco Central, actualizados cada 30 min",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-25T23:23:41.876Z"
+        },
+        {
+          "id": "gael-monedas-codigo",
+          "name": "Moneda por Código",
+          "url": "https://api.gael.cloud/general/public/monedas/USD",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Valor actual de una moneda específica por código (USD, EUR, UF, UTM, etc.)",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-25T23:23:43.424Z"
+        },
+        {
+          "id": "gael-clima",
+          "name": "Todos los Climas",
+          "url": "https://api.gael.cloud/general/public/clima",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Datos climáticos de estaciones meteorológicas a lo largo de Chile. Fuente: Dirección Meteorológica",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-25T23:23:45.475Z"
+        },
+        {
+          "id": "gael-sismos",
+          "name": "Sismos Recientes",
+          "url": "https://api.gael.cloud/general/public/sismos",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Últimos sismos registrados en Chile. Fuente: CSN",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-25T23:23:47.479Z"
+        },
+        {
+          "id": "gael-previred",
+          "name": "Indicadores Previred",
+          "url": "https://api.gael.cloud/general/public/previred/082025",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Indicadores Previred para cálculo de remuneraciones. Parámetro: periodo en formato MMAAAA (ej: 082025)",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-25T23:23:49.492Z"
+        },
+        {
+          "id": "gael-impuesto-unico",
+          "name": "Indicadores Impuesto Único",
+          "url": "https://api.gael.cloud/general/public/impunico/082025",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Tablas de impuesto único 2da categoría. Parámetro: periodo en formato MMAAAA (ej: 082025)",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-25T23:23:51.441Z"
+        }
+      ]
+    },
+    {
+      "id": "energia-abierta",
+      "name": "Energía Abierta - CNE",
+      "url": "http://energiaabierta.cl/",
+      "category": "government",
+      "pricing": "free",
+      "description": "Plataforma de datos abiertos del sector energético de Chile de la Comisión Nacional de Energía: distribución geográfica de infraestructura, redes de distribución y datos de generación",
+      "endpoints": [
+        {
+          "id": "energia-abierta-catalogo",
+          "name": "Catálogo de Datos Abiertos Energéticos",
+          "url": "http://energiaabierta.cl/",
+          "method": "GET",
+          "auth": "none",
+          "format": "XML",
+          "description": "Acceso a datasets del sector energético: generación, distribución, subestaciones y redes",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "XML",
+          "last_checked": "2026-08-25T23:23:52.939Z"
+        }
+      ]
+    },
+    {
+      "id": "duodte",
+      "name": "DUODTE - API Facturación Electrónica SII",
+      "url": "https://duodte.cl/api-docs.html",
+      "category": "business",
+      "pricing": "freemium",
+      "description": "API REST para integración con el SII de Chile: emisión de facturas, boletas, notas de crédito, guías de despacho y cesión de documentos. Respaldo automático y PDF",
+      "endpoints": [
+        {
+          "id": "duodte-emision",
+          "name": "Emisión de DTE",
+          "url": "https://api.duodte.cl/v1/dte",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Emisión de documentos tributarios electrónicos al SII",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-25T23:35:39.868Z",
+          "last_error": "HTTP 404 (auth required)"
+        }
+      ]
+    },
+    {
+      "id": "chilexpress-developers",
+      "name": "Chilexpress Developers - API Logística",
+      "url": "https://developers.wschilexpress.com/",
+      "category": "transport",
+      "pricing": "paid",
+      "description": "API REST de Chilexpress para integración logística: cotización de envíos, generación de órdenes de transporte, seguimiento (tracking), coberturas y georeferenciación de direcciones. Requiere registro y TCC",
+      "endpoints": [
+        {
+          "id": "chilexpress-cobertura",
+          "name": "API Cobertura",
+          "url": "https://services.wschilexpress.com/georeference/api/v1/regions",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Listado de regiones con cobertura. Base georeference: tambien expone comunas, calles, numeraciones y oficinas de entrega",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-08-25T23:58:05.696Z"
+        },
+        {
+          "id": "chilexpress-cotizador",
+          "name": "API Cotizador",
+          "url": "https://services.wschilexpress.com/rating/api/v1.0/rates/courier",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Tarificacion de envios courier (POST). Requiere header Ocp-Apim-Subscription-Key. Existe variante /rates/business para tarifas empresariales",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-25T23:58:07.121Z",
+          "last_error": "HTTP 404 (auth required)"
+        },
+        {
+          "id": "chilexpress-envios",
+          "name": "API Envíos",
+          "url": "https://services.wschilexpress.com/transport-orders/api/v1.0/transport-orders",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Generacion y consulta de ordenes de transporte (OT) y etiquetas (POST). Requiere header Ocp-Apim-Subscription-Key",
+          "status": "active",
+          "last_status_code": 400,
+          "last_response_format": "Other",
+          "last_checked": "2026-08-25T23:58:09.121Z"
+        }
+      ]
+    },
+    {
+      "id": "tupana",
+      "name": "Tupana - API Facturación Electrónica SII",
+      "url": "https://www.tupana.ai/api-factura",
+      "category": "business",
+      "pricing": "paid",
+      "description": "API REST que replica el facturador MiPyme del SII: emisión de facturas, boletas, notas de crédito y más. Multicredencial, webhooks, 100% programable",
+      "endpoints": [
+        {
+          "id": "tupana-api",
+          "name": "API Tupana",
+          "url": "https://api.tupana.ai/v1/",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Facturación electrónica al SII: emisión de DTEs, consultas y webhooks",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-25T23:24:06.022Z",
+          "last_error": "HTTP 404 (auth required)"
+        }
+      ]
+    },
+    {
+      "id": "openfactura",
+      "name": "OpenFactura - API Facturación Electrónica Haulmer",
+      "url": "https://docsapi-openfactura.haulmer.com/",
+      "category": "business",
+      "pricing": "freemium",
+      "description": "API RESTful de Haulmer para facturación electrónica al SII: emisión de facturas (33), boletas (39), notas de crédito (61), guías de despacho (52) y más. Entorno de desarrollo gratuito con CAF simulado. Rate limit: 3 req/s, 100 req/min",
+      "endpoints": [
+        {
+          "id": "openfactura-emision",
+          "name": "Emisión de DTE",
+          "url": "https://api.haulmer.com/v2/dte/document",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Emisión de documentos tributarios electrónicos al SII. Devuelve XML, PDF, timbre y resolución",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-25T23:24:06.910Z"
+        },
+        {
+          "id": "openfactura-dev",
+          "name": "Emisión Dev (gratuito)",
+          "url": "https://dev-api.haulmer.com/v2/dte/document",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Entorno de desarrollo gratuito para pruebas de integración sin cuenta",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-25T23:24:07.554Z"
+        }
+      ]
+    },
+    {
+      "id": "camara-diputados",
+      "name": "Cámara de Diputados - Datos Abiertos Legislativos",
+      "url": "https://www.camara.cl/transparencia/datosAbiertos.aspx",
+      "category": "government",
+      "pricing": "free",
+      "description": "Portal de datos abiertos de la Cámara de Diputados de Chile: sesiones, votaciones, proyectos de ley, diputados y transparencia activa. API SOAP/REST",
+      "endpoints": [
+        {
+          "id": "camara-diputados-api",
+          "name": "API Cámara de Diputados",
+          "url": "https://www.camara.cl/transparencia/datosAbiertos.aspx",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Catalogo de metodos SOAP/REST de datos abiertos: sesiones, votaciones, proyectos de ley y datos de diputados",
+          "status": "active",
+          "last_status_code": 403,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-25T23:35:39.356Z"
+        }
+      ]
+    },
+    {
+      "id": "senado-chile",
+      "name": "Senado de Chile - Datos Abiertos Legislativos",
+      "url": "https://www.senado.cl/transparencia/datos-abiertos-legislativos",
+      "category": "government",
+      "pricing": "free",
+      "description": "Portal de datos abiertos del Senado de Chile: senadores, sesiones, proyectos de ley, votaciones y transparencia activa",
+      "endpoints": [
+        {
+          "id": "senado-datos-abiertos",
+          "name": "Datos Abiertos Senado",
+          "url": "https://www.senado.cl/transparencia/datos-abiertos-legislativos",
+          "method": "GET",
+          "auth": "none",
+          "format": "XML",
+          "description": "Descarga de datos abiertos legislativos: senadores, proyectos, votaciones y sesiones",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "XML",
+          "last_checked": "2026-08-25T23:35:39.127Z"
+        }
+      ]
+    },
+    {
+      "id": "facturador-pulsando",
+      "name": "Facturador Pulsando - API Facturación Electrónica SII",
+      "url": "https://docs.facturador.pulsandotech.cl/",
+      "category": "business",
+      "pricing": "paid",
+      "description": "API REST completa para emisión y consulta de DTEs chilenos: facturas, boletas, notas de crédito/débito, guías de despacho. Multi-RUT, RCV, folios (CAF), webhooks, sandbox gratuito, integración MCP/IA. OpenAPI 1.3",
+      "endpoints": [
+        {
+          "id": "pulsando-emision",
+          "name": "Emisión de DTE",
+          "url": "https://api.facturador.pulsandotech.cl/api/public/v1/dte",
+          "method": "POST",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Emisión de DTEs al SII con estados asíncronos. Soporta factura (33/34), boleta (39/41), NC (61/56), ND (55/46), GD (52)",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-25T23:35:40.555Z"
+        },
+        {
+          "id": "pulsando-rcv",
+          "name": "RCV - Registro Compras y Ventas",
+          "url": "https://api.facturador.pulsandotech.cl/api/public/v1/rcv",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Consulta y sincronización del Registro de Compras y Ventas desde el SII",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-25T23:35:42.121Z"
+        },
+        {
+          "id": "pulsando-contribuyentes",
+          "name": "Consulta Contribuyente SII",
+          "url": "https://api.facturador.pulsandotech.cl/api/public/v1/contribuyentes",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Consulta de contribuyente en el padrón del SII",
+          "status": "active",
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-08-25T23:35:44.128Z",
+          "last_error": "HTTP 404 (auth required)"
         }
       ]
     }

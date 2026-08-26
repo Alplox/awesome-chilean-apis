@@ -1,19 +1,112 @@
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  ALLOWED_STATUSES,
+  ALLOWED_METHODS,
+  ALLOWED_AUTH,
+  ALLOWED_FORMATS,
+  ALLOWED_PRICING,
+} from '../../lib/api-utils.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..', '..');
 
+/**
+ * Lee y parsea un archivo JSON relativo a la raíz del proyecto.
+ *
+ * @param {string} path Ruta relativa (ej. `'apis-database.json'`).
+ * @returns {any} Contenido parseado.
+ */
 function readJson(path) {
   return JSON.parse(readFileSync(join(ROOT, path), 'utf-8'));
 }
 
+/**
+ * Escribe un archivo de texto relativo a la raíz del proyecto.
+ *
+ * @param {string} path Ruta relativa.
+ * @param {string} content Contenido completo del archivo.
+ */
 function writeFile(path, content) {
   writeFileSync(join(ROOT, path), content, 'utf-8');
 }
 
-function updateAgentsMd(tree) {
+/**
+ * Formatea una lista de valores permitidos como código inline.
+ *
+ * @param {string[]} values Valores permitidos de un campo.
+ * @returns {string} Lista tipo `` `GET`, `POST`, ... ``.
+ */
+function formatAllowed(values) {
+  return values.map((v) => `\`${v}\``).join(', ');
+}
+
+/**
+ * Calcula estadísticas agregadas del directorio para el snapshot.
+ *
+ * @param {{ apis: any[] }} database Base de datos completa.
+ * @returns {{ totalApis: number, totalEndpoints: number, activeEndpoints: number, brokenEndpoints: number, offlineEndpoints: number, byCategory: Map<string, { apis: number, endpoints: number, active: number }> }}
+ *   Totales globales y desglose por categoría.
+ */
+function computeStats(database) {
+  /** @type {Map<string, { apis: number, endpoints: number, active: number }>} */
+  const byCategory = new Map();
+  let activeEndpoints = 0;
+  let brokenEndpoints = 0;
+  let offlineEndpoints = 0;
+
+  for (const api of database.apis) {
+    const entry = byCategory.get(api.category) || { apis: 0, endpoints: 0, active: 0 };
+    entry.apis++;
+    for (const ep of api.endpoints) {
+      entry.endpoints++;
+      if (ep.status === 'active') {
+        entry.active++;
+        activeEndpoints++;
+      } else if (ep.status === 'broken') {
+        brokenEndpoints++;
+      } else if (ep.status === 'offline') {
+        offlineEndpoints++;
+      }
+    }
+    byCategory.set(api.category, entry);
+  }
+
+  return {
+    totalApis: database.apis.length,
+    totalEndpoints: database.apis.reduce((s, a) => s + a.endpoints.length, 0),
+    activeEndpoints,
+    brokenEndpoints,
+    offlineEndpoints,
+    byCategory,
+  };
+}
+
+/** Descripción semántica de cada estado posible de un endpoint. */
+const STATUS_DESCRIPTIONS = {
+  active: 'Responde correctamente (2xx; también 401/403/redirect: el servicio existe y exige credenciales o redirige)',
+  stale: 'Sin verificación hace más de 90 días (STALE_THRESHOLD_DAYS)',
+  broken: 'Responde con error (404/410/5xx)',
+  offline: 'Host inaccesible: DNS no resuelve o conexión rechazada',
+  endpoint_empty: 'Responde 2xx pero sin contenido',
+};
+
+/**
+ * Regenera AGENTS.md con la estructura actual del repositorio,
+ * el flujo de datos, los scripts disponibles, el formato de entrada
+ * (base de datos y watchlist), valores permitidos, significado de estados,
+ * categorías inline y snapshot de estadísticas.
+ *
+ * @param {string} tree Árbol de directorios pre-renderizado (ver {@link buildTree}).
+ * @param {{ apis: any[] }} database Base de datos completa.
+ * @param {Record<string, { label: string, description: string, order: number }>} categories Categorías definidas.
+ */
+function updateAgentsMd(tree, database, categories) {
+  const stats = computeStats(database);
+
+  const categoriesOrdered = Object.entries(categories).sort((a, b) => a[1].order - b[1].order);
+
   const lines = [
     '# AGENTS.md — awesome-chilean-apis',
     '',
@@ -23,25 +116,62 @@ function updateAgentsMd(tree) {
     '',
     'Directorio curado de APIs chilenas públicas y privadas, con endpoints verificados, health checks automáticos y documentación centralizada.',
     '',
+    `**Snapshot actual:** ${stats.totalApis} APIs · ${stats.totalEndpoints} endpoints · ${stats.activeEndpoints} activos ✅ · ${stats.brokenEndpoints} rotos ❌ · ${stats.offlineEndpoints} offline 📡`,
+    '',
     '## 📁 Estructura del repositorio',
     '',
     '```',
     tree,
     '```',
     '',
+    '## 🔄 Flujo de datos',
+    '',
+    '```',
+    'humano/PR edita apis-database.json o watchlist.json',
+    '        │',
+    '        ▼',
+    'npm run validate:json ──► valida estructura de todos los JSON',
+    '        │',
+    '        ▼',
+    'npm run validate ───────► health checks HTTP; actualiza status/last_checked en la DB',
+    '        │',
+    '        ▼',
+    'npm run generate ───────► regenera README.md y este archivo (AGENTS.md)',
+    '```',
+    '',
+    '- El CI (`.github/workflows/validate.yml`) ejecuta `validate:json` + `generate` y falla si hay cambios sin regenerar.',
+    '- Los estados de endpoints solo los escribe `scripts/core/validate_apis.js`; no editarlos a mano.',
+    '',
     '## 🚀 Scripts disponibles',
     '',
     '| Comando | Descripción |',
     '|---------|-------------|',
     '| `npm run generate` | Regenera README.md desde `apis-database.json` + `categories.json` |',
-    '| `npm run validate` | Health checks de todos los endpoints |',
-    '| `npm run validate:json` | Valida estructura de JSONs |',
+    '| `npm run validate` | Health checks de los endpoints; con `--update` persiste resultados en la DB |',
+    '| `npm run validate:json` | Valida estructura de database + watchlist + categorías + regiones. Exit 1 si hay errores |',
+    '| `npm run find:duplicates` | Detecta IDs/URLs duplicados en database y watchlist (y cruces entre ambos). Exit 1 si encuentra |',
     '| `npm run lint` | ESLint |',
+    '| `npm run ci` | `validate:json` + `generate` + `git diff --exit-code README.md` |',
     '',
-    '## 📝 Cómo agregar una API',
+    '### Flags de `npm run validate`',
+    '',
+    '```',
+    '--id=<id>         valida una sola API por su ID',
+    '--url=<u>         valida una URL suelta (no toca la base de datos)',
+    '--status=<s>      filtra por estado del endpoint (active, broken, ...)',
+    '--limit=<n>       valida solo las primeras N APIs',
+    '--missing-date    solo endpoints sin last_known_item_date',
+    '--update          escribe los resultados en apis-database.json',
+    '```',
+    '',
+    '## 📝 Cómo agregar una API (base de datos)',
     '',
     '1. Agrega la entrada en `apis-database.json` dentro del array `"apis"`',
-    '2. Ejecuta `npm run generate` para regenerar README',
+    '2. Ejecuta `npm run validate:json` para verificar la estructura',
+    '3. Ejecuta `npm run generate` para regenerar README',
+    '',
+    'Usa esta vía cuando la API tenga **al menos un endpoint verificado** (que responda o exija credenciales).',
+    'Si no hay endpoints comprobables, usa el watchlist (ver sección siguiente).',
     '',
     '### Formato de entrada en apis-database.json',
     '',
@@ -70,24 +200,72 @@ function updateAgentsMd(tree) {
     }, null, 2),
     '```',
     '',
-    '## 🔄 Auto-evolución',
+    '**Valores permitidos por campo:**',
     '',
-    '- Al ejecutar `npm run generate`, se actualiza AGENTS.md reflejando la estructura real del proyecto',
-    '- Los scripts de validación mantienen `apis-database.json` actualizado con estados de endpoints',
-    '- AGENTS.md se regenera con la lista actual de directorios y archivos del proyecto',
+    '| Campo | Valores válidos |',
+    '|-------|-----------------|',
+    `| \`method\` | ${formatAllowed(ALLOWED_METHODS)} |`,
+    `| \`auth\` | ${formatAllowed(ALLOWED_AUTH)} |`,
+    `| \`format\` | ${formatAllowed(ALLOWED_FORMATS)} |`,
+    `| \`pricing\` | ${formatAllowed(ALLOWED_PRICING)} |`,
+    `| \`status\` | ${formatAllowed(ALLOWED_STATUSES)} |`,
+    '',
+    '**Significado de cada estado (`status`):**',
+    '',
+    '| Estado | Significado |',
+    '|--------|-------------|',
+    ...Object.entries(STATUS_DESCRIPTIONS).map(([k, v]) => `| \`${k}\` | ${v} |`),
+    '',
+    '> Los IDs (`id` de API y de endpoint) deben ser únicos y en kebab-case.',
+    '',
+    '## 🗂️ Cómo proponer una API (watchlist)',
+    '',
+    'Usa `watchlist.json` cuando la API/sitio **no tiene un endpoint público verificado**:',
+    'documentación que exige registro, acceso por correo, endpoints caídos, etc.',
+    '',
+    '### Formato de entrada en watchlist.json',
+    '',
+    '```json',
+    JSON.stringify({
+      id: 'nombre-candidato',
+      name: 'Nombre Oficial',
+      url: 'https://sitio.oficial.cl/documentacion',
+      category: 'government',
+      description: 'Qué datos ofrecería la API',
+      reason: 'Por qué aún no está en la base de datos (sin endpoint verificado, caído, etc.)',
+      endpoints: [],
+    }, null, 2),
+    '```',
+    '',
+    '- El campo `reason` es **obligatorio** y debe explicar qué falta para promocionarla.',
+    '- Cuando exista un endpoint verificado, mueve la entrada a `apis-database.json` y elimínala del watchlist.',
+    '- `npm run find:duplicates` detecta entradas presentes en ambos archivos a la vez.',
     '',
     '## 🏷️ Categorías disponibles',
     '',
-    'Ver `categories.json` para la lista completa de categorías con sus slugs.',
+    '| Categoría | Clave (`category`) | APIs |',
+    '|-----------|--------------------|------|',
+    ...categoriesOrdered.map(([key, cat]) => {
+      const count = stats.byCategory.get(key)?.apis || 0;
+      return `| ${cat.label} | \`${key}\` | ${count} |`;
+    }),
     '',
     '## 🌐 Regiones disponibles',
     '',
-    'Ver `regions.json` para el mapa de regiones de Chile.',
+    '`regions.json` contiene el mapa de regiones de Chile (datos de referencia para futuras funciones de filtrado geográfico; actualmente ningún script lo consume).',
     '',
   ];
   writeFile('AGENTS.md', lines.join('\n'));
 }
 
+/**
+ * Construye recursivamente el árbol de directorios del repo
+ * en formato ASCII (estilo `tree`), excluyendo artefactos locales.
+ *
+ * @param {string} dir Directorio a recorrer.
+ * @param {string} [prefix=''] Prefijo de indentación para llamadas recursivas.
+ * @returns {string} Árbol renderizado como texto multilínea.
+ */
 function buildTree(dir, prefix = '') {
   const entries = readdirSync(dir, { withFileTypes: true }).sort((a, b) => {
     if (a.isDirectory() && !b.isDirectory()) return -1;
@@ -102,11 +280,12 @@ function buildTree(dir, prefix = '') {
     const connector = isLast ? '└── ' : '├── ';
     const fullPath = join(dir, entry.name);
 
-    if (entry.name.startsWith('node_modules') || entry.name === 'package-lock.json' || entry.name === '.git') {
+    const HIDDEN_ENTRIES = ['node_modules', 'package-lock.json', '.git', '.gitattributes', '.gitignore', '.markdownlint.jsonc'];
+    if (HIDDEN_ENTRIES.some((h) => entry.name === h || entry.name.startsWith(h))) {
       continue;
     }
 
-    const description = getDescription(entry.name, fullPath);
+    const description = getDescription(entry.name);
 
     result += prefix + connector + entry.name + description + '\n';
 
@@ -118,7 +297,14 @@ function buildTree(dir, prefix = '') {
   return result;
 }
 
-function getDescription(name, fullPath) {
+/**
+ * Devuelve la anotación descriptiva de un archivo conocido,
+ * o string vacío para archivos sin descripción.
+ *
+ * @param {string} name Nombre del archivo o directorio.
+ * @returns {string} Descripción con prefijo `'  ← ...'`, o vacío.
+ */
+function getDescription(name) {
   const descs = {
     'apis-database.json': '  ← Base de datos central de APIs (NO EDITABLE MANUALMENTE)',
     'watchlist.json': '  ← APIs candidatas sin endpoints verificados',
@@ -132,11 +318,11 @@ function getDescription(name, fullPath) {
     'generate.js': '  ← Genera README.md y actualiza AGENTS.md',
     'validate_apis.js': '  ← Health checks de endpoints',
     'validate-json.js': '  ← Valida estructura JSON (CI)',
+    'find-duplicates.js': '  ← Detecta IDs/URLs duplicados',
     'package.json': '  ← Dependencias y scripts',
     'eslint.config.js': '  ← Configuración ESLint',
     'validate.yml': '  ← CI: valida JSON + health checks',
-    'find-duplicates.js': '',
-    'add-site-endpoints.js': '',
+    'scripts-readme.md': '  ← Documentación de los scripts',
     'api-validator.js': '  ← Validación de endpoints REST',
     'network-utils.js': '  ← Utilidades de red',
     'cli-args.js': '  ← Parseo de args CLI',
@@ -145,20 +331,25 @@ function getDescription(name, fullPath) {
     'prompter.js': '  ← Prompts interactivos',
   };
 
-  if (descs[name]) return descs[name];
-
-  if (name.endsWith('.js') && !fullPath.includes('node_modules')) return '';
-  if (name.endsWith('.json') && !fullPath.includes('node_modules')) return '';
-
-  return '';
+  return descs[name] || '';
 }
 
-function generateReadme(database, categories, _regions) {
+/**
+ * Renderiza el README.md completo a partir de la base de datos:
+ * índice por categoría, tarjetas por API con badges y listado de endpoints.
+ *
+ * @param {{ apis: any[], total_endpoints?: number, last_updated?: string }} database Base de datos completa.
+ * @param {Record<string, { label: string, description: string, order: number }>} categories Mapa de categorías definidas.
+ * @returns {void} Escribe `README.md` en disco e imprime un resumen por consola.
+ */
+function generateReadme(database, categories) {
   database.total_endpoints = database.apis.reduce((s, a) => s + a.endpoints.length, 0);
   const { apis, total_endpoints, last_updated } = database;
 
+  /** @type {[string, { label: string, description: string, order: number }][]} */
   const categoriesOrdered = Object.entries(categories).sort((a, b) => a[1].order - b[1].order);
 
+  /** @type {Record<string, any[]>} */
   const apisByCategory = {};
   for (const api of apis) {
     if (!apisByCategory[api.category]) apisByCategory[api.category] = [];
@@ -256,26 +447,14 @@ function generateReadme(database, categories, _regions) {
   console.log(`✅ README.md generado: ${apis.length} APIs, ${total_endpoints} endpoints`);
 }
 
+/** Punto de entrada: regenera README.md y AGENTS.md. */
 function main() {
   const database = readJson('apis-database.json');
   const categories = readJson('categories.json');
-  const regions = readJson('regions.json');
+  readJson('regions.json'); // Validado por validate-json.js; se lee aquí para fallar temprano si falta.
 
-  generateReadme(database, categories, regions);
-
-const tree = buildTree(ROOT);
-  updateAgentsMd(`/\n${tree.replace(`${ROOT}\\`, '').replace(`${ROOT}/`, '')}`);
-
-  const relativeTree = buildTree(ROOT).split('\n').map((line) => {
-    return line;
-  }).join('\n');
-
-  const cleanTree = '\\\n' + relativeTree
-    .split('\n')
-    .filter((l) => !l.includes('node_modules') && !l.includes('package-lock.json') && !l.includes('.git'))
-    .join('\n');
-
-  updateAgentsMd('/' + cleanTree);
+  generateReadme(database, categories);
+  updateAgentsMd('/\n' + buildTree(ROOT), database, categories);
 
   console.log('✅ AGENTS.md actualizado con estructura del proyecto');
 }

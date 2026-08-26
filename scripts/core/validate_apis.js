@@ -6,20 +6,49 @@ import { clearSiteCache } from '../../lib/network-utils.js';
 
 const DATABASE_PATH = 'apis-database.json';
 
+/** Imprime el banner inicial del validador. */
 function printBanner() {
   console.log('\n========================================');
   console.log('  🔍 awesome-chilean-apis — Validator');
   console.log('========================================\n');
 }
 
-async function validateAll() {
+/**
+ * Valida una URL suelta (modo `--url`) sin tocar la base de datos.
+ *
+ * @param {string} url URL a verificar.
+ */
+async function validateSingleUrl(url) {
+  printBanner();
+  console.log(`Validating single URL: ${url}\n`);
+  const startTime = Date.now();
+  const result = await checkEndpoint(url);
+  const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+  const icon = result.status === 'active' ? '✅' : result.status === 'stale' ? '⚠️' : '❌';
+  const codeStr = result.last_status_code ? ` ${result.last_status_code}` : '';
+  const fmtStr = result.last_response_format ? ` ${result.last_response_format}` : '';
+  const errStr = result.error ? ` — ${result.error}` : '';
+  console.log(`  ${icon}  ${url} →${codeStr}${fmtStr} (${elapsed}s)${errStr}`);
+}
+
+/**
+ * Ejecuta health checks sobre los endpoints de la base de datos,
+ * respetando filtros CLI (`--id`, `--status`, `--missing-date`, `--limit`)
+ * y el rate limiter global por dominio.
+ *
+ * Si se pasan `--update` o `--automatic`, persiste los resultados
+ * (estado, código HTTP, formato y fecha de verificación) en la base de datos.
+ *
+ * @param {{ id?: string, status?: string, missingDate?: boolean, limit?: number, update?: boolean, automatic?: boolean }} args Opciones parseadas por {@link parseArgs}.
+ */
+async function validateAll(args) {
   printBanner();
   clearSiteCache();
 
-  const args = parseArgs();
   const database = readJson(DATABASE_PATH);
   const { apis } = database;
 
+  /** @type {typeof apis} */
   let apisToValidate = apis;
 
   if (args.id) {
@@ -28,20 +57,6 @@ async function validateAll() {
       console.error(`❌ No API found with id "${args.id}"`);
       process.exit(1);
     }
-  }
-
-  if (args.url) {
-    printBanner();
-    console.log(`Validating single URL: ${args.url}\n`);
-    const startTime = Date.now();
-    const result = await checkEndpoint(args.url);
-    const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
-    const icon = result.status === 'active' ? '✅' : result.status === 'stale' ? '⚠️' : '❌';
-    const codeStr = result.last_status_code ? ` ${result.last_status_code}` : '';
-    const fmtStr = result.last_response_format ? ` ${result.last_response_format}` : '';
-    const errStr = result.error ? ` — ${result.error}` : '';
-    console.log(`  ${icon}  ${args.url} →${codeStr}${fmtStr} (${elapsed}s)${errStr}`);
-    return;
   }
 
   if (args.limit) {
@@ -165,7 +180,42 @@ async function validateAll() {
   globalRateLimiter.dispose();
 }
 
-validateAll().catch((err) => {
+/**
+ * Punto de entrada del validador.
+ * Prioriza el modo `--url` (verificación puntual); si no,
+ * ejecuta la validación completa/filtrada de la base de datos.
+ */
+async function main() {
+  const args = parseArgs();
+
+  if (args.help) {
+    console.log(`
+Usage: node scripts/core/validate_apis.js [options] [api-id]
+
+Options:
+  --id=<id>         Validate a single API by ID
+  --url=<u>         Validate a single URL (does not touch the database)
+  --status=<s>      Only validate endpoints with the given status
+  --limit=<n>       Only validate the first N APIs
+  --missing-date    Only validate endpoints without last_known_item_date
+  --update          Write results to the database
+  --automatic       Same as --update but silent about changes
+  --dry-run         Run without writing changes
+  --help            Show this help
+`);
+    return;
+  }
+
+  if (args.url) {
+    await validateSingleUrl(args.url);
+    globalRateLimiter.dispose();
+    return;
+  }
+
+  await validateAll(args);
+}
+
+main().catch((err) => {
   console.error('Fatal error:', err);
   globalRateLimiter.dispose();
   process.exit(1);

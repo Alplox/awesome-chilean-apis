@@ -2,29 +2,30 @@
 # 🇨🇱 Awesome Chilean APIs
 
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/alplox/awesome-chilean-apis)
-![APIs](https://img.shields.io/badge/apis-45-brightgreen)
-![Endpoints](https://img.shields.io/badge/endpoints-118-blue)
+![APIs](https://img.shields.io/badge/apis-82-brightgreen)
+![Endpoints](https://img.shields.io/badge/endpoints-171-blue)
 
-> Directorio curado de APIs chilenas públicas y privadas con endpoints verificados. **45 APIs** y **118 endpoints**, organizados por categoría y mantenidos activamente.
+> Directorio curado de APIs chilenas públicas y privadas con endpoints verificados. **82 APIs** y **171 endpoints**, organizados por categoría y mantenidos activamente.
 
 ## 📑 Índice
 
-- [🏛️ Gobierno y Datos Públicos](#cat-government) — 11 APIs
-- [💰 Finanzas e Impuestos](#cat-finance) — 10 APIs
-- [🚌 Transporte y Tránsito](#cat-transport) — 2 APIs
+- [🏛️ Gobierno y Datos Públicos](#cat-government) — 16 APIs
+- [💰 Finanzas e Impuestos](#cat-finance) — 18 APIs
+- [🚌 Transporte y Tránsito](#cat-transport) — 7 APIs
 - [🌤️ Clima y Meteorología](#cat-weather) — 1 API
 - [🌿 Medio Ambiente](#cat-environment) — 4 APIs
+- [📚 Educación](#cat-education) — 3 APIs
 - [🏥 Salud](#cat-health) — 1 API
-- [🗺️ Geografía y Mapas](#cat-maps) — 1 API
-- [💼 Negocios y Comercio](#cat-business) — 8 APIs
-- [📢 Alertas y Notificaciones](#cat-notifications) — 5 APIs
-- [🤝 Comunidad y Otros](#cat-community) — 2 APIs
+- [🗺️ Geografía y Mapas](#cat-maps) — 2 APIs
+- [💼 Negocios y Comercio](#cat-business) — 23 APIs
+- [📢 Alertas y Notificaciones](#cat-notifications) — 4 APIs
+- [🤝 Comunidad y Otros](#cat-community) — 3 APIs
 
-> Última actualización: 2 de agosto de 2026
+> Última actualización: 25 de agosto de 2026
 
 <a id="cat-government"></a>
 
-### 🏛️ Gobierno y Datos Públicos (11 APIs)
+### 🏛️ Gobierno y Datos Públicos (16 APIs)
 
 **APIs gubernamentales, datos abiertos y servicios del Estado**
 
@@ -84,7 +85,7 @@
 
 - **Chile Abierto** ![Active](https://img.shields.io/badge/5_endpoints-active-brightgreen)
   - 🌐 [https://www.chileabierto.cl/api](https://www.chileabierto.cl/api)
-  - 📝 API pública con indicadores comunales de Chile: economía, demografía, educación, salud, seguridad, medio ambiente y gobierno. No requiere autenticación, 60 req/min.
+  - 📝 API pública con indicadores comunales de Chile: economía, demografía, educación, salud, seguridad, medio ambiente y gobierno. No requiere autenticación, 60 req/min
   - **Endpoints:**
     - ✅ `200` `JSON` `GET` [`https://chileabierto.cl/api/v1/comunas`](https://chileabierto.cl/api/v1/comunas) — Retorna listado de todas las comunas con datos básicos. Filtros: region, search
     - ✅ `200` `JSON` `GET` [`https://chileabierto.cl/api/v1/comunas/13101`](https://chileabierto.cl/api/v1/comunas/13101) — Retorna datos de una comuna específica con todos sus indicadores. Parámetro: code
@@ -94,7 +95,7 @@
 
 - **DataEstado - API de Autoridades del Estado** ![Active](https://img.shields.io/badge/7_endpoints-active-brightgreen)
   - 🌐 [https://dataestado.cl/docs](https://dataestado.cl/docs)
-  - 📝 API pública con datos históricos y actuales de autoridades del Estado chileno: ministros, subsecretarios, gobiernos, ministerios desde 1990. Sin autenticación.
+  - 📝 API pública con datos históricos y actuales de autoridades del Estado chileno: ministros, subsecretarios, gobiernos, ministerios desde 1990. Sin autenticación
   - **Endpoints:**
     - ✅ `200` `JSON` `GET` [`https://api.dataestado.cl/health`](https://api.dataestado.cl/health) — Devuelve estado de la API, nombre del servicio y timestamp en formato ISO 8601
     - ✅ `200` `JSON` `GET` [`https://api.dataestado.cl/v1/autoridades`](https://api.dataestado.cl/v1/autoridades) — Listado completo de ministros y subsecretarios registrados, con filtro opcional por gobierno (ej: ?gobierno=Boric)
@@ -106,7 +107,7 @@
 
 - **BaseAPI - Infraestructura Tributaria** ![Active](https://img.shields.io/badge/11_endpoints-active-brightgreen) [![paid](https://img.shields.io/badge/paid-red)](https://baseapi.cl#precios)
   - 🌐 [https://baseapi.cl](https://baseapi.cl)
-  - 📝 API REST tributaria con datos del SII, Previred y Tesorería: consulta RCV, DTEs, contribuyentes, cesiones; emisión de boletas de honorarios y facturación electrónica. Servicio disponible hasta el 11 de diciembre de 2026 solo para suscripciones de pago activas.
+  - 📝 API REST tributaria con datos del SII, Previred y Tesorería: consulta RCV, DTEs, contribuyentes, cesiones; emisión de boletas de honorarios y facturación electrónica. Servicio disponible hasta el 11 de diciembre de 2026 solo para suscripciones de pago activas
   - **Endpoints:**
     - ✅ 🔑 `404` `auth_required` `GET` [`https://api.baseapi.cl/v1/sii/contribuyente/11111111-1`](https://api.baseapi.cl/v1/sii/contribuyente/11111111-1) — Razón social, giro, dirección y situación tributaria de un contribuyente
     - ✅ 🔑 `404` `auth_required` `GET` [`https://api.baseapi.cl/v1/sii/rcv`](https://api.baseapi.cl/v1/sii/rcv) — Registro de Compras y Ventas mensual y anual del SII
@@ -126,11 +127,41 @@
   - **Endpoints:**
     - ✅ 🔑 `404` `auth_required` `GET` [`https://api.tramites.cne.cl/api/v1/bencina`](https://api.tramites.cne.cl/api/v1/bencina) — Datos de estaciones de servicio y precios de combustibles vehiculares. Requiere registro gratuito en api.tramites.cne.cl/register
 
+- **DataInnovación - InnovaChile CORFO** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+  - 🌐 [https://datainnovacion.cl/api](https://datainnovacion.cl/api)
+  - 📝 API REST con datos públicos de más de 10.300 proyectos beneficiados por InnovaChile/CORFO. Permite consultar el portafolio de proyectos de I+D+i empresarial con filtros por código, beneficiario, tipo de intervención, estado y año
+  - **Endpoints:**
+    - ✅ 🔑 `200` `JSON` `GET` [`https://datainnovacion.cl/api/v1/proyectos`](https://datainnovacion.cl/api/v1/proyectos) — Consulta del portafolio de proyectos. Parámetros: filter[codigo], filter[rut_beneficiario], filter[tipo_intervencion], filter[estado_data], filter[sostenible], filter[año_adjudicacion], limit. Requiere token JWT público en header Authorization
+
+- **BIDAT - Banco Integrado de Datos** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+  - 🌐 [https://bidat.gob.cl/](https://bidat.gob.cl/)
+  - 📝 Datos abiertos del Ministerio de Desarrollo Social y Familia: información social, económica y de inversión pública
+  - **Endpoints:**
+    - ✅ `200` `HTML` `GET` [`https://bidat.gob.cl/datos-abiertos`](https://bidat.gob.cl/datos-abiertos) — Descarga de datos sociales y de inversión pública del Ministerio
+
+- **Energía Abierta - CNE** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+  - 🌐 [http://energiaabierta.cl/](http://energiaabierta.cl/)
+  - 📝 Plataforma de datos abiertos del sector energético de Chile de la Comisión Nacional de Energía: distribución geográfica de infraestructura, redes de distribución y datos de generación
+  - **Endpoints:**
+    - ✅ `200` `XML` `GET` [`http://energiaabierta.cl/`](http://energiaabierta.cl/) — Acceso a datasets del sector energético: generación, distribución, subestaciones y redes
+
+- **Cámara de Diputados - Datos Abiertos Legislativos** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+  - 🌐 [https://www.camara.cl/transparencia/datosAbiertos.aspx](https://www.camara.cl/transparencia/datosAbiertos.aspx)
+  - 📝 Portal de datos abiertos de la Cámara de Diputados de Chile: sesiones, votaciones, proyectos de ley, diputados y transparencia activa. API SOAP/REST
+  - **Endpoints:**
+    - ✅ `403` `auth_required` `GET` [`https://www.camara.cl/transparencia/datosAbiertos.aspx`](https://www.camara.cl/transparencia/datosAbiertos.aspx) — Catalogo de metodos SOAP/REST de datos abiertos: sesiones, votaciones, proyectos de ley y datos de diputados
+
+- **Senado de Chile - Datos Abiertos Legislativos** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+  - 🌐 [https://www.senado.cl/transparencia/datos-abiertos-legislativos](https://www.senado.cl/transparencia/datos-abiertos-legislativos)
+  - 📝 Portal de datos abiertos del Senado de Chile: senadores, sesiones, proyectos de ley, votaciones y transparencia activa
+  - **Endpoints:**
+    - ✅ `200` `XML` `GET` [`https://www.senado.cl/transparencia/datos-abiertos-legislativos`](https://www.senado.cl/transparencia/datos-abiertos-legislativos) — Descarga de datos abiertos legislativos: senadores, proyectos, votaciones y sesiones
+
   [⬆ Volver al índice](#top)
 
 <a id="cat-finance"></a>
 
-### 💰 Finanzas e Impuestos (10 APIs)
+### 💰 Finanzas e Impuestos (18 APIs)
 
 **APIs del sistema financiero, tributario y mercado de capitales**
 
@@ -192,7 +223,7 @@
 
 - **Magnet Data - API de Datos Públicos Chilenos** ![Active](https://img.shields.io/badge/4_endpoints-active-brightgreen)
   - 🌐 [https://data.magnet.cl/](https://data.magnet.cl/)
-  - 📝 API gratuita con datos públicos de Chile: monedas (UF, USD, EUR, CLF a CLP), feriados, días hábiles, Isapres y AFP. Sin autenticación.
+  - 📝 API gratuita con datos públicos de Chile: monedas (UF, USD, EUR, CLF a CLP), feriados, días hábiles, Isapres y AFP. Sin autenticación
   - **Endpoints:**
     - ✅ `200` `JSON` `GET` [`https://data.magnet.cl/api/v1/currencies/usd/clp/`](https://data.magnet.cl/api/v1/currencies/usd/clp/) — Valor actual de monedas en CLP. Ej: usd/clp, eur/clp, clf/clp, utm/clp. Soporta consultas por fecha (/?YYYY/MM/DD)
     - ✅ `200` `JSON` `GET` [`https://data.magnet.cl/api/v1/holidays/cl/`](https://data.magnet.cl/api/v1/holidays/cl/) — Feriados chilenos y días hábiles con endpoint working-days-count
@@ -210,20 +241,70 @@
     - ✅ 🔑 `401` `auth_required` `POST` [`https://api.floid.app/cl/consent_manager/revoke_consent`](https://api.floid.app/cl/consent_manager/revoke_consent) — Revoca un consentimiento RDC30 existente
     - ✅ 🔑 `401` `auth_required` `POST` [`https://api.floid.app/cl/bank/get_loans`](https://api.floid.app/cl/bank/get_loans) — Retorna los créditos del usuario autenticado
 
+- **Boufin - Open Finance API** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://boufin.com/](https://boufin.com/)
+  - 📝 API de datos financieros para Chile: conecta bancos, SII, TGR y AFP a través de endpoints estandarizados. Open Banking API para bancos y fintechs
+  - **Endpoints:**
+    - ✅ 🔑 `200` `JSON` `GET` [`https://api.boufin.com/`](https://api.boufin.com/) — API de datos financieros: cuentas bancarias, información tributaria (SII), TGR y AFP
+
+- **Belvo - Open Finance API LATAM** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://belvo.com/](https://belvo.com/)
+  - 📝 Open Banking API para Latinoamérica: datos bancarios, empleo y pagos. Soporta Chile, Brasil, México, Colombia
+  - **Endpoints:**
+    - ✅ 🔑 `200` `JSON` `POST` [`https://api.belvo.com/`](https://api.belvo.com/) — Open Banking: aggregación de datos bancarios y pagos A2A
+
+- **Banco de Chile - API Store** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://sitiospublicos.bancochile.cl/api-store](https://sitiospublicos.bancochile.cl/api-store)
+  - 📝 APIs del Banco de Chile: abonos en línea, saldos y movimientos. Transferencias 24/7 a otros bancos
+  - **Endpoints:**
+    - ✅ 🔑 `200` `XML` `POST` [`https://sitiospublicos.bancochile.cl/api-store/abono-en-linea`](https://sitiospublicos.bancochile.cl/api-store/abono-en-linea) — Transferencias electrónicas automáticas desde cuentas de la empresa hacia clientes
+
+- **Clay - API Bancos, SII, Contabilidad e IA** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://www.clay.cl/apis-bancarias-y-sii](https://www.clay.cl/apis-bancarias-y-sii)
+  - 📝 API REST: movimientos bancarios (14 bancos), DTEs del SII, asientos contables. Compatible con LLMs y agentes IA. Actualización cada 2 horas
+  - **Endpoints:**
+    - ✅ 🔑 `307` `redirect` `GET` [`https://api.clay.cl/`](https://api.clay.cl/) — API de datos financieros: bancos, SII, contabilidad. Un token para todas las empresas
+
+- **ApiPyme - API SII Chile** ![Active](https://img.shields.io/badge/3_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://apipyme.cl/](https://apipyme.cl/)
+  - 📝 API REST: Registro de Compras, Ventas, F29 y honorarios del SII. Datos actualizados cada 2 horas
+  - **Endpoints:**
+    - ✅ 🔑 `301` `redirect` `GET` [`https://apipyme.cl/api/v1/ventas/{periodo}`](https://apipyme.cl/api/v1/ventas/{periodo}) — Descarga del libro de ventas del SII con detalle de documentos tributarios
+    - ✅ 🔑 `301` `redirect` `GET` [`https://apipyme.cl/api/v1/compras/{periodo}`](https://apipyme.cl/api/v1/compras/{periodo}) — Documentos recibidos consolidados para integración contable
+    - ✅ 🔑 `301` `redirect` `GET` [`https://apipyme.cl/api/v1/f29/{periodo}`](https://apipyme.cl/api/v1/f29/{periodo}) — Datos del F29 declarado: IVA débito, crédito, ventas y compras afectas
+
+- **Gears - API SII y Bancos** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://www.gears.cl/](https://www.gears.cl/)
+  - 📝 API para conectar al SII y bancos de Chile: Libro IVA, boletas honorarios, F22/F29 y movimientos bancarios
+  - **Endpoints:**
+    - ✅ 🔑 `404` `auth_required` `GET` [`https://api.gears.cl/`](https://api.gears.cl/) — API de datos SII y bancarios: Libro IVA, honorarios, movimientos
+
+- **BICE Connect - Banking as a Service** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://banco.bice.cl/empresas/bice-connect](https://banco.bice.cl/empresas/bice-connect)
+  - 📝 Banking as a Service del Banco BICE: APIs de pagos (payout), recaudación (payin) y datos financieros. Transferencias unitarias y masivas
+  - **Endpoints:**
+    - ✅ 🔑 `400` `Other` `POST` [`https://connect.bice.cl/api/v1/payout`](https://connect.bice.cl/api/v1/payout) — Transferencias bancarias: pagos de sueldos, envíos de dinero programados, dispersión de pagos
+
+- **Chipax - Automatización Financiera Pymes** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://www.chipax.com/](https://www.chipax.com/)
+  - 📝 Software de automatización financiera para pymes: sincroniza bancos y SII, conciliación automática, reportes
+  - **Endpoints:**
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://api.chipax.com/`](https://api.chipax.com/) — API de datos financieros: movimientos bancarios, DTEs del SII, conciliación
+
   [⬆ Volver al índice](#top)
 
 <a id="cat-transport"></a>
 
-### 🚌 Transporte y Tránsito (2 APIs)
+### 🚌 Transporte y Tránsito (7 APIs)
 
 **APIs de transporte público, tránsito y movilidad urbana**
 
 - **Observatorio Logístico - API de Datos Logísticos** ![Active](https://img.shields.io/badge/3_endpoints-active-brightgreen)
   - 🌐 [https://filesprod.observatoriologistico.cl/assets/frontend-graficos/api-datastream-docs/datastreams_api_docs.html](https://filesprod.observatoriologistico.cl/assets/frontend-graficos/api-datastream-docs/datastreams_api_docs.html)
-  - 📝 API RESTful pública del Ministerio de Transportes con datos de logística y comercio exterior de Chile: puertos, carga aérea, ferroviaria, carretera, indicadores. Sin autenticación, 100 req/min.
+  - 📝 API RESTful pública del Ministerio de Transportes con datos de logística y comercio exterior de Chile: puertos, carga aérea, ferroviaria, carretera, indicadores. Sin autenticación, 100 req/min
   - **Endpoints:**
-    - ✅ `200` `JSON` `GET` [`https://www.observatoriologistico.cl/api/v1/datastreams/lists`](https://www.observatoriologistico.cl/api/v1/datastreams/lists) — Obtiene una lista paginada de todos los datastreams disponibles en el sistema con información básica y URLs para acceder a sus datos y metadatos.
-    - ✅ `200` `JSON` `GET` [`https://www.observatoriologistico.cl/api/v1/datastreams/C010/metadata`](https://www.observatoriologistico.cl/api/v1/datastreams/C010/metadata) — /datastreams/{code}/metadata. Obtiene los metadatos de un datastream específico con información sobre la estructura de datos, variables disponibles y descripciones detalladas.
+    - ✅ `200` `JSON` `GET` [`https://www.observatoriologistico.cl/api/v1/datastreams/lists`](https://www.observatoriologistico.cl/api/v1/datastreams/lists) — Obtiene una lista paginada de todos los datastreams disponibles en el sistema con información básica y URLs para acceder a sus datos y metadatos
+    - ✅ `200` `JSON` `GET` [`https://www.observatoriologistico.cl/api/v1/datastreams/C010/metadata`](https://www.observatoriologistico.cl/api/v1/datastreams/C010/metadata) — /datastreams/{code}/metadata. Obtiene los metadatos de un datastream específico con información sobre la estructura de datos, variables disponibles y descripciones detalladas
     - ✅ `200` `JSON` `GET` [`https://www.observatoriologistico.cl/api/v1/datastreams/C010/data`](https://www.observatoriologistico.cl/api/v1/datastreams/C010/data) — /datastreams/{code}/data. Obtiene los datos de un datastream específico con opciones avanzadas de paginación, filtrado dinámico y ordenamiento
 
 - **GetAPI Chile - Vehículos y Peajes** ![Active](https://img.shields.io/badge/12_endpoints-active-brightgreen) [![paid](https://img.shields.io/badge/paid-red)](https://getapi.cl/planes/)
@@ -242,6 +323,38 @@
     - ✅ 🔑 `401` `auth_required` `GET` [`https://chile.getapi.cl/v1/tollroutes/api/locations`](https://chile.getapi.cl/v1/tollroutes/api/locations) — Lista las ciudades disponibles como origen/destino
     - ✅ 🔑 `404` `auth_required` `POST` [`https://chile.getapi.cl/v1/tollroutes/api/calculate-by-path`](https://chile.getapi.cl/v1/tollroutes/api/calculate-by-path) — Calcula peajes desde un recorrido GPS
     - ✅ 🔑 `404` `auth_required` `POST` [`https://chile.getapi.cl/v1/tollroutes/api/route-cost-by-coords`](https://chile.getapi.cl/v1/tollroutes/api/route-cost-by-coords) — Calcula peajes entre dos coordenadas GPS
+
+- **GTFS Red Metropolitana de Movilidad** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+  - 🌐 [https://www.dtpm.cl/index.php/noticias/gtfs-vigente](https://www.dtpm.cl/index.php/noticias/gtfs-vigente)
+  - 📝 Datos abiertos GTFS del transporte público de Santiago: ~380 servicios de bus, 136 estaciones de Metro, 11.000+ paraderos
+  - **Endpoints:**
+    - ✅ `200` `HTML` `GET` [`https://www.dtpm.cl/index.php/noticias/gtfs-vigente`](https://www.dtpm.cl/index.php/noticias/gtfs-vigente) — Descarga del feed GTFS con horarios, rutas, paradas y shapes del transporte público
+
+- **Shipit - API de Logística** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://developers.shipit.cl/](https://developers.shipit.cl/)
+  - 📝 API de logística para ecommerce: múltiples couriers, cotización, seguimiento, inventario y fulfillment
+  - **Endpoints:**
+    - ✅ 🔑 `404` `auth_required` `GET` [`https://api.shipit.cl/`](https://api.shipit.cl/) — API REST: ventas, envíos, seguimiento, cotización, couriers, inventario, webhooks
+
+- **Starken - API de Envíos** ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://starken.cl/integraciones](https://starken.cl/integraciones)
+  - 📝 API REST y SOAP para envíos a todo Chile: cotización, generación de órdenes de flete y seguimiento
+  - **Endpoints:**
+    - ❌ 🔑 `0` `error` `GET` [`https://gateway.starken.cl/`](https://gateway.starken.cl/) — API REST: cotización, ciudades, agencias, órdenes de flete
+
+- **Chilenvíos - API Multi-courier** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://chilenvios.cl/](https://chilenvios.cl/)
+  - 📝 API de envíos multi-courier para Chile: Starken, Chilexpress y Bluexpress en una sola integración JSON
+  - **Endpoints:**
+    - ✅ 🔑 `401` `auth_required` `POST` [`https://multicourier.p.rapidapi.com/quote`](https://multicourier.p.rapidapi.com/quote) — Cotizacion multi-courier (POST /quote): Starken, Chilexpress, Bluexpress. Hospedada en RapidAPI, requiere x-rapidapi-key
+
+- **Chilexpress Developers - API Logística** ![Active](https://img.shields.io/badge/3_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://developers.wschilexpress.com/](https://developers.wschilexpress.com/)
+  - 📝 API REST de Chilexpress para integración logística: cotización de envíos, generación de órdenes de transporte, seguimiento (tracking), coberturas y georeferenciación de direcciones. Requiere registro y TCC
+  - **Endpoints:**
+    - ✅ `200` `JSON` `GET` [`https://services.wschilexpress.com/georeference/api/v1/regions`](https://services.wschilexpress.com/georeference/api/v1/regions) — Listado de regiones con cobertura. Base georeference: tambien expone comunas, calles, numeraciones y oficinas de entrega
+    - ✅ 🔑 `404` `auth_required` `POST` [`https://services.wschilexpress.com/rating/api/v1.0/rates/courier`](https://services.wschilexpress.com/rating/api/v1.0/rates/courier) — Tarificacion de envios courier (POST). Requiere header Ocp-Apim-Subscription-Key. Existe variante /rates/business para tarifas empresariales
+    - ✅ 🔑 `400` `Other` `POST` [`https://services.wschilexpress.com/transport-orders/api/v1.0/transport-orders`](https://services.wschilexpress.com/transport-orders/api/v1.0/transport-orders) — Generacion y consulta de ordenes de transporte (OT) y etiquetas (POST). Requiere header Ocp-Apim-Subscription-Key
 
   [⬆ Volver al índice](#top)
 
@@ -285,10 +398,36 @@
 
 - **Datos para Resiliencia ante Desastres - Itrend** ![Active](https://img.shields.io/badge/2_endpoints-active-brightgreen)
   - 🌐 [https://guides.dataverse.org/en/latest/api/index.html](https://guides.dataverse.org/en/latest/api/index.html)
-  - 📝 Repositorio de datos abiertos sobre desastres naturales en Chile: sismos, tsunamis, incendios, volcanes, meteorología y vulnerabilidad (Harvard Dataverse). Endpoints públicos y autenticados con API key.
+  - 📝 Repositorio de datos abiertos sobre desastres naturales en Chile: sismos, tsunamis, incendios, volcanes, meteorología y vulnerabilidad (Harvard Dataverse). Endpoints públicos y autenticados con API key
   - **Endpoints:**
     - ✅ `200` `JSON` `GET` [`https://datospararesiliencia.cl/api/search?q=sismo&type=dataset`](https://datospararesiliencia.cl/api/search?q=sismo&type=dataset) — Búsqueda pública de datasets. Parámetros: q, type, sort, order, fq, start, rows
     - ✅ 🔑 `200` `JSON` `GET` [`https://datospararesiliencia.cl/api/dataverses/inicio`](https://datospararesiliencia.cl/api/dataverses/inicio) — Info de colecciones, datasets y administración. Usa header X-Dataverse-key para autenticación
+
+  [⬆ Volver al índice](#top)
+
+<a id="cat-education"></a>
+
+### 📚 Educación (3 APIs)
+
+**APIs educativas, universitarias y de admisión**
+
+- **Centro de Estudios Mineduc - Datos Abiertos** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+  - 🌐 [https://datosabiertos.mineduc.cl/](https://datosabiertos.mineduc.cl/)
+  - 📝 Plataforma de datos abiertos del Ministerio de Educación: 21+ conjuntos de datos sobre matrícula, docentes, establecimientos y sostenedores
+  - **Endpoints:**
+    - ✅ `200` `XML` `GET` [`https://datosabiertos.mineduc.cl/`](https://datosabiertos.mineduc.cl/) — Bases de datos descargables: matrícula, docentes, establecimientos, asistentes de la educación
+
+- **Superintendencia de Educación - Datos Abiertos** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+  - 🌐 [https://www.supereduc.cl/datosabiertos/](https://www.supereduc.cl/datosabiertos/)
+  - 📝 Repositorio de datos y estadísticas de la Superintendencia de Educación: denuncias, mediaciones, procesos administrativos sancionatorios
+  - **Endpoints:**
+    - ✅ `200` `XML` `GET` [`https://www.supereduc.cl/datosabiertos/`](https://www.supereduc.cl/datosabiertos/) — Bases de datos descargables organizadas por año con esquemas de registros detallados
+
+- **Agencia de Calidad de la Educación - Bases de Datos** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+  - 🌐 [https://informacionestadistica.agenciaeducacion.cl/](https://informacionestadistica.agenciaeducacion.cl/)
+  - 📝 Bases de datos de resultados de acceso público de la Agencia de Calidad de la Educación
+  - **Endpoints:**
+    - ✅ `200` `XML` `GET` [`https://informacionestadistica.agenciaeducacion.cl/`](https://informacionestadistica.agenciaeducacion.cl/) — Bases de datos de resultados educativos para descarga pública
 
   [⬆ Volver al índice](#top)
 
@@ -309,7 +448,7 @@
 
 <a id="cat-maps"></a>
 
-### 🗺️ Geografía y Mapas (1 API)
+### 🗺️ Geografía y Mapas (2 APIs)
 
 **APIs geoespaciales, mapas y datos territoriales**
 
@@ -320,21 +459,27 @@
     - ✅ `200` `JSON` `GET` [`https://ideserver.sma.gob.cl/arcgis/rest/services/IDE?f=pjson`](https://ideserver.sma.gob.cl/arcgis/rest/services/IDE?f=pjson) — Listado de capas geoespaciales disponibles de la IDE institucional
     - ✅ `200` `JSON` `GET` [`https://ideserver.sma.gob.cl/arcgis/rest/services/IDE/Energia/MapServer/0/query?where=1%3D1&outFields=nombre%2Ccomuna%2Cregion&returnGeometry=true&outSR=4326&f=pjson`](https://ideserver.sma.gob.cl/arcgis/rest/services/IDE/Energia/MapServer/0/query?where=1%3D1&outFields=nombre%2Ccomuna%2Cregion&returnGeometry=true&outSR=4326&f=pjson) — Consulta de features de una capa. OJO: este servidor da error 400 si se incluye resultRecordCount
 
+- **Geoportal de Chile** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+  - 🌐 [https://geoportal.cl/](https://geoportal.cl/)
+  - 📝 Catálogo Nacional de Información Geoespacial del Estado de Chile. Servicios WMS/WFS de múltiples instituciones públicas
+  - **Endpoints:**
+    - ✅ `200` `JSON` `GET` [`https://geoportal.cl/`](https://geoportal.cl/) — Acceso a metadatos y servicios geoespaciales del Estado
+
   [⬆ Volver al índice](#top)
 
 <a id="cat-business"></a>
 
-### 💼 Negocios y Comercio (8 APIs)
+### 💼 Negocios y Comercio (23 APIs)
 
 **APIs de comercio, licitaciones, pagos y registro de empresas**
 
-- **Khipu - Pagos Online** ![Active](https://img.shields.io/badge/2_endpoints-active-brightgreen) [![paid](https://img.shields.io/badge/paid-red)](https://www.khipu.com/page/tarifas-instantaneos-chile)
+- **Khipu - Pagos Online** ![Active](https://img.shields.io/badge/3_endpoints-active-brightgreen) [![paid](https://img.shields.io/badge/paid-red)](https://www.khipu.com/page/tarifas-instantaneos-chile)
   - 🌐 [https://docs.khipu.com/products](https://docs.khipu.com/products)
   - 📝 APIs de Khipu: Pagos Instantáneos, Pagos Automáticos y Open Finance para acceder a información bancaria
   - **Endpoints:**
     - ✅ 🔑 `403` `auth_required` `GET` [`https://payment-api.khipu.com/v3/banks`](https://payment-api.khipu.com/v3/banks) — Convierte transferencias bancarias en pagos digitales
     - ✅ 🔑 `405` `Other` `POST` [`https://payment-api.khipu.com/v1/automatic-payment/subscription`](https://payment-api.khipu.com/v1/automatic-payment/subscription) — Automatiza cobros recurrentes
-    - ❌ 🔑 `404` `empty` `GET` [`https://api.khipu.com/v1/ar/banking/business`](https://api.khipu.com/v1/ar/banking/business) — Accede a información bancaria y financiera real desde múltiples instituciones
+    - ✅ 🔑 `404` `auth_required` `GET` [`https://api.khipu.com/v1/cl/banking/business`](https://api.khipu.com/v1/cl/banking/business) — Open Finance Khipu: datos bancarios de empresas en Chile. Requiere credenciales de partner; el gateway solo enruta rutas exactas
 
 - **Flow - Pagos Online** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
   - 🌐 [https://developers.flow.cl/api](https://developers.flow.cl/api)
@@ -349,17 +494,17 @@
   - **Endpoints:**
     - ✅ 🔑 `403` `auth_required` `POST` [`https://api.kushkipagos.com`](https://api.kushkipagos.com) — Pagos globales con múltiples medios de pago
 
-- **Reveniu - Suscripciones** [![paid](https://img.shields.io/badge/paid-red)](https://reveniu.com/#rec237022060)
+- **Reveniu - Suscripciones** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) [![paid](https://img.shields.io/badge/paid-red)](https://reveniu.com/#rec237022060)
   - 🌐 [https://docs.reveniu.com](https://docs.reveniu.com)
   - 📝 API REST para gestión de cobro de suscripciones y pagos recurrentes en Chile. Documentación desactualizada (~4 años sin cambios)
   - **Endpoints:**
-    - ❌ 🔑 `404` `empty` `POST` [`https://production.reveniu.com`](https://production.reveniu.com) — Cobro de suscripciones y pagos recurrentes. Endpoints disponibles: /api/plans, /api/subscriptions, /api/webhooks
+    - ✅ 🔑 `301` `redirect` `POST` [`https://production.reveniu.com/api/v1/plans`](https://production.reveniu.com/api/v1/plans) — Planes de suscripcion via POST con header Reveniu-Secret-Key. Verificado: sin key responde 401
 
-- **Fintoc - Pagos por Transferencia** ![paid](https://img.shields.io/badge/paid-red)
+- **Fintoc - Pagos por Transferencia** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
   - 🌐 [https://docs.fintoc.com/reference/introduction](https://docs.fintoc.com/reference/introduction)
   - 📝 API REST para iniciación de pagos mediante transferencias bancarias, tarjetas y conciliación de movimientos
   - **Endpoints:**
-    - ❌ 🔑 `404` `empty` `POST` [`https://api.fintoc.com`](https://api.fintoc.com) — Iniciación de pagos y conciliación bancaria
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://api.fintoc.com/v1/payment_intents`](https://api.fintoc.com/v1/payment_intents) — Intentos de pago via API v1. Requiere header Authorization Bearer con secret key; sin key responde 401
 
 - **Transbank - Webpay** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
   - 🌐 [https://www.transbankdevelopers.cl](https://www.transbankdevelopers.cl)
@@ -369,7 +514,7 @@
 
 - **Reqlut** ![paid](https://img.shields.io/badge/paid-red)
   - 🌐 [https://reqlut.com/api/v3/doc](https://reqlut.com/api/v3/doc)
-  - 📝 API REST para integración con el ecosistema de empleabilidad universitaria Reqlut. Requiere API key para uso institucional.
+  - 📝 API REST para integración con el ecosistema de empleabilidad universitaria Reqlut. Requiere API key para uso institucional
 
 - **feriados.io - Motor de Calendario Operativo LATAM** ![Active](https://img.shields.io/badge/6_endpoints-active-brightgreen) [![freemium](https://img.shields.io/badge/freemium-orange)](https://feriados.io/pricing)
   - 🌐 [https://feriados.io/docs](https://feriados.io/docs)
@@ -382,11 +527,104 @@
     - ✅ 🔑 `401` `auth_required` `GET` [`https://api.feriados.io/v1/CL/calendar/{year}`](https://api.feriados.io/v1/CL/calendar/{year}) — Retorna el calendario anual completo (cada día marcado como hábil o feriado)
     - ✅ 🔑 `401` `auth_required` `POST` [`https://api.feriados.io/v1/CL/business-days/add`](https://api.feriados.io/v1/CL/business-days/add) — Calcula fecha sumando o restando días hábiles desde una fecha base (plan Developer+)
 
+- **SimpleAPI - Facturación Electrónica SII** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) [![freemium](https://img.shields.io/badge/freemium-orange)](https://www.simpleapi.cl/)
+  - 🌐 [https://www.simpleapi.cl/](https://www.simpleapi.cl/)
+  - 📝 API REST y SDK .NET para integración con el SII: emisión de facturas, boletas, guías de despacho y cesiones. Gratuita hasta 500 req/mes
+  - **Endpoints:**
+    - ✅ 🔑 `200` `JSON` `POST` [`https://www.simpleapi.cl/api/`](https://www.simpleapi.cl/api/) — Emisión de DTEs al SII. Requiere certificado digital y CAF autorizado
+
+- **SimpleFactura - API Facturación Electrónica** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://www.simplefactura.cl/soluciones/desarrolladores](https://www.simplefactura.cl/soluciones/desarrolladores)
+  - 📝 API de SimpleFactura (ChileSystems) para emitir DTE y boletas de honorarios, recuperar PDF y XML, administrar folios, clientes, productos y sucursales. Integración con el SII en un solo paso
+  - **Endpoints:**
+    - ✅ 🔑 `404` `auth_required` `POST` [`https://api.simplefactura.cl/`](https://api.simplefactura.cl/) — Emisión de DTEs, boletas de honorarios, gestión de folios y clientes
+
+- **API Gateway CL** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://www.apigateway.cl/](https://www.apigateway.cl/)
+  - 📝 API REST con acceso a datos del SII, Previred, TGR y más fuentes oficiales de Chile
+  - **Endpoints:**
+    - ✅ 🔑 `200` `JSON` `GET` [`https://www.apigateway.cl/docs/api`](https://www.apigateway.cl/docs/api) — Consulta SII, Previred, TGR y otras fuentes oficiales
+
+- **MercadoLibre Chile** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+  - 🌐 [https://developers.mercadolibre.com/](https://developers.mercadolibre.com/)
+  - 📝 API REST del marketplace MercadoLibre para Chile: productos, pedidos, envíos, usuarios. OAuth 2.0
+  - **Endpoints:**
+    - ✅ 🔑 `200` `JSON` `GET` [`https://api.mercadolibre.com/sites/MLC`](https://api.mercadolibre.com/sites/MLC) — API del marketplace para Chile (MLC). Endpoints de items, categorías, pedidos, etc
+
+- **Bsale - API Punto de Venta** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://docs.bsale.dev/](https://docs.bsale.dev/)
+  - 📝 API REST para integración con Bsale: facturación electrónica, inventario, clientes y e-commerce para PyMEs en Chile
+  - **Endpoints:**
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://api.bsale.io/v1/`](https://api.bsale.io/v1/) — API REST para gestión de ventas, inventario y facturación
+
+- **Apipay - Orquestador de Pagos** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://apipay.cl/](https://apipay.cl/)
+  - 📝 Startup chilena: orquestador de medios de pago, recargas telefónicas, criptomonedas y transferencias. API REST para integración
+  - **Endpoints:**
+    - ✅ 🔑 `200` `JSON` `POST` [`https://api.apipay.cl/`](https://api.apipay.cl/) — Orquestador de pagos: múltiples medios de pago y transferencias
+
+- **Shinkansen Finance - Payouts API** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://shinkansen.finance/](https://shinkansen.finance/)
+  - 📝 API de payouts y transferencias bancarias automáticas en Chile. Automatiza envíos de fondos con IA. Cámara de pagos autorizada por CMF
+  - **Endpoints:**
+    - ✅ 🔑 `404` `auth_required` `POST` [`https://api.shinkansen.finance/v1/payouts`](https://api.shinkansen.finance/v1/payouts) — Envio de payouts via POST. Host actual segun docs oficiales (docs.shinkansen.tech); el antiguo api.shinkansen.tech tiene DNS roto
+
+- **PayU Latam - API de Pagos Chile** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://developers.payulatam.com/](https://developers.payulatam.com/)
+  - 📝 API de procesamiento de pagos para Chile: tarjetas de crédito/débito, transferencias bancarias vía Khipu, y otros medios de pago
+  - **Endpoints:**
+    - ✅ 🔑 `200` `JSON` `POST` [`https://sandbox.api.payulatam.com/payments-api/4.0/service/es/CHL`](https://sandbox.api.payulatam.com/payments-api/4.0/service/es/CHL) — Procesamiento de pagos: tarjetas, transferencias Khipu, y otros medios en Chile
+
+- **Floid - API Registro Civil Chile** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://www.floid.io/servicios/api-registro-civil](https://www.floid.io/servicios/api-registro-civil)
+  - 📝 API para verificación de identidad contra el Registro Civil de Chile: validación de RUT y vigencia de cédula
+  - **Endpoints:**
+    - ✅ 🔑 `401` `auth_required` `POST` [`https://api.floid.app/cl/civil_registry/validate_id`](https://api.floid.app/cl/civil_registry/validate_id) — Validación de cédula de identidad chilena contra el Registro Civil
+
+- **Impish API - Vigencia Documento Identidad** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![freemium](https://img.shields.io/badge/freemium-orange)
+  - 🌐 [https://impishapi.com/vigencia-documento-identidad/](https://impishapi.com/vigencia-documento-identidad/)
+  - 📝 API SaaS para consultar vigencia de cédula de identidad o pasaporte chileno. Conexión directa con Registro Civil. CLP$5 por consulta, 10 gratis/hora
+  - **Endpoints:**
+    - ✅ 🔑 `400` `JSON` `POST` [`https://regcivil.impish.top/query`](https://regcivil.impish.top/query) — Vigencia de cedula/pasaporte via POST (run + tipo y numero de documento). Key por correo; tier gratuito limita 10 req/hora por IP. Verificado manualmente: POST sin key devuelve 400 INVALID_PARAM
+
+- **Mercado Pago Chile - API de Pagos** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![freemium](https://img.shields.io/badge/freemium-orange)
+  - 🌐 [https://www.mercadopago.cl/developers/es](https://www.mercadopago.cl/developers/es)
+  - 📝 API de pagos para Chile: Checkout API, pagos recurrentes, Checkout Pro. Base URL: api.mercadopago.com
+  - **Endpoints:**
+    - ✅ 🔑 `405` `Other` `POST` [`https://api.mercadopago.com/v1/payments`](https://api.mercadopago.com/v1/payments) — API de pagos: creación de pagos, consultas, reembolsos. Autenticación vía Access Token
+
+- **DUODTE - API Facturación Electrónica SII** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![freemium](https://img.shields.io/badge/freemium-orange)
+  - 🌐 [https://duodte.cl/api-docs.html](https://duodte.cl/api-docs.html)
+  - 📝 API REST para integración con el SII de Chile: emisión de facturas, boletas, notas de crédito, guías de despacho y cesión de documentos. Respaldo automático y PDF
+  - **Endpoints:**
+    - ✅ 🔑 `404` `auth_required` `POST` [`https://api.duodte.cl/v1/dte`](https://api.duodte.cl/v1/dte) — Emisión de documentos tributarios electrónicos al SII
+
+- **Tupana - API Facturación Electrónica SII** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://www.tupana.ai/api-factura](https://www.tupana.ai/api-factura)
+  - 📝 API REST que replica el facturador MiPyme del SII: emisión de facturas, boletas, notas de crédito y más. Multicredencial, webhooks, 100% programable
+  - **Endpoints:**
+    - ✅ 🔑 `404` `auth_required` `POST` [`https://api.tupana.ai/v1/`](https://api.tupana.ai/v1/) — Facturación electrónica al SII: emisión de DTEs, consultas y webhooks
+
+- **OpenFactura - API Facturación Electrónica Haulmer** ![Active](https://img.shields.io/badge/2_endpoints-active-brightgreen) ![freemium](https://img.shields.io/badge/freemium-orange)
+  - 🌐 [https://docsapi-openfactura.haulmer.com/](https://docsapi-openfactura.haulmer.com/)
+  - 📝 API RESTful de Haulmer para facturación electrónica al SII: emisión de facturas (33), boletas (39), notas de crédito (61), guías de despacho (52) y más. Entorno de desarrollo gratuito con CAF simulado. Rate limit: 3 req/s, 100 req/min
+  - **Endpoints:**
+    - ✅ 🔑 `401` `auth_required` `POST` [`https://api.haulmer.com/v2/dte/document`](https://api.haulmer.com/v2/dte/document) — Emisión de documentos tributarios electrónicos al SII. Devuelve XML, PDF, timbre y resolución
+    - ✅ 🔑 `401` `auth_required` `POST` [`https://dev-api.haulmer.com/v2/dte/document`](https://dev-api.haulmer.com/v2/dte/document) — Entorno de desarrollo gratuito para pruebas de integración sin cuenta
+
+- **Facturador Pulsando - API Facturación Electrónica SII** ![Active](https://img.shields.io/badge/3_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://docs.facturador.pulsandotech.cl/](https://docs.facturador.pulsandotech.cl/)
+  - 📝 API REST completa para emisión y consulta de DTEs chilenos: facturas, boletas, notas de crédito/débito, guías de despacho. Multi-RUT, RCV, folios (CAF), webhooks, sandbox gratuito, integración MCP/IA. OpenAPI 1.3
+  - **Endpoints:**
+    - ✅ 🔑 `401` `auth_required` `POST` [`https://api.facturador.pulsandotech.cl/api/public/v1/dte`](https://api.facturador.pulsandotech.cl/api/public/v1/dte) — Emisión de DTEs al SII con estados asíncronos. Soporta factura (33/34), boleta (39/41), NC (61/56), ND (55/46), GD (52)
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://api.facturador.pulsandotech.cl/api/public/v1/rcv`](https://api.facturador.pulsandotech.cl/api/public/v1/rcv) — Consulta y sincronización del Registro de Compras y Ventas desde el SII
+    - ✅ 🔑 `404` `auth_required` `GET` [`https://api.facturador.pulsandotech.cl/api/public/v1/contribuyentes`](https://api.facturador.pulsandotech.cl/api/public/v1/contribuyentes) — Consulta de contribuyente en el padrón del SII
+
   [⬆ Volver al índice](#top)
 
 <a id="cat-notifications"></a>
 
-### 📢 Alertas y Notificaciones (5 APIs)
+### 📢 Alertas y Notificaciones (4 APIs)
 
 **APIs de alertas tempranas, emergencias y comunicaciones oficiales**
 
@@ -397,12 +635,6 @@
     - ✅ `200` `XML` `GET` [`https://eew.csn.uchile.cl/fdsnws/station/1/`](https://eew.csn.uchile.cl/fdsnws/station/1/) — Información de estaciones sismológicas de la red del CSN vía FDSNWS
     - ✅ `200` `XML` `GET` [`https://eew.csn.uchile.cl/fdsnws/dataselect/1/`](https://eew.csn.uchile.cl/fdsnws/dataselect/1/) — Descarga de datos sísmicos en formato MiniSEED vía FDSNWS
     - ✅ `200` `XML` `GET` [`https://eew.csn.uchile.cl/fdsnws/availability/1/`](https://eew.csn.uchile.cl/fdsnws/availability/1/) — Disponibilidad de datos sísmicos por estación vía FDSNWS
-
-- **Sismos Chile - Gael** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
-  - 🌐 [https://api.gael.cloud](https://api.gael.cloud)
-  - 📝 API pública de últimos sismos en Chile
-  - **Endpoints:**
-    - ✅ `200` `JSON` `GET` [`https://api.gael.cloud/general/public/sismos`](https://api.gael.cloud/general/public/sismos) — Últimos sismos registrados en Chile
 
 - **XORCL - API Sismología** ![Active](https://img.shields.io/badge/2_endpoints-active-brightgreen)
   - 🌐 [https://github.com/xorcl/api-sismo](https://github.com/xorcl/api-sismo)
@@ -428,7 +660,7 @@
 
 <a id="cat-community"></a>
 
-### 🤝 Comunidad y Otros (2 APIs)
+### 🤝 Comunidad y Otros (3 APIs)
 
 **APIs comunitarias, adopción animal, feriados y utilidades varias**
 
@@ -438,11 +670,26 @@
   - **Endpoints:**
     - ✅ `200` `JSON` `GET` [`https://huachitos.cl/api/animales/`](https://huachitos.cl/api/animales/) — Animales en adopción, perdidos y encontrados por región
 
-- **boostr.cl - APIs de Uso Libre** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+- **boostr.cl - APIs de Uso Libre** ![Active](https://img.shields.io/badge/5_endpoints-active-brightgreen) ![freemium](https://img.shields.io/badge/freemium-orange)
   - 🌐 [https://docs.boostr.cl/reference/welcome](https://docs.boostr.cl/reference/welcome)
   - 📝 Colección de APIs útiles y gratuitas para diversos propósitos
   - **Endpoints:**
     - ✅ `301` `redirect` `GET` [`https://api.boostr.cl/`](https://api.boostr.cl/) — Múltiples APIs de uso libre
+    - ✅ 🔑 `403` `auth_required` `GET` [`https://api.boostr.cl/vehicle/{patente}.json`](https://api.boostr.cl/vehicle/{patente}.json) — Información del vehículo: marca, modelo, año, motor, transmisión, tipo combustible
+    - ✅ `200` `JSON` `GET` [`https://api.boostr.cl/holidays.json`](https://api.boostr.cl/holidays.json) — Todos los días feriados del año actual en Chile
+    - ✅ `403` `auth_required` `GET` [`https://api.boostr.cl/sismos.json`](https://api.boostr.cl/sismos.json) — Información sísmológica reciente de Chile. Fuente: sismologia.cl
+    - ✅ `403` `auth_required` `GET` [`https://api.boostr.cl/rut/{rut}.json`](https://api.boostr.cl/rut/{rut}.json) — Validación de RUT chileno con dígito verificador
+
+- **Gael Cloud - API Pública Chile** ![Active](https://img.shields.io/badge/6_endpoints-active-brightgreen)
+  - 🌐 [https://api.gael.cloud/](https://api.gael.cloud/)
+  - 📝 API pública y gratuita con múltiples servicios: monedas (UF, USD, UTM), clima de estaciones meteorológicas, sismos recientes, e indicadores Previred e Impuesto Único. Rate limit: 9 req/10s
+  - **Endpoints:**
+    - ✅ `200` `JSON` `GET` [`https://api.gael.cloud/general/public/monedas`](https://api.gael.cloud/general/public/monedas) — Valores actuales de cambio nominal (CLP) de UF, USD, UTM y otras monedas. Datos del Banco Central, actualizados cada 30 min
+    - ✅ `200` `JSON` `GET` [`https://api.gael.cloud/general/public/monedas/USD`](https://api.gael.cloud/general/public/monedas/USD) — Valor actual de una moneda específica por código (USD, EUR, UF, UTM, etc.)
+    - ✅ `200` `JSON` `GET` [`https://api.gael.cloud/general/public/clima`](https://api.gael.cloud/general/public/clima) — Datos climáticos de estaciones meteorológicas a lo largo de Chile. Fuente: Dirección Meteorológica
+    - ✅ `200` `JSON` `GET` [`https://api.gael.cloud/general/public/sismos`](https://api.gael.cloud/general/public/sismos) — Últimos sismos registrados en Chile. Fuente: CSN
+    - ✅ `200` `JSON` `GET` [`https://api.gael.cloud/general/public/previred/082025`](https://api.gael.cloud/general/public/previred/082025) — Indicadores Previred para cálculo de remuneraciones. Parámetro: periodo en formato MMAAAA (ej: 082025)
+    - ✅ `200` `JSON` `GET` [`https://api.gael.cloud/general/public/impunico/082025`](https://api.gael.cloud/general/public/impunico/082025) — Tablas de impuesto único 2da categoría. Parámetro: periodo en formato MMAAAA (ej: 082025)
 
   [⬆ Volver al índice](#top)
 

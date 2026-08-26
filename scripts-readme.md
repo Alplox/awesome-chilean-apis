@@ -32,7 +32,6 @@ npm run validate [flags]
 | Archivo                               | Descripción                                                            |
 | ------------------------------------- | ---------------------------------------------------------------------- |
 | `scripts/utils/find-duplicates.js`    | Busca IDs y URLs duplicadas en `apis-database.json`. Flag: `--verbose` |
-| `scripts/utils/add-site-endpoints.js` | Utilidad para agregar endpoints proxy a APIs (WIP)                     |
 
 ## Pipeline de validación
 
