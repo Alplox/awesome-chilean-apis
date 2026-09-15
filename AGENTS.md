@@ -6,7 +6,7 @@
 
 Directorio curado de APIs chilenas públicas y privadas, con endpoints verificados, health checks automáticos y documentación centralizada.
 
-**Snapshot actual:** 82 APIs · 171 endpoints · 170 activos ✅ · 1 rotos ❌ · 0 offline 📡
+**Snapshot actual:** 89 APIs · 182 endpoints · 181 activos ✅ · 1 rotos ❌ · 0 offline 📡
 
 ## 📁 Estructura del repositorio
 
@@ -167,16 +167,16 @@ documentación que exige registro, acceso por correo, endpoints caídos, etc.
 
 | Categoría | Clave (`category`) | APIs |
 |-----------|--------------------|------|
-| 🏛️ Gobierno y Datos Públicos | `government` | 16 |
+| 🏛️ Gobierno y Datos Públicos | `government` | 18 |
 | 💰 Finanzas e Impuestos | `finance` | 18 |
-| 🚌 Transporte y Tránsito | `transport` | 7 |
+| 🚌 Transporte y Tránsito | `transport` | 9 |
 | 🌤️ Clima y Meteorología | `weather` | 1 |
 | 🌿 Medio Ambiente | `environment` | 4 |
 | 📚 Educación | `education` | 3 |
 | 🏥 Salud | `health` | 1 |
-| 🗺️ Geografía y Mapas | `maps` | 2 |
+| 🗺️ Geografía y Mapas | `maps` | 3 |
 | 💼 Negocios y Comercio | `business` | 23 |
-| 🔧 Servicios Básicos | `utilities` | 0 |
+| 🔧 Servicios Básicos | `utilities` | 2 |
 | 📢 Alertas y Notificaciones | `notifications` | 4 |
 | 🤝 Comunidad y Otros | `community` | 3 |
 

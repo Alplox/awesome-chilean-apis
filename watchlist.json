@@ -9,21 +9,12 @@
     "endpoints": []
   },
   {
-    "id": "onemi",
-    "name": "ONEMI - Servicio Nacional de Prevención y Respuesta ante Desastres",
-    "url": "https://www.onemi.gov.cl",
+    "id": "onemi-senapred",
+    "name": "SENAPRED - Servicio Nacional de Prevención y Respuesta ante Desastres (ex-ONEMI)",
+    "url": "https://www.senapred.gob.cl",
     "category": "notifications",
-    "description": "API de alertas y emergencias del sistema nacional de protección civil",
-    "reason": "Sin endpoint API público verificado",
-    "endpoints": []
-  },
-  {
-    "id": "ide-chile",
-    "name": "IDE Chile - Infraestructura de Datos Geoespaciales",
-    "url": "https://www.ide.cl",
-    "category": "maps",
-    "description": "API geoespacial con datos cartográficos y límites territoriales de Chile",
-    "reason": "Sin endpoint API público verificado",
+    "description": "API de alertas y emergencias del sistema nacional de protección civil. Sucesor de ONEMI (Ley 21.364)",
+    "reason": "Sin endpoint API público verificado. ONEMI fue renombrado a SENAPRED en 2022",
     "endpoints": []
   },
   {
@@ -190,7 +181,7 @@
     "url": "https://api.roison.cl",
     "category": "business",
     "description": "API REST que entrega feriados chilenos (incluye regionales) en formato JSON",
-    "reason": "Endpoint activo pero datos desactualizados (última actualización 2024-05-22)",
+    "reason": "Endpoint caído (devuelve HTML 404 desde agosto 2026). Antes retornaba datos correctos",
     "endpoints": [
       {
         "id": "roison-cl-api",
@@ -199,9 +190,12 @@
         "method": "GET",
         "auth": "none",
         "format": "JSON",
-        "description": "Feriados chilenos con regionales (datos estancados en 2024)",
-        "status": "active",
-        "last_checked": "2026-07-02T00:00:00.000Z"
+        "description": "Feriados chilenos con regionales",
+        "status": "broken",
+        "last_checked": "2026-09-02T00:00:00.000Z",
+        "last_status_code": 404,
+        "last_response_format": "error",
+        "last_error": "HTTP 404 (returns HTML Page Not Found)"
       }
     ]
   },
@@ -224,12 +218,93 @@
     "endpoints": []
   },
   {
-    "id": "correos-chile-developers",
-    "name": "CorreosChile Developers",
-    "url": "https://developers.correos.cl/",
-    "category": "transport",
-    "description": "APIs de CorreosChile: tarifificacion, cobertura, sucursales, etiquetas y trazabilidad (SOAP v1 / REST v2)",
-    "reason": "Las APIs requieren credenciales de cliente CorreosChile; los hosts productivos no son publicos (api.correos.cl no resuelve)",
+    "id": "dpa-subdere",
+    "name": "API División Político Administrativa - SUBDERE",
+    "url": "https://apis.digital.gob.cl/dpa/",
+    "category": "government",
+    "description": "API oficial del gobierno para consultar regiones, provincias y comunas de Chile según la división político-administrativa vigente",
+    "reason": "Endpoint oficial (apis.digital.gob.cl/dpa) no resuelve DNS desde 2024. Existe recreación community en GitHub (mapacheverdugo/api-dpa-geo-chile) pero sin endpoint hospedado",
+    "endpoints": []
+  },
+  {
+    "id": "chilean-cities-api",
+    "name": "Chilean Cities API",
+    "url": "https://gonzalobulnes.docs.apiary.io/",
+    "category": "maps",
+    "description": "API REST con subsets de áreas administrativas chilenas (regiones, provincias, comunas) en formato JSON",
+    "reason": "Endpoint original en Heroku (chilean-cities.herokuapp.com) devuelve 404. Documentación en Apiary existe pero el servicio está caído",
+    "endpoints": []
+  },
+  {
+    "id": "farmanet",
+    "name": "Farmanet - Farmacias de Turno MINSAL",
+    "url": "https://farmanet.minsal.cl",
+    "category": "health",
+    "description": "API del Ministerio de Salud con listado de farmacias del país y sus turnos nocturnos legales",
+    "reason": "Endpoint farmanet.minsal.cl no resuelve DNS. Los datos de farmacias de turno se proveen vía datos.gob.cl (ya en la base de datos)",
+    "endpoints": []
+  },
+  {
+    "id": "api-congreso-rest",
+    "name": "API REST del Congreso",
+    "url": "https://congresorest.appspot.com/",
+    "category": "government",
+    "description": "Servicio open source y gratuito que mapea el contenido generado por el Congreso Nacional de Chile para que desarrolladores construyan aplicaciones",
+    "reason": "Endpoint congresorest.appspot.com devuelve HTTP 500. El servicio parece discontinuado en Google App Engine",
+    "endpoints": []
+  },
+  {
+    "id": "chile-alerta-api",
+    "name": "Chile Alerta API",
+    "url": "https://app.chilealerta.com/",
+    "category": "notifications",
+    "description": "API con boletines de tsunami, sismos en Chile y el mundo. Múltiples fuentes de información sísmica",
+    "reason": "Endpoint api.chilealerta.com no resuelve DNS. La app móvil sigue funcionando pero la API pública no está disponible",
+    "endpoints": []
+  },
+  {
+    "id": "bolsa-santiago",
+    "name": "Bolsa de Santiago - API para Developers",
+    "url": "https://www.bolsadesantiago.com/",
+    "category": "finance",
+    "description": "APIs de la Bolsa de Santiago para acceder a datos del mercado chileno: cotizaciones, indicadores y valores financieros",
+    "reason": "No hay endpoint público documentado. La API interna requiere credenciales de broker. SDK community en GitHub (LautaroParada/bolsa-santiago) pero sin acceso público",
+    "endpoints": []
+  },
+  {
+    "id": "sii-valores-economicos",
+    "name": "SII - Valores Económicos (RSS)",
+    "url": "https://www.sii.cl",
+    "category": "finance",
+    "description": "RSS con valores diarios de dólar, UF y mensual de UTM del Servicio de Impuestos Internos",
+    "reason": "Los URLs RSS documentados (sii.cl/documentacion/sii/rss/) devuelven 404. El SII no expone una API REST pública",
+    "endpoints": []
+  },
+  {
+    "id": "api-cne-cl",
+    "name": "CNE - API de Combustibles",
+    "url": "https://api.cne.cl/",
+    "category": "utilities",
+    "description": "Portal oficial de APIs de la Comisión Nacional de Energía: bencina, gas y parafina en línea con registro gratuito y API key",
+    "reason": "El host no resuelve DNS desde la red de verificación (getaddrinfo ENOENT, sep 2026). Re-chequear y promover cuando resuelva; el endpoint actual vive en api.tramites.cne.cl",
+    "endpoints": []
+  },
+  {
+    "id": "servel",
+    "name": "Servel - Servicio Electoral",
+    "url": "https://www.servel.cl",
+    "category": "government",
+    "description": "Resultados electorales preliminares e históricos, consulta de datos electorales y padrones",
+    "reason": "Sin endpoint API público documentado: resultados en ZIP descargables y app web (provisorios.servel.cl); consulta.servel.cl exige RUN con captcha",
+    "endpoints": []
+  },
+  {
+    "id": "sea-seia",
+    "name": "SEA - Proyectos sometidos al SEIA (ArcGIS)",
+    "url": "https://sig.sea.gob.cl/mapadeproyectos",
+    "category": "environment",
+    "description": "Servicio ArcGIS del SEA con la localización de proyectos EIA y DIA (capas ProyectosSEIA/EIA/DIA)",
+    "reason": "Endpoint real pero con token restringido: responde 499 Token Required y no hay vía pública para obtener token (el /tokens/ exige usuario autorizado). Los datos se descargan desde la app web en CSV/KMZ/XLS",
     "endpoints": []
   }
 ]

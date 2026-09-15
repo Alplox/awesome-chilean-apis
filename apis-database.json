@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-08-26T00:49:01.772Z",
-  "total_endpoints": 171,
+  "last_updated": "2026-09-15T01:00:11.269Z",
+  "total_endpoints": 182,
   "apis": [
     {
       "id": "datos-gob",
@@ -3063,6 +3063,219 @@
           "last_response_format": "auth_required",
           "last_checked": "2026-08-25T23:35:44.128Z",
           "last_error": "HTTP 404 (auth required)"
+        }
+      ]
+    },
+    {
+      "id": "observa-minciencia",
+      "name": "Observa MinCiencia - Datos Abiertos del Ministerio de Ciencia",
+      "url": "https://observa.minciencia.gob.cl/",
+      "category": "government",
+      "pricing": "free",
+      "description": "API pública de datos abiertos del Ministerio de Ciencia, Tecnología, Conocimiento e Innovación de Chile. Contiene conjuntos de datos de investigación, innovación e indicadores científicos. Sin autenticación",
+      "endpoints": [
+        {
+          "id": "observa-datos-abiertos",
+          "name": "Datos Abiertos",
+          "url": "https://api.observa.minciencia.gob.cl/api/datosabiertos/",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Listado de conjuntos de datos abiertos del Ministerio de Ciencia. Retorna metadata completa de cada dataset",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-09-01T00:00:00.000Z"
+        },
+        {
+          "id": "observa-download",
+          "name": "Descarga de Dataset",
+          "url": "https://api.observa.minciencia.gob.cl/api/datosabiertos/download/?uuid=337e0a01-4e23-4574-bd0c-02ab2f9606a0",
+          "method": "GET",
+          "auth": "none",
+          "format": "Other",
+          "description": "Descarga directa de un dataset por UUID. Patrón: /api/datosabiertos/download/?uuid={uuid}",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "Other",
+          "last_checked": "2026-09-01T00:00:00.000Z"
+        },
+        {
+          "id": "observa-indicadores",
+          "name": "Indicadores de Ciencia e Innovación",
+          "url": "https://api.observa.minciencia.gob.cl/api/indicadores/",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Indicadores de ciencia, tecnología, conocimiento e innovación. Incluye datos de exportaciones, I+D, patentes y más",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-09-01T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "correos-chile-developers",
+      "name": "CorreosChile Developers",
+      "url": "https://developers.correos.cl/",
+      "category": "transport",
+      "pricing": "paid",
+      "description": "APIs oficiales de CorreosChile (SOAP v1 y REST v2): tarifificación, cobertura, regiones y comunas, sucursales, admisión de envíos, etiquetas y trazabilidad. Requiere ser cliente y credenciales de integración",
+      "endpoints": [
+        {
+          "id": "correos-chile-servicios",
+          "name": "Servicios disponibles",
+          "url": "https://cert-apib2bv2.correos.cl:8000/servicios",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Consulta los servicios disponibles del cliente (ambiente de certificación documentado). Requiere header Authorization",
+          "status": "active",
+          "last_status_code": 401,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-09-15T00:38:41.890Z"
+        }
+      ]
+    },
+    {
+      "id": "ide-chile",
+      "name": "IDE Chile - Infraestructura de Datos Geoespaciales",
+      "url": "https://www.ide.cl",
+      "category": "maps",
+      "pricing": "free",
+      "description": "Portal institucional de la Infraestructura de Datos Geoespaciales de Chile. El catálogo y visor viven en Geoportal, con servicios OGC y ArcGIS de organismos del Estado. Sin autenticación",
+      "endpoints": [
+        {
+          "id": "ide-csw-getcapabilities",
+          "name": "Catálogo CSW GetCapabilities",
+          "url": "https://geoportal.cl/csw?SERVICE=CSW&REQUEST=GetCapabilities",
+          "method": "GET",
+          "auth": "none",
+          "format": "XML",
+          "description": "Servicio OGC CSW del Catálogo Nacional de Información Geoespacial (pycsw). Responde XML con las operaciones GetCapabilities, GetRecords y GetRecordById",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "XML",
+          "last_checked": "2026-09-15T00:44:40.458Z"
+        },
+        {
+          "id": "ide-ciclovias-featureserver",
+          "name": "Capa Ciclovías (FeatureServer)",
+          "url": "https://services6.arcgis.com/feQ9HId8vmgonvvD/ArcGIS/rest/services/CICLOV_validVisor_WFL1/FeatureServer?f=pjson",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Capa de ejemplo del Catálogo Nacional de Información Geoespacial (ciclovías SECTRA). Metadata del FeatureServer en JSON",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-09-15T00:44:40.764Z"
+        }
+      ]
+    },
+    {
+      "id": "dga-hidrometria",
+      "name": "DGA - Red Hidrométrica Nacional",
+      "url": "https://dga.mop.gob.cl/servicios-de-informacion",
+      "category": "utilities",
+      "pricing": "free",
+      "description": "Servicio de mapas ArcGIS de la Dirección General de Aguas con estaciones fluviométricas y niveles de alerta de caudales, actualizado cada 15-60 minutos. Sin autenticación",
+      "endpoints": [
+        {
+          "id": "dga-alertas-query",
+          "name": "Estaciones de alerta de caudales",
+          "url": "https://rest-sit.mop.gob.cl/arcgis/rest/services/DGA/ALERTAS/MapServer/0/query?where=1%3D1&returnCountOnly=true&f=pjson",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Conteo de estaciones fluviométricas con nivel de alerta. Acepta parámetros where, outFields y returnGeometry para consultas completas",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-09-15T00:44:16.909Z"
+        }
+      ]
+    },
+    {
+      "id": "coordinador-electrico",
+      "name": "Coordinador Eléctrico Nacional",
+      "url": "https://portal.api.coordinador.cl/",
+      "category": "utilities",
+      "pricing": "free",
+      "description": "APIs del Coordinador Eléctrico Nacional (operación, SIP, mercados, medidas). Requiere registro gratuito en el portal y API Key u OpenID; las APIs públicas (SIP) se activan de inmediato sin aprobación",
+      "endpoints": [
+        {
+          "id": "coordinador-generacion",
+          "name": "Clasificación de generación",
+          "url": "https://operacion.api.coordinador.cl/reportes/v3/generation",
+          "method": "GET",
+          "auth": "api-key",
+          "format": "JSON",
+          "description": "Clasificación de generación del sistema OpReal (Gerencia de Operaciones). Requiere API Key del portal",
+          "status": "active",
+          "last_status_code": 403,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-09-15T00:50:43.140Z"
+        }
+      ]
+    },
+    {
+      "id": "presupuesto-abierto",
+      "name": "Presupuesto Abierto - DIPRES",
+      "url": "https://presupuestoabierto.gob.cl/",
+      "category": "government",
+      "pricing": "free",
+      "description": "Plataforma de DIPRES y Hacienda con la ejecución presupuestaria transaccional del Gobierno Central por institución, proveedor y honorarios, con descargas CSV y JSON por vista. Sin autenticación",
+      "endpoints": [
+        {
+          "id": "presupuesto-abierto-proveedor",
+          "name": "Proveedor por RUT",
+          "url": "https://api.presupuestoabierto.gob.cl/api/v1/providers/96987050-9",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Ficha de un proveedor o receptor de recursos del Estado por RUT (ejemplo: 96987050-9). Patrón: /api/v1/providers/{rut}",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-09-15T01:00:09.299Z"
+        },
+        {
+          "id": "presupuesto-abierto-pagos",
+          "name": "Pagos por partida, capítulo y área",
+          "url": "https://api.presupuestoabierto.gob.cl/api/v1/data/pagos?group-by=[%22partida%22,%22capitulo%22,%22area%22]&where={%22periodo%22:2026}",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Consulta de pagos del Gobierno Central agrupados por partida, capítulo y área para el periodo 2026. Retorna JSON con totales y detalles de pagos",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-09-15T01:00:11.269Z"
+        }
+      ]
+    },
+    {
+      "id": "xorcl-red",
+      "name": "XorCl Red - Transporte de Santiago",
+      "url": "https://github.com/xorcl/api-red",
+      "category": "transport",
+      "pricing": "free",
+      "description": "API comunitaria (Go, GPL-3.0) que consulta los sitios oficiales de Red y Metro. Solo el estado de la red de Metro responde actualmente; paraderos (400) y saldo bip! (500) fallan por cambios en los sitios de origen. Sin autenticación",
+      "endpoints": [
+        {
+          "id": "xorcl-metro-network",
+          "name": "Estado de la red de Metro",
+          "url": "https://api.xor.cl/red/metro-network",
+          "method": "GET",
+          "auth": "none",
+          "format": "JSON",
+          "description": "Estado en vivo de la red de Metro según la página oficial (issues, time, lines por línea; 0 operativa, 1 cerrada temporal, 2 no habilitada, 3 accesos cerrados). lines viene vacío cuando no hay incidentes",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "JSON",
+          "last_checked": "2026-09-15T00:44:21.390Z"
         }
       ]
     }

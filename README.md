@@ -2,30 +2,31 @@
 # 🇨🇱 Awesome Chilean APIs
 
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/alplox/awesome-chilean-apis)
-![APIs](https://img.shields.io/badge/apis-82-brightgreen)
-![Endpoints](https://img.shields.io/badge/endpoints-171-blue)
+![APIs](https://img.shields.io/badge/apis-89-brightgreen)
+![Endpoints](https://img.shields.io/badge/endpoints-182-blue)
 
-> Directorio curado de APIs chilenas públicas y privadas con endpoints verificados. **82 APIs** y **171 endpoints**, organizados por categoría y mantenidos activamente.
+> Directorio curado de APIs chilenas públicas y privadas con endpoints verificados. **89 APIs** y **182 endpoints**, organizados por categoría y mantenidos activamente.
 
 ## 📑 Índice
 
-- [🏛️ Gobierno y Datos Públicos](#cat-government) — 16 APIs
+- [🏛️ Gobierno y Datos Públicos](#cat-government) — 18 APIs
 - [💰 Finanzas e Impuestos](#cat-finance) — 18 APIs
-- [🚌 Transporte y Tránsito](#cat-transport) — 7 APIs
+- [🚌 Transporte y Tránsito](#cat-transport) — 9 APIs
 - [🌤️ Clima y Meteorología](#cat-weather) — 1 API
 - [🌿 Medio Ambiente](#cat-environment) — 4 APIs
 - [📚 Educación](#cat-education) — 3 APIs
 - [🏥 Salud](#cat-health) — 1 API
-- [🗺️ Geografía y Mapas](#cat-maps) — 2 APIs
+- [🗺️ Geografía y Mapas](#cat-maps) — 3 APIs
 - [💼 Negocios y Comercio](#cat-business) — 23 APIs
+- [🔧 Servicios Básicos](#cat-utilities) — 2 APIs
 - [📢 Alertas y Notificaciones](#cat-notifications) — 4 APIs
 - [🤝 Comunidad y Otros](#cat-community) — 3 APIs
 
-> Última actualización: 25 de agosto de 2026
+> Última actualización: 14 de septiembre de 2026
 
 <a id="cat-government"></a>
 
-### 🏛️ Gobierno y Datos Públicos (16 APIs)
+### 🏛️ Gobierno y Datos Públicos (18 APIs)
 
 **APIs gubernamentales, datos abiertos y servicios del Estado**
 
@@ -156,6 +157,21 @@
   - 📝 Portal de datos abiertos del Senado de Chile: senadores, sesiones, proyectos de ley, votaciones y transparencia activa
   - **Endpoints:**
     - ✅ `200` `XML` `GET` [`https://www.senado.cl/transparencia/datos-abiertos-legislativos`](https://www.senado.cl/transparencia/datos-abiertos-legislativos) — Descarga de datos abiertos legislativos: senadores, proyectos, votaciones y sesiones
+
+- **Observa MinCiencia - Datos Abiertos del Ministerio de Ciencia** ![Active](https://img.shields.io/badge/3_endpoints-active-brightgreen)
+  - 🌐 [https://observa.minciencia.gob.cl/](https://observa.minciencia.gob.cl/)
+  - 📝 API pública de datos abiertos del Ministerio de Ciencia, Tecnología, Conocimiento e Innovación de Chile. Contiene conjuntos de datos de investigación, innovación e indicadores científicos. Sin autenticación
+  - **Endpoints:**
+    - ✅ `200` `JSON` `GET` [`https://api.observa.minciencia.gob.cl/api/datosabiertos/`](https://api.observa.minciencia.gob.cl/api/datosabiertos/) — Listado de conjuntos de datos abiertos del Ministerio de Ciencia. Retorna metadata completa de cada dataset
+    - ✅ `200` `Other` `GET` [`https://api.observa.minciencia.gob.cl/api/datosabiertos/download/?uuid=337e0a01-4e23-4574-bd0c-02ab2f9606a0`](https://api.observa.minciencia.gob.cl/api/datosabiertos/download/?uuid=337e0a01-4e23-4574-bd0c-02ab2f9606a0) — Descarga directa de un dataset por UUID. Patrón: /api/datosabiertos/download/?uuid={uuid}
+    - ✅ `200` `JSON` `GET` [`https://api.observa.minciencia.gob.cl/api/indicadores/`](https://api.observa.minciencia.gob.cl/api/indicadores/) — Indicadores de ciencia, tecnología, conocimiento e innovación. Incluye datos de exportaciones, I+D, patentes y más
+
+- **Presupuesto Abierto - DIPRES** ![Active](https://img.shields.io/badge/2_endpoints-active-brightgreen)
+  - 🌐 [https://presupuestoabierto.gob.cl/](https://presupuestoabierto.gob.cl/)
+  - 📝 Plataforma de DIPRES y Hacienda con la ejecución presupuestaria transaccional del Gobierno Central por institución, proveedor y honorarios, con descargas CSV y JSON por vista. Sin autenticación
+  - **Endpoints:**
+    - ✅ `200` `JSON` `GET` [`https://api.presupuestoabierto.gob.cl/api/v1/providers/96987050-9`](https://api.presupuestoabierto.gob.cl/api/v1/providers/96987050-9) — Ficha de un proveedor o receptor de recursos del Estado por RUT (ejemplo: 96987050-9). Patrón: /api/v1/providers/{rut}
+    - ✅ `200` `JSON` `GET` [`https://api.presupuestoabierto.gob.cl/api/v1/data/pagos?group-by=[%22partida%22,%22capitulo%22,%22area%22]&where={%22periodo%22:2026}`](https://api.presupuestoabierto.gob.cl/api/v1/data/pagos?group-by=[%22partida%22,%22capitulo%22,%22area%22]&where={%22periodo%22:2026}) — Consulta de pagos del Gobierno Central agrupados por partida, capítulo y área para el periodo 2026. Retorna JSON con totales y detalles de pagos
 
   [⬆ Volver al índice](#top)
 
@@ -295,7 +311,7 @@
 
 <a id="cat-transport"></a>
 
-### 🚌 Transporte y Tránsito (7 APIs)
+### 🚌 Transporte y Tránsito (9 APIs)
 
 **APIs de transporte público, tránsito y movilidad urbana**
 
@@ -355,6 +371,18 @@
     - ✅ `200` `JSON` `GET` [`https://services.wschilexpress.com/georeference/api/v1/regions`](https://services.wschilexpress.com/georeference/api/v1/regions) — Listado de regiones con cobertura. Base georeference: tambien expone comunas, calles, numeraciones y oficinas de entrega
     - ✅ 🔑 `404` `auth_required` `POST` [`https://services.wschilexpress.com/rating/api/v1.0/rates/courier`](https://services.wschilexpress.com/rating/api/v1.0/rates/courier) — Tarificacion de envios courier (POST). Requiere header Ocp-Apim-Subscription-Key. Existe variante /rates/business para tarifas empresariales
     - ✅ 🔑 `400` `Other` `POST` [`https://services.wschilexpress.com/transport-orders/api/v1.0/transport-orders`](https://services.wschilexpress.com/transport-orders/api/v1.0/transport-orders) — Generacion y consulta de ordenes de transporte (OT) y etiquetas (POST). Requiere header Ocp-Apim-Subscription-Key
+
+- **CorreosChile Developers** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen) ![paid](https://img.shields.io/badge/paid-red)
+  - 🌐 [https://developers.correos.cl/](https://developers.correos.cl/)
+  - 📝 APIs oficiales de CorreosChile (SOAP v1 y REST v2): tarifificación, cobertura, regiones y comunas, sucursales, admisión de envíos, etiquetas y trazabilidad. Requiere ser cliente y credenciales de integración
+  - **Endpoints:**
+    - ✅ 🔑 `401` `auth_required` `GET` [`https://cert-apib2bv2.correos.cl:8000/servicios`](https://cert-apib2bv2.correos.cl:8000/servicios) — Consulta los servicios disponibles del cliente (ambiente de certificación documentado). Requiere header Authorization
+
+- **XorCl Red - Transporte de Santiago** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+  - 🌐 [https://github.com/xorcl/api-red](https://github.com/xorcl/api-red)
+  - 📝 API comunitaria (Go, GPL-3.0) que consulta los sitios oficiales de Red y Metro. Solo el estado de la red de Metro responde actualmente; paraderos (400) y saldo bip! (500) fallan por cambios en los sitios de origen. Sin autenticación
+  - **Endpoints:**
+    - ✅ `200` `JSON` `GET` [`https://api.xor.cl/red/metro-network`](https://api.xor.cl/red/metro-network) — Estado en vivo de la red de Metro según la página oficial (issues, time, lines por línea; 0 operativa, 1 cerrada temporal, 2 no habilitada, 3 accesos cerrados). lines viene vacío cuando no hay incidentes
 
   [⬆ Volver al índice](#top)
 
@@ -448,7 +476,7 @@
 
 <a id="cat-maps"></a>
 
-### 🗺️ Geografía y Mapas (2 APIs)
+### 🗺️ Geografía y Mapas (3 APIs)
 
 **APIs geoespaciales, mapas y datos territoriales**
 
@@ -464,6 +492,13 @@
   - 📝 Catálogo Nacional de Información Geoespacial del Estado de Chile. Servicios WMS/WFS de múltiples instituciones públicas
   - **Endpoints:**
     - ✅ `200` `JSON` `GET` [`https://geoportal.cl/`](https://geoportal.cl/) — Acceso a metadatos y servicios geoespaciales del Estado
+
+- **IDE Chile - Infraestructura de Datos Geoespaciales** ![Active](https://img.shields.io/badge/2_endpoints-active-brightgreen)
+  - 🌐 [https://www.ide.cl](https://www.ide.cl)
+  - 📝 Portal institucional de la Infraestructura de Datos Geoespaciales de Chile. El catálogo y visor viven en Geoportal, con servicios OGC y ArcGIS de organismos del Estado. Sin autenticación
+  - **Endpoints:**
+    - ✅ `200` `XML` `GET` [`https://geoportal.cl/csw?SERVICE=CSW&REQUEST=GetCapabilities`](https://geoportal.cl/csw?SERVICE=CSW&REQUEST=GetCapabilities) — Servicio OGC CSW del Catálogo Nacional de Información Geoespacial (pycsw). Responde XML con las operaciones GetCapabilities, GetRecords y GetRecordById
+    - ✅ `200` `JSON` `GET` [`https://services6.arcgis.com/feQ9HId8vmgonvvD/ArcGIS/rest/services/CICLOV_validVisor_WFL1/FeatureServer?f=pjson`](https://services6.arcgis.com/feQ9HId8vmgonvvD/ArcGIS/rest/services/CICLOV_validVisor_WFL1/FeatureServer?f=pjson) — Capa de ejemplo del Catálogo Nacional de Información Geoespacial (ciclovías SECTRA). Metadata del FeatureServer en JSON
 
   [⬆ Volver al índice](#top)
 
@@ -619,6 +654,26 @@
     - ✅ 🔑 `401` `auth_required` `POST` [`https://api.facturador.pulsandotech.cl/api/public/v1/dte`](https://api.facturador.pulsandotech.cl/api/public/v1/dte) — Emisión de DTEs al SII con estados asíncronos. Soporta factura (33/34), boleta (39/41), NC (61/56), ND (55/46), GD (52)
     - ✅ 🔑 `401` `auth_required` `GET` [`https://api.facturador.pulsandotech.cl/api/public/v1/rcv`](https://api.facturador.pulsandotech.cl/api/public/v1/rcv) — Consulta y sincronización del Registro de Compras y Ventas desde el SII
     - ✅ 🔑 `404` `auth_required` `GET` [`https://api.facturador.pulsandotech.cl/api/public/v1/contribuyentes`](https://api.facturador.pulsandotech.cl/api/public/v1/contribuyentes) — Consulta de contribuyente en el padrón del SII
+
+  [⬆ Volver al índice](#top)
+
+<a id="cat-utilities"></a>
+
+### 🔧 Servicios Básicos (2 APIs)
+
+**APIs de servicios básicos, energía y telecomunicaciones**
+
+- **DGA - Red Hidrométrica Nacional** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+  - 🌐 [https://dga.mop.gob.cl/servicios-de-informacion](https://dga.mop.gob.cl/servicios-de-informacion)
+  - 📝 Servicio de mapas ArcGIS de la Dirección General de Aguas con estaciones fluviométricas y niveles de alerta de caudales, actualizado cada 15-60 minutos. Sin autenticación
+  - **Endpoints:**
+    - ✅ `200` `JSON` `GET` [`https://rest-sit.mop.gob.cl/arcgis/rest/services/DGA/ALERTAS/MapServer/0/query?where=1%3D1&returnCountOnly=true&f=pjson`](https://rest-sit.mop.gob.cl/arcgis/rest/services/DGA/ALERTAS/MapServer/0/query?where=1%3D1&returnCountOnly=true&f=pjson) — Conteo de estaciones fluviométricas con nivel de alerta. Acepta parámetros where, outFields y returnGeometry para consultas completas
+
+- **Coordinador Eléctrico Nacional** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+  - 🌐 [https://portal.api.coordinador.cl/](https://portal.api.coordinador.cl/)
+  - 📝 APIs del Coordinador Eléctrico Nacional (operación, SIP, mercados, medidas). Requiere registro gratuito en el portal y API Key u OpenID; las APIs públicas (SIP) se activan de inmediato sin aprobación
+  - **Endpoints:**
+    - ✅ 🔑 `403` `auth_required` `GET` [`https://operacion.api.coordinador.cl/reportes/v3/generation`](https://operacion.api.coordinador.cl/reportes/v3/generation) — Clasificación de generación del sistema OpReal (Gerencia de Operaciones). Requiere API Key del portal
 
   [⬆ Volver al índice](#top)
 
