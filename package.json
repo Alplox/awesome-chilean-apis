@@ -9,8 +9,9 @@
     "validate:json": "node scripts/validation/validate-json.js",
     "find:duplicates": "node scripts/utils/find-duplicates.js",
     "lint": "eslint .",
-    "ci": "npm run validate:json && npm run generate && git diff --exit-code README.md"
+    "ci": "pnpm validate:json && pnpm generate && git diff --exit-code README.md"
   },
+  "packageManager": "pnpm@11.20.0",
   "dependencies": {
     "fast-xml-parser": "5.8.0"
   },

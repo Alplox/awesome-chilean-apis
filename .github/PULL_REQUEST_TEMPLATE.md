@@ -11,9 +11,9 @@
 
 ## ✅ Checklist
 
-- [ ] Los endpoints fueron verificados (`npm run validate --automatic`)
-- [ ] `npm run generate` ejecutado sin errores
-- [ ] `npm run lint` pasa sin errores ni warnings
+- [ ] Los endpoints fueron verificados (`pnpm validate --automatic`)
+- [ ] `pnpm generate` ejecutado sin errores
+- [ ] `pnpm lint` pasa sin errores ni warnings
 - [ ] La entrada sigue el formato de `apis-database.json`
 - [ ] No hay duplicados con APIs existentes
 

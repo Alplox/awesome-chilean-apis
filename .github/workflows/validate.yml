@@ -12,24 +12,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Validate JSON structure
-        run: npm run validate:json
+        run: pnpm validate:json
 
       - name: Generate README
-        run: npm run generate
+        run: pnpm generate
 
       - name: Check README is up-to-date
         run: git diff --exit-code README.md
 
       - name: Validate endpoints
-        run: npm run validate -- --automatic
+        run: pnpm validate -- --automatic
         continue-on-error: true

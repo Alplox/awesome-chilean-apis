@@ -1,19 +1,19 @@
 # Scripts — awesome-chilean-apis
 
-## npm scripts
+## pnpm scripts
 
 | Comando                 | Script                                | Descripción                                                                   |
 | ----------------------- | ------------------------------------- | ----------------------------------------------------------------------------- |
-| `npm run generate`      | `scripts/core/generate.js`            | Regenera README.md y AGENTS.md desde `apis-database.json` + `categories.json` |
-| `npm run validate`      | `scripts/core/validate_apis.js`       | Health checks de todos los endpoints (HTTP)                                   |
-| `npm run validate:json` | `scripts/validation/validate-json.js` | Valida estructura de `apis-database.json` y `categories.json`                 |
-| `npm run lint`          | `eslint .`                            | ESLint                                                                        |
-| `npm run ci`            | —                                     | `validate:json` → `generate` → `git diff --exit-code README.md`               |
+| `pnpm generate`      | `scripts/core/generate.js`            | Regenera README.md y AGENTS.md desde `apis-database.json` + `categories.json` |
+| `pnpm validate`      | `scripts/core/validate_apis.js`       | Health checks de todos los endpoints (HTTP)                                   |
+| `pnpm validate:json` | `scripts/validation/validate-json.js` | Valida estructura de `apis-database.json` y `categories.json`                 |
+| `pnpm lint`          | `eslint .`                            | ESLint                                                                        |
+| `pnpm ci`            | —                                     | `validate:json` → `generate` → `git diff --exit-code README.md`               |
 
 ## validate — flags
 
 ```
-npm run validate [flags]
+pnpm validate [flags]
 ```
 
 | Flag             | Descripción                                         |
@@ -35,7 +35,7 @@ npm run validate [flags]
 
 ## Pipeline de validación
 
-`npm run validate` → `checkEndpoint()` → `tryFetchEndpoint()` con 3 intentos:
+`pnpm validate` → `checkEndpoint()` → `tryFetchEndpoint()` con 3 intentos:
 
 1. HTTPS normal
 2. HTTPS con TLS inseguro (`rejectUnauthorized: false`)

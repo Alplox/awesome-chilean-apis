@@ -1,6 +1,6 @@
 # AGENTS.md — awesome-chilean-apis
 
-> **Auto-evolutivo**: Este archivo se actualiza automáticamente al ejecutar `npm run generate`. Si agregas/quitas archivos o cambias la estructura, vuelve a generar.
+> **Auto-evolutivo**: Este archivo se actualiza automáticamente al ejecutar `pnpm generate`. Si agregas/quitas archivos o cambias la estructura, vuelve a generar.
 
 ## 📋 Descripción del proyecto
 
@@ -48,13 +48,13 @@ Directorio curado de APIs chilenas públicas y privadas, con endpoints verificad
 humano/PR edita apis-database.json o watchlist.json
         │
         ▼
-npm run validate:json ──► valida estructura de todos los JSON
+pnpm validate:json ──► valida estructura de todos los JSON
         │
         ▼
-npm run validate ───────► health checks HTTP; actualiza status/last_checked en la DB
+pnpm validate ───────► health checks HTTP; actualiza status/last_checked en la DB
         │
         ▼
-npm run generate ───────► regenera README.md y este archivo (AGENTS.md)
+pnpm generate ───────► regenera README.md y este archivo (AGENTS.md)
 ```
 
 - El CI (`.github/workflows/validate.yml`) ejecuta `validate:json` + `generate` y falla si hay cambios sin regenerar.
@@ -64,14 +64,14 @@ npm run generate ───────► regenera README.md y este archivo (AGE
 
 | Comando | Descripción |
 |---------|-------------|
-| `npm run generate` | Regenera README.md desde `apis-database.json` + `categories.json` |
-| `npm run validate` | Health checks de los endpoints; con `--update` persiste resultados en la DB |
-| `npm run validate:json` | Valida estructura de database + watchlist + categorías + regiones. Exit 1 si hay errores |
-| `npm run find:duplicates` | Detecta IDs/URLs duplicados en database y watchlist (y cruces entre ambos). Exit 1 si encuentra |
-| `npm run lint` | ESLint |
-| `npm run ci` | `validate:json` + `generate` + `git diff --exit-code README.md` |
+| `pnpm generate` | Regenera README.md desde `apis-database.json` + `categories.json` |
+| `pnpm validate` | Health checks de los endpoints; con `--update` persiste resultados en la DB |
+| `pnpm validate:json` | Valida estructura de database + watchlist + categorías + regiones. Exit 1 si hay errores |
+| `pnpm find:duplicates` | Detecta IDs/URLs duplicados en database y watchlist (y cruces entre ambos). Exit 1 si encuentra |
+| `pnpm lint` | ESLint |
+| `pnpm ci` | `validate:json` + `generate` + `git diff --exit-code README.md` |
 
-### Flags de `npm run validate`
+### Flags de `pnpm validate`
 
 ```
 --id=<id>         valida una sola API por su ID
@@ -85,8 +85,8 @@ npm run generate ───────► regenera README.md y este archivo (AGE
 ## 📝 Cómo agregar una API (base de datos)
 
 1. Agrega la entrada en `apis-database.json` dentro del array `"apis"`
-2. Ejecuta `npm run validate:json` para verificar la estructura
-3. Ejecuta `npm run generate` para regenerar README
+2. Ejecuta `pnpm validate:json` para verificar la estructura
+3. Ejecuta `pnpm generate` para regenerar README
 
 Usa esta vía cuando la API tenga **al menos un endpoint verificado** (que responda o exija credenciales).
 Si no hay endpoints comprobables, usa el watchlist (ver sección siguiente).
@@ -161,7 +161,7 @@ documentación que exige registro, acceso por correo, endpoints caídos, etc.
 
 - El campo `reason` es **obligatorio** y debe explicar qué falta para promocionarla.
 - Cuando exista un endpoint verificado, mueve la entrada a `apis-database.json` y elimínala del watchlist.
-- `npm run find:duplicates` detecta entradas presentes en ambos archivos a la vez.
+- `pnpm find:duplicates` detecta entradas presentes en ambos archivos a la vez.
 
 ## 🏷️ Categorías disponibles
 

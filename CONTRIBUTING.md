@@ -44,8 +44,8 @@ Agrega en `apis-database.json` dentro del array `"apis"`:
 Luego ejecuta:
 
 ```bash
-npm install
-npm run generate
+pnpm install
+pnpm generate
 ```
 
 ### Criterios para una buena descripción
@@ -70,9 +70,9 @@ Antes de contribuir, verifica que:
 ## 🤖 Scripts
 
 ```bash
-npm run generate    # Regenera README.md
-npm run validate    # Health checks de endpoints
-npm run validate:json  # Valida estructura JSON
+pnpm generate    # Regenera README.md
+pnpm validate    # Health checks de endpoints
+pnpm validate:json  # Valida estructura JSON
 ```
 
 ## 📜 Código de conducta
