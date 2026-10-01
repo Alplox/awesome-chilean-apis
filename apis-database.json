@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-15T01:00:11.269Z",
-  "total_endpoints": 182,
+  "last_updated": "2026-10-01T02:22:37.363Z",
+  "total_endpoints": 183,
   "apis": [
     {
       "id": "datos-gob",
@@ -20,7 +20,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:00:20.359Z"
+          "last_checked": "2026-10-01T02:07:21.099Z"
         },
         {
           "id": "datos-gob-busqueda",
@@ -33,7 +33,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:00:21.475Z"
+          "last_checked": "2026-10-01T02:07:22.002Z"
         },
         {
           "id": "datos-gob-datastore-search",
@@ -46,7 +46,7 @@
           "status": "active",
           "last_status_code": 409,
           "last_response_format": "Other",
-          "last_checked": "2026-07-03T02:00:23.279Z"
+          "last_checked": "2026-10-01T02:07:23.999Z"
         },
         {
           "id": "datos-gob-datastore-sql",
@@ -59,7 +59,7 @@
           "status": "active",
           "last_status_code": 400,
           "last_response_format": "Other",
-          "last_checked": "2026-07-03T02:00:25.287Z"
+          "last_checked": "2026-10-01T02:07:26.327Z"
         },
         {
           "id": "datos-gob-tags",
@@ -72,7 +72,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:00:27.338Z"
+          "last_checked": "2026-10-01T02:07:28.060Z"
         },
         {
           "id": "farmacias-turno-json",
@@ -80,12 +80,12 @@
           "url": "https://datos.gob.cl/dataset/farmacias-en-chile",
           "method": "GET",
           "auth": "none",
-          "format": "XML",
+          "format": "HTML",
           "description": "Farmacias del país con turnos nocturnos",
           "status": "active",
-          "last_checked": "2026-07-03T02:00:29.309Z",
+          "last_checked": "2026-10-01T02:07:30.027Z",
           "last_status_code": 200,
-          "last_response_format": "XML"
+          "last_response_format": "HTML"
         }
       ]
     },
@@ -103,12 +103,12 @@
           "url": "https://www.bcn.cl/leychile/api/v1",
           "method": "GET",
           "auth": "api-key",
-          "format": "XML",
+          "format": "HTML",
           "description": "API REST con autenticación API-Key para acceder a normas, leyes y documentos jurídicos",
           "status": "active",
           "last_status_code": 200,
-          "last_response_format": "XML",
-          "last_checked": "2026-07-03T02:00:29.666Z"
+          "last_response_format": "HTML",
+          "last_checked": "2026-10-01T02:07:30.157Z"
         }
       ]
     },
@@ -126,12 +126,12 @@
           "url": "https://datos.bcn.cl/sparql",
           "method": "GET",
           "auth": "none",
-          "format": "XML",
+          "format": "HTML",
           "description": "Consulta SPARQL de normas, proyectos de ley y sesiones parlamentarias (Accept: application/json)",
           "status": "active",
           "last_status_code": 200,
-          "last_response_format": "XML",
-          "last_checked": "2026-07-31T16:00:09.359Z"
+          "last_response_format": "HTML",
+          "last_checked": "2026-10-01T02:07:33.079Z"
         },
         {
           "id": "bcn-datos-recurso",
@@ -144,7 +144,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-31T16:00:10.194Z"
+          "last_checked": "2026-10-01T02:07:33.126Z"
         }
       ]
     },
@@ -166,7 +166,7 @@
           "status": "active",
           "last_status_code": 403,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:00:30.131Z"
+          "last_checked": "2026-10-01T02:07:33.402Z"
         },
         {
           "id": "chileatiende-servicios",
@@ -179,7 +179,7 @@
           "status": "active",
           "last_status_code": 403,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:00:31.930Z"
+          "last_checked": "2026-10-01T02:07:35.345Z"
         },
         {
           "id": "chileatiende-sucursales",
@@ -192,7 +192,7 @@
           "status": "active",
           "last_status_code": 403,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:00:33.937Z"
+          "last_checked": "2026-10-01T02:07:37.346Z"
         }
       ]
     },
@@ -212,7 +212,7 @@
           "format": "JSON",
           "description": "Licitaciones diarias, por código, diarias por estado, por día, por estado y día, por código de organismo público o proveedor",
           "status": "active",
-          "last_checked": "2026-07-03T02:00:34.531Z",
+          "last_checked": "2026-10-01T02:07:38.712Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         },
@@ -225,7 +225,7 @@
           "format": "JSON",
           "description": "Permite obtener, de forma estructurada y paginada, la información publicada en el mecanismo Compra Ágil de Mercado Público",
           "status": "active",
-          "last_checked": "2026-07-03T02:00:34.960Z",
+          "last_checked": "2026-10-01T02:07:39.151Z",
           "last_status_code": 403,
           "last_response_format": "auth_required"
         },
@@ -238,7 +238,7 @@
           "format": "JSON",
           "description": "Órdenes de compra diarias, de compra por código, de compra diarias por estado, de compra por día, de compra por estado y día, de compra por código de organismo público o proveedor",
           "status": "active",
-          "last_checked": "2026-07-03T02:00:36.069Z",
+          "last_checked": "2026-10-01T02:07:40.172Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         },
@@ -251,7 +251,7 @@
           "format": "JSON",
           "description": "Lista todos los organismos públicos de la plataforma Mercado Público",
           "status": "active",
-          "last_checked": "2026-07-03T02:00:38.101Z",
+          "last_checked": "2026-10-01T02:07:41.731Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         }
@@ -273,7 +273,7 @@
           "format": "JSON",
           "description": "Feriados oficiales de Chile años 2026-2027",
           "status": "active",
-          "last_checked": "2026-07-03T02:00:39.425Z",
+          "last_checked": "2026-10-01T02:07:42.355Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         }
@@ -295,7 +295,7 @@
           "format": "CSV",
           "description": "SDMX REST API",
           "status": "active",
-          "last_checked": "2026-07-03T02:00:40.297Z",
+          "last_checked": "2026-10-01T02:07:42.801Z",
           "last_status_code": 200,
           "last_response_format": "CSV"
         }
@@ -317,7 +317,7 @@
           "format": "JSON",
           "description": "Bases de datos estadísticos con documentación y ejemplos",
           "status": "active",
-          "last_checked": "2026-07-03T02:00:40.488Z",
+          "last_checked": "2026-10-01T02:07:42.893Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         }
@@ -341,7 +341,7 @@
           "status": "active",
           "last_status_code": 302,
           "last_response_format": "redirect",
-          "last_checked": "2026-07-03T02:00:40.660Z",
+          "last_checked": "2026-10-01T02:07:43.036Z",
           "last_error": "HTTP 302"
         }
       ]
@@ -362,7 +362,7 @@
           "format": "JSON",
           "description": "Indicadores diarios e históricos en formato JSON",
           "status": "active",
-          "last_checked": "2026-07-03T02:00:41.744Z",
+          "last_checked": "2026-10-01T02:07:43.732Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         }
@@ -384,7 +384,7 @@
           "format": "JSON",
           "description": "Indicadores económicos diarios e históricos",
           "status": "active",
-          "last_checked": "2026-07-03T02:00:41.818Z",
+          "last_checked": "2026-10-01T02:07:43.787Z",
           "last_status_code": 301,
           "last_response_format": "redirect",
           "last_error": "HTTP 301"
@@ -409,7 +409,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:00:42.016Z"
+          "last_checked": "2026-10-01T02:07:44.029Z"
         },
         {
           "id": "dolarapi-cotizaciones-usd",
@@ -422,7 +422,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:00:43.904Z"
+          "last_checked": "2026-10-01T02:07:45.888Z"
         },
         {
           "id": "dolarapi-cotizaciones-eur",
@@ -435,7 +435,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:00:46.085Z"
+          "last_checked": "2026-10-01T02:07:47.905Z"
         },
         {
           "id": "dolarapi-cotizaciones-brl",
@@ -448,7 +448,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:00:48.089Z"
+          "last_checked": "2026-10-01T02:07:49.913Z"
         },
         {
           "id": "dolarapi-cotizaciones-ars",
@@ -461,7 +461,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:00:50.228Z"
+          "last_checked": "2026-10-01T02:07:51.918Z"
         },
         {
           "id": "dolarapi-cotizaciones-uyu",
@@ -474,7 +474,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:00:52.100Z"
+          "last_checked": "2026-10-01T02:07:53.933Z"
         },
         {
           "id": "dolarapi-estado",
@@ -487,7 +487,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:00:53.945Z"
+          "last_checked": "2026-10-01T02:07:55.931Z"
         }
       ]
     },
@@ -507,7 +507,7 @@
           "format": "JSON",
           "description": "Endpoint público que devuelve la lista de todos los mercados disponibles en Buda, junto con la configuración de cada uno",
           "status": "active",
-          "last_checked": "2026-07-03T02:00:54.650Z",
+          "last_checked": "2026-10-01T02:07:56.583Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         },
@@ -520,7 +520,7 @@
           "format": "JSON",
           "description": "Entrega la varianción del precio en el último día y en la última semana, junto con el precio de la última transacción (last_price) para cada mercado",
           "status": "active",
-          "last_checked": "2026-07-03T02:00:56.627Z",
+          "last_checked": "2026-10-01T02:07:58.153Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         },
@@ -533,7 +533,7 @@
           "format": "XML",
           "description": "Las llamadas privadas consisten en endpoints que acceden a información privada del usuario que las invocan, les permiten crear o cancelar órdenes o les permiten abonar o retirar dinero hacia o desde el exchange",
           "status": "active",
-          "last_checked": "2026-07-03T02:00:57.974Z",
+          "last_checked": "2026-10-01T02:08:00.024Z",
           "last_status_code": 403,
           "last_response_format": "auth_required"
         }
@@ -555,7 +555,7 @@
           "format": "JSON",
           "description": "APIs financieras del Banco BCI",
           "status": "active",
-          "last_checked": "2026-07-03T02:00:58.082Z",
+          "last_checked": "2026-10-01T02:08:00.099Z",
           "last_status_code": 403,
           "last_response_format": "auth_required"
         }
@@ -574,12 +574,12 @@
           "url": "https://www.quetalmiafp.cl/AccederCuotas",
           "method": "GET",
           "auth": "api-key",
-          "format": "XML",
+          "format": "HTML",
           "description": "Valores diarios de las cuotas de las AFP",
           "status": "active",
-          "last_checked": "2026-07-03T02:00:59.056Z",
+          "last_checked": "2026-10-01T02:08:01.148Z",
           "last_status_code": 200,
-          "last_response_format": "XML"
+          "last_response_format": "HTML"
         }
       ]
     },
@@ -601,7 +601,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:00.129Z"
+          "last_checked": "2026-10-01T02:08:02.445Z"
         }
       ]
     },
@@ -623,7 +623,7 @@
           "status": "active",
           "last_status_code": 301,
           "last_response_format": "redirect",
-          "last_checked": "2026-07-03T02:01:00.221Z",
+          "last_checked": "2026-10-01T02:08:02.518Z",
           "last_error": "HTTP 301"
         }
       ]
@@ -646,7 +646,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:01.432Z"
+          "last_checked": "2026-10-01T02:08:03.550Z"
         }
       ]
     },
@@ -669,7 +669,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-31T16:41:55.772Z"
+          "last_checked": "2026-10-01T02:08:03.611Z"
         },
         {
           "id": "sma-ide-query",
@@ -682,7 +682,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-31T16:41:57.724Z"
+          "last_checked": "2026-10-01T02:08:05.614Z"
         }
       ]
     },
@@ -702,7 +702,7 @@
           "format": "JSON",
           "description": "Datos meteorológicos en tiempo real e históricos",
           "status": "active",
-          "last_checked": "2026-07-03T02:01:01.579Z",
+          "last_checked": "2026-10-01T02:08:05.752Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         }
@@ -721,12 +721,12 @@
           "url": "https://eew.csn.uchile.cl/fdsnws/station/1/",
           "method": "GET",
           "auth": "none",
-          "format": "XML",
+          "format": "HTML",
           "description": "Información de estaciones sismológicas de la red del CSN vía FDSNWS",
           "status": "active",
           "last_status_code": 200,
-          "last_response_format": "XML",
-          "last_checked": "2026-07-03T02:01:01.684Z"
+          "last_response_format": "HTML",
+          "last_checked": "2026-10-01T02:08:05.805Z"
         },
         {
           "id": "csn-dataselect",
@@ -734,12 +734,12 @@
           "url": "https://eew.csn.uchile.cl/fdsnws/dataselect/1/",
           "method": "GET",
           "auth": "none",
-          "format": "XML",
+          "format": "HTML",
           "description": "Descarga de datos sísmicos en formato MiniSEED vía FDSNWS",
           "status": "active",
           "last_status_code": 200,
-          "last_response_format": "XML",
-          "last_checked": "2026-07-03T02:01:03.617Z"
+          "last_response_format": "HTML",
+          "last_checked": "2026-10-01T02:08:07.779Z"
         },
         {
           "id": "csn-availability",
@@ -747,12 +747,12 @@
           "url": "https://eew.csn.uchile.cl/fdsnws/availability/1/",
           "method": "GET",
           "auth": "none",
-          "format": "XML",
+          "format": "HTML",
           "description": "Disponibilidad de datos sísmicos por estación vía FDSNWS",
           "status": "active",
           "last_status_code": 200,
-          "last_response_format": "XML",
-          "last_checked": "2026-07-03T02:01:05.623Z"
+          "last_response_format": "HTML",
+          "last_checked": "2026-10-01T02:08:09.796Z"
         }
       ]
     },
@@ -774,7 +774,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:07.756Z"
+          "last_checked": "2026-10-01T02:08:10.665Z"
         },
         {
           "id": "xorcl-sismo-historic",
@@ -787,7 +787,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:09.081Z"
+          "last_checked": "2026-10-01T02:08:12.450Z"
         }
       ]
     },
@@ -809,7 +809,7 @@
           "format": "JSON",
           "description": "Convierte transferencias bancarias en pagos digitales",
           "status": "active",
-          "last_checked": "2026-08-26T00:49:00.072Z",
+          "last_checked": "2026-10-01T02:08:13.023Z",
           "last_status_code": 403,
           "last_response_format": "auth_required"
         },
@@ -822,7 +822,7 @@
           "format": "JSON",
           "description": "Automatiza cobros recurrentes",
           "status": "active",
-          "last_checked": "2026-08-26T00:49:01.667Z",
+          "last_checked": "2026-10-01T02:08:14.861Z",
           "last_status_code": 405,
           "last_response_format": "Other"
         },
@@ -835,7 +835,7 @@
           "format": "JSON",
           "description": "Open Finance Khipu: datos bancarios de empresas en Chile. Requiere credenciales de partner; el gateway solo enruta rutas exactas",
           "status": "active",
-          "last_checked": "2026-08-26T00:49:01.771Z",
+          "last_checked": "2026-10-01T02:08:34.942Z",
           "last_status_code": 404,
           "last_response_format": "auth_required",
           "last_error": "HTTP 404 (auth required)"
@@ -860,7 +860,7 @@
           "format": "JSON",
           "description": "Pagos con tarjetas de crédito y débito",
           "status": "active",
-          "last_checked": "2026-07-03T02:01:12.273Z",
+          "last_checked": "2026-10-01T02:08:35.565Z",
           "last_status_code": 301,
           "last_response_format": "redirect",
           "last_error": "HTTP 301"
@@ -885,7 +885,7 @@
           "format": "JSON",
           "description": "Pagos globales con múltiples medios de pago",
           "status": "active",
-          "last_checked": "2026-07-03T02:01:12.553Z",
+          "last_checked": "2026-10-01T02:08:35.767Z",
           "last_status_code": 403,
           "last_response_format": "auth_required"
         }
@@ -909,7 +909,7 @@
           "format": "JSON",
           "description": "Planes de suscripcion via POST con header Reveniu-Secret-Key. Verificado: sin key responde 401",
           "status": "active",
-          "last_checked": "2026-08-26T00:48:59.234Z",
+          "last_checked": "2026-10-01T02:08:36.288Z",
           "last_status_code": 301,
           "last_response_format": "redirect",
           "last_error": "HTTP 301"
@@ -933,7 +933,7 @@
           "format": "JSON",
           "description": "Intentos de pago via API v1. Requiere header Authorization Bearer con secret key; sin key responde 401",
           "status": "active",
-          "last_checked": "2026-08-26T00:48:58.625Z",
+          "last_checked": "2026-10-01T02:08:36.690Z",
           "last_status_code": 401,
           "last_response_format": "auth_required"
         }
@@ -958,7 +958,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-31T16:30:02.680Z"
+          "last_checked": "2026-10-01T02:08:36.812Z"
         }
       ]
     },
@@ -978,7 +978,7 @@
           "format": "JSON",
           "description": "Animales en adopción, perdidos y encontrados por región",
           "status": "active",
-          "last_checked": "2026-07-03T02:01:14.793Z",
+          "last_checked": "2026-10-01T02:08:38.110Z",
           "last_status_code": 200,
           "last_response_format": "JSON"
         }
@@ -1001,7 +1001,7 @@
           "format": "JSON",
           "description": "Múltiples APIs de uso libre",
           "status": "active",
-          "last_checked": "2026-07-03T02:01:14.953Z",
+          "last_checked": "2026-10-01T02:08:38.336Z",
           "last_status_code": 301,
           "last_response_format": "redirect",
           "last_error": "HTTP 301"
@@ -1017,7 +1017,7 @@
           "status": "active",
           "last_status_code": 403,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-25T23:23:54.252Z"
+          "last_checked": "2026-10-01T02:08:40.197Z"
         },
         {
           "id": "boostr-holidays",
@@ -1030,7 +1030,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-08-25T23:23:55.835Z"
+          "last_checked": "2026-10-01T02:08:42.206Z"
         },
         {
           "id": "boostr-sismos",
@@ -1043,7 +1043,7 @@
           "status": "active",
           "last_status_code": 403,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-25T23:23:57.813Z"
+          "last_checked": "2026-10-01T02:08:44.213Z"
         },
         {
           "id": "boostr-rut",
@@ -1056,7 +1056,7 @@
           "status": "active",
           "last_status_code": 403,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-25T23:23:59.814Z"
+          "last_checked": "2026-10-01T02:08:46.222Z"
         }
       ]
     },
@@ -1078,7 +1078,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:16.560Z"
+          "last_checked": "2026-10-01T02:08:46.454Z"
         },
         {
           "id": "chileabierto-comuna",
@@ -1091,7 +1091,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:18.381Z"
+          "last_checked": "2026-10-01T02:08:48.303Z"
         },
         {
           "id": "chileabierto-indicators",
@@ -1104,7 +1104,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:19.545Z"
+          "last_checked": "2026-10-01T02:08:50.313Z"
         },
         {
           "id": "chileabierto-indicator",
@@ -1117,7 +1117,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:21.409Z"
+          "last_checked": "2026-10-01T02:08:52.332Z"
         },
         {
           "id": "chileabierto-compare",
@@ -1130,7 +1130,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:23.513Z"
+          "last_checked": "2026-10-01T02:08:54.328Z"
         }
       ]
     },
@@ -1161,7 +1161,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:29.592Z"
+          "last_checked": "2026-10-01T02:08:55.401Z"
         },
         {
           "id": "datos-resiliencia-native",
@@ -1174,7 +1174,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:29.751Z"
+          "last_checked": "2026-10-01T02:08:56.477Z"
         }
       ]
     },
@@ -1197,7 +1197,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:01:29.855Z"
+          "last_checked": "2026-10-01T02:08:56.663Z"
         },
         {
           "id": "super-salud-registro",
@@ -1210,7 +1210,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:01:31.771Z"
+          "last_checked": "2026-10-01T02:08:58.501Z"
         }
       ]
     },
@@ -1233,7 +1233,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:32.222Z"
+          "last_checked": "2026-10-01T02:08:59.259Z"
         },
         {
           "id": "dataestado-autoridades",
@@ -1246,7 +1246,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:34.136Z"
+          "last_checked": "2026-10-01T02:09:01.198Z"
         },
         {
           "id": "dataestado-gobiernos",
@@ -1259,7 +1259,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:35.944Z"
+          "last_checked": "2026-10-01T02:09:02.777Z"
         },
         {
           "id": "dataestado-ministerios",
@@ -1272,7 +1272,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:38.109Z"
+          "last_checked": "2026-10-01T02:09:05.044Z"
         },
         {
           "id": "dataestado-personas",
@@ -1285,7 +1285,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:39.959Z"
+          "last_checked": "2026-10-01T02:09:06.792Z"
         },
         {
           "id": "dataestado-estadisticas",
@@ -1298,7 +1298,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:41.961Z"
+          "last_checked": "2026-10-01T02:09:08.795Z"
         },
         {
           "id": "dataestado-search",
@@ -1311,7 +1311,7 @@
           "status": "active",
           "last_status_code": 400,
           "last_response_format": "Other",
-          "last_checked": "2026-07-03T02:01:43.959Z"
+          "last_checked": "2026-10-01T02:09:10.798Z"
         }
       ]
     },
@@ -1334,7 +1334,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:44.697Z"
+          "last_checked": "2026-10-01T02:09:11.281Z"
         },
         {
           "id": "magnet-data-holidays",
@@ -1347,7 +1347,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:46.152Z"
+          "last_checked": "2026-10-01T02:09:13.000Z"
         },
         {
           "id": "magnet-data-health",
@@ -1360,7 +1360,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:48.149Z"
+          "last_checked": "2026-10-01T02:09:15.015Z"
         },
         {
           "id": "magnet-data-pension",
@@ -1373,7 +1373,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:50.210Z"
+          "last_checked": "2026-10-01T02:09:17.036Z"
         }
       ]
     },
@@ -1396,7 +1396,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:50.361Z"
+          "last_checked": "2026-10-01T02:09:17.140Z"
         },
         {
           "id": "observatorio-metadata",
@@ -1409,7 +1409,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:52.293Z"
+          "last_checked": "2026-10-01T02:09:19.093Z"
         },
         {
           "id": "observatorio-data",
@@ -1422,7 +1422,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-07-03T02:01:54.332Z"
+          "last_checked": "2026-10-01T02:09:21.117Z"
         }
       ]
     },
@@ -1446,7 +1446,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:05:30.009Z",
+          "last_checked": "2026-10-01T02:09:21.922Z",
           "last_error": "HTTP 404 (auth required)"
         },
         {
@@ -1460,7 +1460,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:05:31.636Z",
+          "last_checked": "2026-10-01T02:09:23.268Z",
           "last_error": "HTTP 404 (auth required)"
         },
         {
@@ -1474,7 +1474,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:05:33.640Z",
+          "last_checked": "2026-10-01T02:09:25.280Z",
           "last_error": "HTTP 404 (auth required)"
         },
         {
@@ -1488,7 +1488,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:05:35.643Z",
+          "last_checked": "2026-10-01T02:09:27.286Z",
           "last_error": "HTTP 404 (auth required)"
         },
         {
@@ -1502,7 +1502,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:05:37.658Z",
+          "last_checked": "2026-10-01T02:09:29.286Z",
           "last_error": "HTTP 404 (auth required)"
         },
         {
@@ -1516,7 +1516,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:05:39.667Z",
+          "last_checked": "2026-10-01T02:09:31.287Z",
           "last_error": "HTTP 404 (auth required)"
         },
         {
@@ -1530,7 +1530,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:05:41.681Z",
+          "last_checked": "2026-10-01T02:09:33.297Z",
           "last_error": "HTTP 404 (auth required)"
         },
         {
@@ -1544,7 +1544,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:05:43.686Z",
+          "last_checked": "2026-10-01T02:09:35.304Z",
           "last_error": "HTTP 404 (auth required)"
         },
         {
@@ -1558,7 +1558,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:05:45.702Z",
+          "last_checked": "2026-10-01T02:09:37.302Z",
           "last_error": "HTTP 404 (auth required)"
         },
         {
@@ -1572,7 +1572,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:05:47.711Z",
+          "last_checked": "2026-10-01T02:09:39.306Z",
           "last_error": "HTTP 404 (auth required)"
         },
         {
@@ -1586,7 +1586,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:05:49.717Z",
+          "last_checked": "2026-10-01T02:09:41.308Z",
           "last_error": "HTTP 404 (auth required)"
         }
       ]
@@ -1610,7 +1610,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:06:50.376Z",
+          "last_checked": "2026-10-01T02:09:41.711Z",
           "last_error": "HTTP 404 (auth required)"
         }
       ]
@@ -1635,7 +1635,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:02:15.438Z"
+          "last_checked": "2026-10-01T02:09:42.144Z"
         },
         {
           "id": "floid-get-credit-cards",
@@ -1648,7 +1648,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:02:17.047Z"
+          "last_checked": "2026-10-01T02:09:43.889Z"
         },
         {
           "id": "floid-consent-create",
@@ -1661,7 +1661,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:02:19.053Z"
+          "last_checked": "2026-10-01T02:09:45.897Z"
         },
         {
           "id": "floid-list-consents",
@@ -1674,7 +1674,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:02:21.059Z"
+          "last_checked": "2026-10-01T02:09:47.900Z"
         },
         {
           "id": "floid-revoke-consent",
@@ -1687,7 +1687,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:02:23.058Z"
+          "last_checked": "2026-10-01T02:09:49.905Z"
         },
         {
           "id": "floid-get-loans",
@@ -1700,7 +1700,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:02:25.083Z"
+          "last_checked": "2026-10-01T02:09:51.900Z"
         }
       ]
     },
@@ -1724,7 +1724,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:02:25.538Z"
+          "last_checked": "2026-10-01T02:09:52.185Z"
         },
         {
           "id": "feriados-io-holidays",
@@ -1737,7 +1737,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:02:27.135Z"
+          "last_checked": "2026-10-01T02:09:53.996Z"
         },
         {
           "id": "feriados-io-is-business-day",
@@ -1750,7 +1750,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:02:29.147Z"
+          "last_checked": "2026-10-01T02:09:56.014Z"
         },
         {
           "id": "feriados-io-next-holiday",
@@ -1763,7 +1763,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:02:31.154Z"
+          "last_checked": "2026-10-01T02:09:58.021Z"
         },
         {
           "id": "feriados-io-calendar",
@@ -1776,7 +1776,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:02:33.162Z"
+          "last_checked": "2026-10-01T02:10:00.022Z"
         },
         {
           "id": "feriados-io-business-days-add",
@@ -1789,7 +1789,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:02:35.159Z"
+          "last_checked": "2026-10-01T02:10:02.020Z"
         }
       ]
     },
@@ -1813,7 +1813,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:06:22.838Z"
+          "last_checked": "2026-10-01T02:10:02.717Z"
         },
         {
           "id": "getapi-appraisal",
@@ -1826,7 +1826,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:06:24.550Z"
+          "last_checked": "2026-10-01T02:10:04.208Z"
         },
         {
           "id": "getapi-vin",
@@ -1839,7 +1839,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:06:26.551Z"
+          "last_checked": "2026-10-01T02:10:06.211Z"
         },
         {
           "id": "getapi-recall",
@@ -1852,7 +1852,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:06:28.551Z"
+          "last_checked": "2026-10-01T02:10:08.209Z"
         },
         {
           "id": "getapi-stolen",
@@ -1865,7 +1865,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:06:30.566Z"
+          "last_checked": "2026-10-01T02:10:10.220Z"
         },
         {
           "id": "getapi-stolen-latest",
@@ -1878,7 +1878,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:06:32.577Z"
+          "last_checked": "2026-10-01T02:10:12.231Z"
         },
         {
           "id": "getapi-route-cost",
@@ -1891,7 +1891,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:06:34.577Z"
+          "last_checked": "2026-10-01T02:10:14.238Z"
         },
         {
           "id": "getapi-highways",
@@ -1904,7 +1904,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:06:36.589Z"
+          "last_checked": "2026-10-01T02:10:16.240Z"
         },
         {
           "id": "getapi-categories",
@@ -1917,7 +1917,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:06:38.594Z"
+          "last_checked": "2026-10-01T02:10:18.250Z"
         },
         {
           "id": "getapi-locations",
@@ -1930,7 +1930,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:06:40.604Z"
+          "last_checked": "2026-10-01T02:10:20.254Z"
         },
         {
           "id": "getapi-calculate-by-path",
@@ -1943,7 +1943,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:06:42.617Z",
+          "last_checked": "2026-10-01T02:10:22.257Z",
           "last_error": "HTTP 404 (auth required)"
         },
         {
@@ -1957,7 +1957,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-07-03T02:06:44.624Z",
+          "last_checked": "2026-10-01T02:10:24.266Z",
           "last_error": "HTTP 404 (auth required)"
         }
       ]
@@ -1981,7 +1981,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-08-02T19:35:16.928Z"
+          "last_checked": "2026-10-01T02:10:24.812Z"
         },
         {
           "id": "sismos-en-chile-estadisticas",
@@ -1994,7 +1994,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-08-02T19:35:18.735Z"
+          "last_checked": "2026-10-01T02:10:26.648Z"
         }
       ]
     },
@@ -2017,7 +2017,7 @@
           "status": "active",
           "last_status_code": 301,
           "last_response_format": "redirect",
-          "last_checked": "2026-08-02T19:36:17.909Z",
+          "last_checked": "2026-10-01T02:10:34.685Z",
           "last_error": "HTTP 301"
         }
       ]
@@ -2039,9 +2039,9 @@
           "format": "JSON",
           "description": "Consulta del portafolio de proyectos. Parámetros: filter[codigo], filter[rut_beneficiario], filter[tipo_intervencion], filter[estado_data], filter[sostenible], filter[año_adjudicacion], limit. Requiere token JWT público en header Authorization",
           "status": "active",
-          "last_status_code": 200,
-          "last_response_format": "JSON",
-          "last_checked": "2026-08-23T00:00:00.000Z"
+          "last_status_code": 400,
+          "last_response_format": "Other",
+          "last_checked": "2026-10-01T02:10:35.145Z"
         }
       ]
     },
@@ -2063,9 +2063,9 @@
           "format": "JSON",
           "description": "Emisión de DTEs al SII. Requiere certificado digital y CAF autorizado",
           "status": "active",
-          "last_status_code": 200,
-          "last_response_format": "JSON",
-          "last_checked": "2026-08-23T00:00:00.000Z"
+          "last_status_code": 403,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-10-01T02:10:35.531Z"
         }
       ]
     },
@@ -2088,7 +2088,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-25T01:08:00.703Z",
+          "last_checked": "2026-10-01T02:10:35.919Z",
           "last_error": "HTTP 404 (auth required)"
         }
       ]
@@ -2112,7 +2112,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-08-23T00:00:00.000Z"
+          "last_checked": "2026-10-01T02:10:38.404Z"
         }
       ]
     },
@@ -2133,9 +2133,9 @@
           "format": "JSON",
           "description": "API del marketplace para Chile (MLC). Endpoints de items, categorías, pedidos, etc",
           "status": "active",
-          "last_status_code": 200,
-          "last_response_format": "JSON",
-          "last_checked": "2026-08-23T00:00:00.000Z"
+          "last_status_code": 403,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-10-01T02:10:38.601Z"
         }
       ]
     },
@@ -2156,9 +2156,10 @@
           "format": "JSON",
           "description": "Acceso a metadatos y servicios geoespaciales del Estado",
           "status": "active",
-          "last_status_code": 200,
-          "last_response_format": "JSON",
-          "last_checked": "2026-08-23T00:00:00.000Z"
+          "last_status_code": 302,
+          "last_response_format": "redirect",
+          "last_checked": "2026-10-01T02:10:38.812Z",
+          "last_error": "HTTP 302"
         }
       ]
     },
@@ -2176,12 +2177,12 @@
           "url": "https://www.dtpm.cl/index.php/noticias/gtfs-vigente",
           "method": "GET",
           "auth": "none",
-          "format": "Other",
+          "format": "HTML",
           "description": "Descarga del feed GTFS con horarios, rutas, paradas y shapes del transporte público",
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "HTML",
-          "last_checked": "2026-08-23T00:00:00.000Z"
+          "last_checked": "2026-10-01T02:10:59.067Z"
         }
       ]
     },
@@ -2204,7 +2205,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-23T00:00:00.000Z"
+          "last_checked": "2026-10-01T02:11:19.688Z"
         }
       ]
     },
@@ -2225,9 +2226,10 @@
           "format": "JSON",
           "description": "API de datos financieros: cuentas bancarias, información tributaria (SII), TGR y AFP",
           "status": "active",
-          "last_status_code": 200,
-          "last_response_format": "JSON",
-          "last_checked": "2026-08-23T00:00:00.000Z"
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-10-01T02:11:19.946Z",
+          "last_error": "HTTP 404 (auth required)"
         }
       ]
     },
@@ -2248,9 +2250,10 @@
           "format": "JSON",
           "description": "Orquestador de pagos: múltiples medios de pago y transferencias",
           "status": "active",
-          "last_status_code": 200,
-          "last_response_format": "JSON",
-          "last_checked": "2026-08-23T00:00:00.000Z"
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-10-01T02:11:20.526Z",
+          "last_error": "HTTP 404 (auth required)"
         }
       ]
     },
@@ -2273,7 +2276,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-26T00:48:57.134Z",
+          "last_checked": "2026-10-01T02:11:21.035Z",
           "last_error": "HTTP 404 (auth required)"
         }
       ]
@@ -2295,9 +2298,9 @@
           "format": "JSON",
           "description": "Open Banking: aggregación de datos bancarios y pagos A2A",
           "status": "active",
-          "last_status_code": 200,
-          "last_response_format": "JSON",
-          "last_checked": "2026-08-23T00:00:00.000Z"
+          "last_status_code": 403,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-10-01T02:11:21.129Z"
         }
       ]
     },
@@ -2318,9 +2321,10 @@
           "format": "JSON",
           "description": "Procesamiento de pagos: tarjetas, transferencias Khipu, y otros medios en Chile",
           "status": "active",
-          "last_status_code": 200,
-          "last_response_format": "JSON",
-          "last_checked": "2026-08-23T00:00:00.000Z"
+          "last_status_code": 404,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-10-01T02:11:21.658Z",
+          "last_error": "HTTP 404 (auth required)"
         }
       ]
     },
@@ -2338,12 +2342,12 @@
           "url": "https://bidat.gob.cl/datos-abiertos",
           "method": "GET",
           "auth": "none",
-          "format": "CSV",
+          "format": "HTML",
           "description": "Descarga de datos sociales y de inversión pública del Ministerio",
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "HTML",
-          "last_checked": "2026-08-23T00:00:00.000Z"
+          "last_checked": "2026-10-01T02:11:24.303Z"
         }
       ]
     },
@@ -2361,12 +2365,12 @@
           "url": "https://datosabiertos.mineduc.cl/",
           "method": "GET",
           "auth": "none",
-          "format": "XML",
+          "format": "HTML",
           "description": "Bases de datos descargables: matrícula, docentes, establecimientos, asistentes de la educación",
           "status": "active",
           "last_status_code": 200,
-          "last_response_format": "XML",
-          "last_checked": "2026-08-25T23:20:29.762Z"
+          "last_response_format": "HTML",
+          "last_checked": "2026-10-01T02:11:25.334Z"
         }
       ]
     },
@@ -2384,12 +2388,12 @@
           "url": "https://www.supereduc.cl/datosabiertos/",
           "method": "GET",
           "auth": "none",
-          "format": "XML",
+          "format": "HTML",
           "description": "Bases de datos descargables organizadas por año con esquemas de registros detallados",
           "status": "active",
           "last_status_code": 200,
-          "last_response_format": "XML",
-          "last_checked": "2026-08-25T23:23:15.244Z"
+          "last_response_format": "HTML",
+          "last_checked": "2026-10-01T02:11:25.667Z"
         }
       ]
     },
@@ -2407,12 +2411,12 @@
           "url": "https://informacionestadistica.agenciaeducacion.cl/",
           "method": "GET",
           "auth": "none",
-          "format": "XML",
+          "format": "HTML",
           "description": "Bases de datos de resultados educativos para descarga pública",
           "status": "active",
           "last_status_code": 200,
-          "last_response_format": "XML",
-          "last_checked": "2026-08-25T23:23:15.811Z"
+          "last_response_format": "HTML",
+          "last_checked": "2026-10-01T02:11:26.100Z"
         }
       ]
     },
@@ -2435,7 +2439,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-25T23:23:16.906Z"
+          "last_checked": "2026-10-01T02:11:26.499Z"
         }
       ]
     },
@@ -2456,9 +2460,9 @@
           "format": "JSON",
           "description": "Vigencia de cedula/pasaporte via POST (run + tipo y numero de documento). Key por correo; tier gratuito limita 10 req/hora por IP. Verificado manualmente: POST sin key devuelve 400 INVALID_PARAM",
           "status": "active",
-          "last_status_code": 400,
-          "last_response_format": "JSON",
-          "last_checked": "2026-08-26T00:35:35.455Z"
+          "last_status_code": 405,
+          "last_response_format": "Other",
+          "last_checked": "2026-10-01T02:22:37.361Z"
         }
       ]
     },
@@ -2481,7 +2485,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-25T23:23:19.749Z",
+          "last_checked": "2026-10-01T02:11:28.894Z",
           "last_error": "HTTP 404 (auth required)"
         }
       ]
@@ -2505,7 +2509,7 @@
           "status": "broken",
           "last_status_code": 0,
           "last_response_format": "error",
-          "last_checked": "2026-08-25T23:23:21.557Z",
+          "last_checked": "2026-10-01T02:22:06.550Z",
           "last_error": "socket hang up"
         }
       ]
@@ -2529,7 +2533,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-26T00:35:49.153Z"
+          "last_checked": "2026-10-01T02:11:31.168Z"
         }
       ]
     },
@@ -2552,7 +2556,7 @@
           "status": "active",
           "last_status_code": 405,
           "last_response_format": "Other",
-          "last_checked": "2026-08-25T23:23:25.654Z"
+          "last_checked": "2026-10-01T02:11:31.598Z"
         }
       ]
     },
@@ -2570,12 +2574,12 @@
           "url": "https://sitiospublicos.bancochile.cl/api-store/abono-en-linea",
           "method": "POST",
           "auth": "api-key",
-          "format": "XML",
+          "format": "HTML",
           "description": "Transferencias electrónicas automáticas desde cuentas de la empresa hacia clientes",
           "status": "active",
           "last_status_code": 200,
-          "last_response_format": "XML",
-          "last_checked": "2026-08-25T23:23:26.619Z"
+          "last_response_format": "HTML",
+          "last_checked": "2026-10-01T02:11:31.902Z"
         }
       ]
     },
@@ -2598,7 +2602,7 @@
           "status": "active",
           "last_status_code": 307,
           "last_response_format": "redirect",
-          "last_checked": "2026-08-25T23:23:27.800Z",
+          "last_checked": "2026-10-01T02:11:32.484Z",
           "last_error": "HTTP 307"
         }
       ]
@@ -2622,7 +2626,7 @@
           "status": "active",
           "last_status_code": 301,
           "last_response_format": "redirect",
-          "last_checked": "2026-08-26T00:35:44.341Z",
+          "last_checked": "2026-10-01T02:11:32.915Z",
           "last_error": "HTTP 301"
         },
         {
@@ -2636,7 +2640,7 @@
           "status": "active",
           "last_status_code": 301,
           "last_response_format": "redirect",
-          "last_checked": "2026-08-26T00:35:46.030Z",
+          "last_checked": "2026-10-01T02:11:34.636Z",
           "last_error": "HTTP 301"
         },
         {
@@ -2650,7 +2654,7 @@
           "status": "active",
           "last_status_code": 301,
           "last_response_format": "redirect",
-          "last_checked": "2026-08-26T00:35:48.031Z",
+          "last_checked": "2026-10-01T02:11:36.635Z",
           "last_error": "HTTP 301"
         }
       ]
@@ -2674,7 +2678,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-25T23:23:39.397Z",
+          "last_checked": "2026-10-01T02:11:36.734Z",
           "last_error": "HTTP 404 (auth required)"
         }
       ]
@@ -2696,9 +2700,9 @@
           "format": "JSON",
           "description": "Transferencias bancarias: pagos de sueldos, envíos de dinero programados, dispersión de pagos",
           "status": "active",
-          "last_status_code": 400,
-          "last_response_format": "Other",
-          "last_checked": "2026-08-25T23:23:40.026Z"
+          "last_status_code": 403,
+          "last_response_format": "auth_required",
+          "last_checked": "2026-10-01T02:11:36.847Z"
         }
       ]
     },
@@ -2721,7 +2725,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-25T23:23:41.085Z"
+          "last_checked": "2026-10-01T02:11:37.272Z"
         }
       ]
     },
@@ -2744,7 +2748,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-08-25T23:23:41.876Z"
+          "last_checked": "2026-10-01T02:11:37.615Z"
         },
         {
           "id": "gael-monedas-codigo",
@@ -2757,7 +2761,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-08-25T23:23:43.424Z"
+          "last_checked": "2026-10-01T02:11:39.450Z"
         },
         {
           "id": "gael-clima",
@@ -2770,7 +2774,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-08-25T23:23:45.475Z"
+          "last_checked": "2026-10-01T02:11:42.231Z"
         },
         {
           "id": "gael-sismos",
@@ -2783,7 +2787,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-08-25T23:23:47.479Z"
+          "last_checked": "2026-10-01T02:11:43.464Z"
         },
         {
           "id": "gael-previred",
@@ -2796,7 +2800,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-08-25T23:23:49.492Z"
+          "last_checked": "2026-10-01T02:11:45.473Z"
         },
         {
           "id": "gael-impuesto-unico",
@@ -2809,7 +2813,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-08-25T23:23:51.441Z"
+          "last_checked": "2026-10-01T02:11:47.484Z"
         }
       ]
     },
@@ -2830,9 +2834,10 @@
           "format": "XML",
           "description": "Acceso a datasets del sector energético: generación, distribución, subestaciones y redes",
           "status": "active",
-          "last_status_code": 200,
-          "last_response_format": "XML",
-          "last_checked": "2026-08-25T23:23:52.939Z"
+          "last_status_code": 301,
+          "last_response_format": "redirect",
+          "last_checked": "2026-10-01T02:11:47.865Z",
+          "last_error": "HTTP 301"
         }
       ]
     },
@@ -2855,7 +2860,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-25T23:35:39.868Z",
+          "last_checked": "2026-10-01T02:11:48.303Z",
           "last_error": "HTTP 404 (auth required)"
         }
       ]
@@ -2879,7 +2884,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-08-25T23:58:05.696Z"
+          "last_checked": "2026-10-01T02:11:48.989Z"
         },
         {
           "id": "chilexpress-cotizador",
@@ -2892,7 +2897,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-25T23:58:07.121Z",
+          "last_checked": "2026-10-01T02:11:50.450Z",
           "last_error": "HTTP 404 (auth required)"
         },
         {
@@ -2906,7 +2911,7 @@
           "status": "active",
           "last_status_code": 400,
           "last_response_format": "Other",
-          "last_checked": "2026-08-25T23:58:09.121Z"
+          "last_checked": "2026-10-01T02:11:52.458Z"
         }
       ]
     },
@@ -2929,7 +2934,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-25T23:24:06.022Z",
+          "last_checked": "2026-10-01T02:11:53.071Z",
           "last_error": "HTTP 404 (auth required)"
         }
       ]
@@ -2953,7 +2958,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-25T23:24:06.910Z"
+          "last_checked": "2026-10-01T02:12:13.663Z"
         },
         {
           "id": "openfactura-dev",
@@ -2966,7 +2971,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-25T23:24:07.554Z"
+          "last_checked": "2026-10-01T02:12:14.270Z"
         }
       ]
     },
@@ -2989,7 +2994,7 @@
           "status": "active",
           "last_status_code": 403,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-25T23:35:39.356Z"
+          "last_checked": "2026-10-01T02:12:34.530Z"
         }
       ]
     },
@@ -3007,12 +3012,12 @@
           "url": "https://www.senado.cl/transparencia/datos-abiertos-legislativos",
           "method": "GET",
           "auth": "none",
-          "format": "XML",
+          "format": "HTML",
           "description": "Descarga de datos abiertos legislativos: senadores, proyectos, votaciones y sesiones",
           "status": "active",
           "last_status_code": 200,
-          "last_response_format": "XML",
-          "last_checked": "2026-08-25T23:35:39.127Z"
+          "last_response_format": "HTML",
+          "last_checked": "2026-10-01T02:12:35.257Z"
         }
       ]
     },
@@ -3035,7 +3040,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-25T23:35:40.555Z"
+          "last_checked": "2026-10-01T02:12:35.748Z"
         },
         {
           "id": "pulsando-rcv",
@@ -3048,7 +3053,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-25T23:35:42.121Z"
+          "last_checked": "2026-10-01T02:12:37.458Z"
         },
         {
           "id": "pulsando-contribuyentes",
@@ -3061,7 +3066,7 @@
           "status": "active",
           "last_status_code": 404,
           "last_response_format": "auth_required",
-          "last_checked": "2026-08-25T23:35:44.128Z",
+          "last_checked": "2026-10-01T02:12:39.463Z",
           "last_error": "HTTP 404 (auth required)"
         }
       ]
@@ -3085,7 +3090,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-09-01T00:00:00.000Z"
+          "last_checked": "2026-10-01T02:12:40.625Z"
         },
         {
           "id": "observa-download",
@@ -3093,12 +3098,12 @@
           "url": "https://api.observa.minciencia.gob.cl/api/datosabiertos/download/?uuid=337e0a01-4e23-4574-bd0c-02ab2f9606a0",
           "method": "GET",
           "auth": "none",
-          "format": "Other",
+          "format": "HTML",
           "description": "Descarga directa de un dataset por UUID. Patrón: /api/datosabiertos/download/?uuid={uuid}",
           "status": "active",
           "last_status_code": 200,
-          "last_response_format": "Other",
-          "last_checked": "2026-09-01T00:00:00.000Z"
+          "last_response_format": "HTML",
+          "last_checked": "2026-10-01T02:12:41.740Z"
         },
         {
           "id": "observa-indicadores",
@@ -3109,9 +3114,10 @@
           "format": "JSON",
           "description": "Indicadores de ciencia, tecnología, conocimiento e innovación. Incluye datos de exportaciones, I+D, patentes y más",
           "status": "active",
-          "last_status_code": 200,
-          "last_response_format": "JSON",
-          "last_checked": "2026-09-01T00:00:00.000Z"
+          "last_status_code": 301,
+          "last_response_format": "redirect",
+          "last_checked": "2026-10-01T02:12:49.611Z",
+          "last_error": "HTTP 301"
         }
       ]
     },
@@ -3134,7 +3140,7 @@
           "status": "active",
           "last_status_code": 401,
           "last_response_format": "auth_required",
-          "last_checked": "2026-09-15T00:38:41.890Z"
+          "last_checked": "2026-10-01T02:12:49.824Z"
         }
       ]
     },
@@ -3157,7 +3163,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "XML",
-          "last_checked": "2026-09-15T00:44:40.458Z"
+          "last_checked": "2026-10-01T02:12:49.993Z"
         },
         {
           "id": "ide-ciclovias-featureserver",
@@ -3170,7 +3176,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-09-15T00:44:40.764Z"
+          "last_checked": "2026-10-01T02:12:50.355Z"
         }
       ]
     },
@@ -3193,7 +3199,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-09-15T00:44:16.909Z"
+          "last_checked": "2026-10-01T02:12:50.713Z"
         }
       ]
     },
@@ -3216,7 +3222,7 @@
           "status": "active",
           "last_status_code": 403,
           "last_response_format": "auth_required",
-          "last_checked": "2026-09-15T00:50:43.140Z"
+          "last_checked": "2026-10-01T02:12:50.827Z"
         }
       ]
     },
@@ -3239,7 +3245,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-09-15T01:00:09.299Z"
+          "last_checked": "2026-10-01T02:12:51.247Z"
         },
         {
           "id": "presupuesto-abierto-pagos",
@@ -3252,7 +3258,7 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-09-15T01:00:11.269Z"
+          "last_checked": "2026-10-01T02:12:52.920Z"
         }
       ]
     },
@@ -3275,7 +3281,30 @@
           "status": "active",
           "last_status_code": 200,
           "last_response_format": "JSON",
-          "last_checked": "2026-09-15T00:44:21.390Z"
+          "last_checked": "2026-10-01T02:12:54.166Z"
+        }
+      ]
+    },
+    {
+      "id": "infolobby-datos",
+      "name": "InfoLobby - Datos Abiertos Ley de Lobby",
+      "url": "https://www.infolobby.cl/DatosAbiertos",
+      "category": "government",
+      "pricing": "free",
+      "description": "Datos abiertos de la Ley Nº 20.730 de Lobby, operados por el Consejo para la Transparencia: ontología RDF/SPARQL con audiencias, viajes y donativos del Estado bajo estándares W3C de Web Semántica",
+      "endpoints": [
+        {
+          "id": "infolobby-sparql",
+          "name": "Endpoint SPARQL",
+          "url": "http://datos.infolobby.cl/sparql",
+          "method": "GET",
+          "auth": "none",
+          "format": "HTML",
+          "description": "Consulta SPARQL sobre la ontología de la ley de lobby (~294M tripletas en el grafo http://datos.infolobby.cl/infolobby). Para resultados en JSON enviar `Accept: application/sparql-results+json`; un GET sin ese header devuelve el formulario HTML de Virtuoso. Documentación oficial: infolobby.cl/DatosAbiertos",
+          "status": "active",
+          "last_status_code": 200,
+          "last_response_format": "HTML",
+          "last_checked": "2026-10-01T02:12:54.397Z"
         }
       ]
     }

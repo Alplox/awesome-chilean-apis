@@ -2,14 +2,14 @@
 # 🇨🇱 Awesome Chilean APIs
 
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/alplox/awesome-chilean-apis)
-![APIs](https://img.shields.io/badge/apis-89-brightgreen)
-![Endpoints](https://img.shields.io/badge/endpoints-182-blue)
+![APIs](https://img.shields.io/badge/apis-90-brightgreen)
+![Endpoints](https://img.shields.io/badge/endpoints-183-blue)
 
-> Directorio curado de APIs chilenas públicas y privadas con endpoints verificados. **89 APIs** y **182 endpoints**, organizados por categoría y mantenidos activamente.
+> Directorio curado de APIs chilenas públicas y privadas con endpoints verificados. **90 APIs** y **183 endpoints**, organizados por categoría y mantenidos activamente.
 
 ## 📑 Índice
 
-- [🏛️ Gobierno y Datos Públicos](#cat-government) — 18 APIs
+- [🏛️ Gobierno y Datos Públicos](#cat-government) — 19 APIs
 - [💰 Finanzas e Impuestos](#cat-finance) — 18 APIs
 - [🚌 Transporte y Tránsito](#cat-transport) — 9 APIs
 - [🌤️ Clima y Meteorología](#cat-weather) — 1 API
@@ -22,11 +22,11 @@
 - [📢 Alertas y Notificaciones](#cat-notifications) — 4 APIs
 - [🤝 Comunidad y Otros](#cat-community) — 3 APIs
 
-> Última actualización: 14 de septiembre de 2026
+> Última actualización: 26 de septiembre de 2026
 
 <a id="cat-government"></a>
 
-### 🏛️ Gobierno y Datos Públicos (18 APIs)
+### 🏛️ Gobierno y Datos Públicos (19 APIs)
 
 **APIs gubernamentales, datos abiertos y servicios del Estado**
 
@@ -172,6 +172,12 @@
   - **Endpoints:**
     - ✅ `200` `JSON` `GET` [`https://api.presupuestoabierto.gob.cl/api/v1/providers/96987050-9`](https://api.presupuestoabierto.gob.cl/api/v1/providers/96987050-9) — Ficha de un proveedor o receptor de recursos del Estado por RUT (ejemplo: 96987050-9). Patrón: /api/v1/providers/{rut}
     - ✅ `200` `JSON` `GET` [`https://api.presupuestoabierto.gob.cl/api/v1/data/pagos?group-by=[%22partida%22,%22capitulo%22,%22area%22]&where={%22periodo%22:2026}`](https://api.presupuestoabierto.gob.cl/api/v1/data/pagos?group-by=[%22partida%22,%22capitulo%22,%22area%22]&where={%22periodo%22:2026}) — Consulta de pagos del Gobierno Central agrupados por partida, capítulo y área para el periodo 2026. Retorna JSON con totales y detalles de pagos
+
+- **InfoLobby - Datos Abiertos Ley de Lobby** ![Active](https://img.shields.io/badge/1_endpoints-active-brightgreen)
+  - 🌐 [https://www.infolobby.cl/DatosAbiertos](https://www.infolobby.cl/DatosAbiertos)
+  - 📝 Datos abiertos de la Ley Nº 20.730 de Lobby, operados por el Consejo para la Transparencia: ontología RDF/SPARQL con audiencias, viajes y donativos del Estado bajo estándares W3C de Web Semántica
+  - **Endpoints:**
+    - ✅ `200` `HTML` `GET` [`http://datos.infolobby.cl/sparql`](http://datos.infolobby.cl/sparql) — Consulta SPARQL sobre la ontología de la ley de lobby (~294M tripletas en el grafo http://datos.infolobby.cl/infolobby). Para resultados en JSON enviar `Accept: application/sparql-results+json`; un GET sin ese header devuelve el formulario HTML de Virtuoso. Documentación oficial: infolobby.cl/DatosAbiertos
 
   [⬆ Volver al índice](#top)
 

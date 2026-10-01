@@ -6,7 +6,7 @@
 
 Directorio curado de APIs chilenas públicas y privadas, con endpoints verificados, health checks automáticos y documentación centralizada.
 
-**Snapshot actual:** 89 APIs · 182 endpoints · 181 activos ✅ · 1 rotos ❌ · 0 offline 📡
+**Snapshot actual:** 90 APIs · 183 endpoints · 182 activos ✅ · 1 rotos ❌ · 0 offline 📡
 
 ## 📁 Estructura del repositorio
 
@@ -27,6 +27,7 @@ Directorio curado de APIs chilenas públicas y privadas, con endpoints verificad
 │   │   └── find-duplicates.js  ← Detecta IDs/URLs duplicados
 │   └── validation
 │       └── validate-json.js  ← Valida estructura JSON (CI)
+├── .nvmrc
 ├── AGENTS.md  ← Este archivo (auto-generado)
 ├── apis-database.json  ← Base de datos central de APIs (NO EDITABLE MANUALMENTE)
 ├── categories.json  ← Definición de categorías con slugs
@@ -167,7 +168,7 @@ documentación que exige registro, acceso por correo, endpoints caídos, etc.
 
 | Categoría | Clave (`category`) | APIs |
 |-----------|--------------------|------|
-| 🏛️ Gobierno y Datos Públicos | `government` | 18 |
+| 🏛️ Gobierno y Datos Públicos | `government` | 19 |
 | 💰 Finanzas e Impuestos | `finance` | 18 |
 | 🚌 Transporte y Tránsito | `transport` | 9 |
 | 🌤️ Clima y Meteorología | `weather` | 1 |
